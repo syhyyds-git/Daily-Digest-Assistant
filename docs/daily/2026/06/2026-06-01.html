@@ -81,6 +81,8 @@ details summary:hover { background: #eef2ff; }
       <div class="pill">📄 arXiv <b>10</b> 篇</div>
       
       
+      <div class="pill">📕 小红书 <b>10</b> 条</div>
+      
       <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
     </div>
   </div>
@@ -130,7 +132,7 @@ details summary:hover { background: #eef2ff; }
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  深入分析自进化 LLM Agent 中 harness 进化能力与模型基础能力的解耦关系，揭示自我进化机制的本质。
+                  深入分析自我进化LLM代理中harness与模型能力的关系，揭示进化机制的真正来源。
                 </div>
                 
                 <div class="card-links">
@@ -143,7 +145,7 @@ details summary:hover { background: #eef2ff; }
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了 LLM Agent 系统中 harness（提示词、技能、记忆、工具）的自我进化能力，并探索其与模型基础任务解决能力的关联。通过实验发现，模型在基础任务上的表现不能预测其在 harness 进化中的能力。核心创新在于提出 harness 进化能力是可独立测量的维度，并建立了系统性的评估框架。主要结论为 harness 的更新与收益之间存在解耦，为设计更有效的自进化 Agent 提供了理论依据。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM代理的自我进化能力，核心问题是harness更新是否真正带来代理能力提升。创新点在于区分模型基础能力和harness进化能力，分析两者的关系。通过大量实验发现，harness进化效果与模型基础能力存在复杂关联，某些进化机制可能仅改变任务执行方式而非提升性能。该研究对代理自我优化具有重要启示意义。</div>
               </details>
               
             </div>
@@ -153,7 +155,28 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 322</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cfc6e000000003701fbd6?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTIbCg-c_cvbaJp8CMK6SpEo=&amp;xsec_source=pc_search" target="_blank">我做了一个“大模型实习简历拷打器”</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cfc6e000000003701fbd6?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTIbCg-c_cvbaJp8CMK6SpEo=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
@@ -183,7 +206,7 @@ details summary:hover { background: #eef2ff; }
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  提出模型感知技能对齐方法，解决现有技能库对不同能力 LLM Agent 通用适配导致性能下降的问题。
+                  提出模型感知技能对齐方法，突破传统模型无关技能库的局限性，提升LLM代理任务性能。
                 </div>
                 
                 <div class="card-links">
@@ -196,7 +219,7 @@ details summary:hover { background: #eef2ff; }
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注 LLM Agent 在长程交互任务中检索外部技能（procedural instructions）的场景。现有技能库采用模型无关设计，忽略不同模型的能力差异。作者通过控制实验发现，相同技能在不同容量和行为的 backbone 上表现差异显著。核心创新在于提出模型感知的技能对齐框架，根据模型能力动态调整技能表述。实验表明，模型感知的设计可显著提升技能检索和执行的准确率。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM代理技能检索问题，提出现有技能库忽略模型差异的缺陷。核心创新是设计模型感知技能对齐方法，为不同容量的模型定制差异化技能表述。通过控制变量实验验证了方法有效性，发现模型感知对齐能显著提升交互任务性能。该研究对技能库设计和代理适配具有重要指导意义。</div>
               </details>
               
             </div>
@@ -204,15 +227,6 @@ details summary:hover { background: #eef2ff; }
         </td>
 
         <!-- 右栏：小红书 -->
-        <td>
-          
-            <div class="rest-cell">—</div>
-          
-        </td>
-      </tr>
-      
-      <tr class="card-row">
-        <!-- 左栏：arXiv -->
         <td>
           
             
@@ -221,94 +235,22 @@ details summary:hover { background: #eef2ff; }
                 <div class="card-top">
                   <div class="card-tags">
                     
-                    <span class="tag">LLM Agent</span>
-                    
+                    <span class="tag">openclaw</span>
                     
                   </div>
-                  <span class="card-date">2026-05-29</span>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 289</span>
+                  
                 </div>
                 <div class="card-title">
-                  <a href="http://arxiv.org/abs/2605.30712v1" target="_blank">ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents</a>
-                </div>
-                <div class="card-byline">Tao Feng, Chongrui Ye, Tianyang Luo, Jingjun Xu, Xueqiang Xu</div>
-                
-                <div class="summary">
-                  <span class="label">💡 一句话总结</span>
-                  提出图结构记忆的经验学习方法 ExpGraph，使 LLM Agent 能跨不同执行器复用成功策略和失败教训。
+                  <a href="https://www.xiaohongshu.com/explore/6a1d46ed00000000350395a4?xsec_token=ABOD0lc9TVrUB_u98RUk5gITsifhF1p144KyU4DIzc5dI=&amp;xsec_source=pc_search" target="_blank">确实选择大于努力</a>
                 </div>
                 
                 <div class="card-links">
-                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30712v1" target="_blank">arXiv</a>
-                  
-                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30712v1" target="_blank">PDF</a>
-                  
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d46ed00000000350395a4?xsec_token=ABOD0lc9TVrUB_u98RUk5gITsifhF1p144KyU4DIzc5dI=&amp;xsec_source=pc_search" target="_blank">小红书</a>
                 </div>
               </div>
-              
-              <details>
-                <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦 LLM Agent 难以复用历史成功经验和失败教训的问题。现有方法通过微调利用经验，但更换更强执行器时不灵活。作者提出 ExpGraph，一种模型无关的经验学习方法，使用图结构记忆组织 Agent 经验。核心创新在于将经验表示为可迁移的图结构，使不同能力的 Agent 都能受益。实验证明 ExpGraph 在多种任务和模型配置下均优于基线方法。</div>
-              </details>
-              
             </div>
-          
-        </td>
-
-        <!-- 右栏：小红书 -->
-        <td>
-          
-            <div class="rest-cell">—</div>
-          
-        </td>
-      </tr>
-      
-      <tr class="card-row">
-        <!-- 左栏：arXiv -->
-        <td>
-          
-            
-            <div class="card">
-              <div class="card-inner">
-                <div class="card-top">
-                  <div class="card-tags">
-                    
-                    <span class="tag">LLM Agent</span>
-                    
-                    
-                  </div>
-                  <span class="card-date">2026-05-29</span>
-                </div>
-                <div class="card-title">
-                  <a href="http://arxiv.org/abs/2605.30785v1" target="_blank">Learning Agent-Compatible Context Management for Long-Horizon Tasks</a>
-                </div>
-                <div class="card-byline">Lu Yi, Runlin Lei, Liuyi Yao, Yuexiang Xie, Yuyang Li</div>
-                
-                <div class="summary">
-                  <span class="label">💡 一句话总结</span>
-                  设计智能体兼容的上下文管理机制，解决 LLM Agent 在长程任务中因上下文累积导致的推理退化问题。
-                </div>
-                
-                <div class="card-links">
-                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30785v1" target="_blank">arXiv</a>
-                  
-                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30785v1" target="_blank">PDF</a>
-                  
-                </div>
-              </div>
-              
-              <details>
-                <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 在网页搜索、深度研究等长程任务中面临的上下文退化问题。传统方法依赖固定策略如摘要，需要训练 Agent 本身才能适应，实用性受限。作者提出智能体兼容的上下文管理方法。核心创新在于让上下文管理策略与 Agent 行为协同优化，而非独立设计。实验表明该方法在多种长程任务上显著优于固定策略基线。</div>
-              </details>
-              
-            </div>
-          
-        </td>
-
-        <!-- 右栏：小红书 -->
-        <td>
-          
-            <div class="rest-cell">—</div>
           
         </td>
       </tr>
@@ -336,7 +278,7 @@ details summary:hover { background: #eef2ff; }
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  通过专家知识蒸馏实现自动化 AI 技能生成，将嵌入异构轨迹中的人物专业知识转化为可执行技能。
+                  提出COLLEAGUE.SKILL框架，通过专家知识蒸馏自动生成AI技能，解决角色化代理知识获取难题。
                 </div>
                 
                 <div class="card-links">
@@ -349,7 +291,7 @@ details summary:hover { background: #eef2ff; }
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文旨在解决构建以人为中心的 LLM Agent 时专业知识难以获取的问题。由于专业知识嵌入在异构轨迹而非干净指令中，现有方法难以提取。作者提出 COLLEAGUE.SKILL 框架，从专家交互痕迹中自动蒸馏技能知识。核心创新在于将隐式专业经验转化为显式技能表示，同时保留判断力和交互风格。实验验证了生成技能的有效性和可解释性。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了如何为LLM代理构建基于角色的智能体，核心问题是将嵌入在异构轨迹中的可操作知识转换为清洁指令。提出COLLEAGUE.SKILL框架，通过专家知识蒸馏自动生成AI技能。创新点在于设计了自动化技能生成流程，能够从角色轨迹中提取专业知识。实验表明该方法能有效提升代理的角色一致性和任务执行能力。</div>
               </details>
               
             </div>
@@ -359,7 +301,28 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 205</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cfc680000000006035c64?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTBF3BK4SmEaymtagRO1UpjE=&amp;xsec_source=pc_search" target="_blank">OpenAI送6 个月Pro会员，折下来 1200 刀！</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cfc680000000006035c64?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTBF3BK4SmEaymtagRO1UpjE=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
@@ -387,7 +350,7 @@ details summary:hover { background: #eef2ff; }
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  将潜在记忆作为可学习资源，设计 ElasticMem 框架使 LLM Agent 能在扩展交互中实现一致推理和个性化。
+                  将潜在记忆作为可学习资源，解决传统记忆方法的令牌开销和噪声敏感问题。
                 </div>
                 
                 <div class="card-links">
@@ -400,7 +363,7 @@ details summary:hover { background: #eef2ff; }
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注 LLM Agent 长期记忆的核心挑战。现有方法将记忆视为固定资源：文本空间方法导致高令牌开销，潜在空间方法缺乏灵活性和可解释性。作者提出 ElasticMem，将潜在记忆建模为可学习资源。核心创新在于设计可学习的记忆表示，支持自适应遗忘和检索。在扩展交互任务上的实验表明，ElasticMem 在效率和推理一致性上显著优于对比方法。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM代理的长期记忆机制，提出将潜在记忆作为可学习资源的方法。核心问题在于现有文本空间和潜在空间方法分别存在令牌开销大和噪声敏感缺陷。创新点在于设计可学习的潜在记忆资源，实现记忆的动态优化。实验表明该方法能显著降低记忆检索开销同时提升记忆质量，为代理个性化提供新思路。</div>
               </details>
               
             </div>
@@ -410,7 +373,28 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 191</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cde4e0000000008003231?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTHmETAl8zFhTjArFmWYB0A4=&amp;xsec_source=pc_search" target="_blank">面试官：KL 散度放在 Loss / Reward 区别 ？</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cde4e0000000008003231?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTHmETAl8zFhTjArFmWYB0A4=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
@@ -432,26 +416,26 @@ details summary:hover { background: #eef2ff; }
                   <span class="card-date">2026-05-29</span>
                 </div>
                 <div class="card-title">
-                  <a href="http://arxiv.org/abs/2605.30907v1" target="_blank">BlueFin: Benchmarking LLM Agents on Financial Spreadsheets</a>
+                  <a href="http://arxiv.org/abs/2605.30712v1" target="_blank">ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents</a>
                 </div>
-                <div class="card-byline">Srivatsa Kundurthy, Clara Na, Colton Moraine, Anoushka Mohta, Case Winter</div>
+                <div class="card-byline">Tao Feng, Chongrui Ye, Tianyang Luo, Jingjun Xu, Xueqiang Xu</div>
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  提出金融电子表格领域的 LLM Agent 评测基准 BlueFin，涵盖合成、操作和理解三类专业任务。
+                  提出图结构记忆实现模型无关的经验学习，使LLM代理能够复用成功策略和失败教训。
                 </div>
                 
                 <div class="card-links">
-                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30907v1" target="_blank">arXiv</a>
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30712v1" target="_blank">arXiv</a>
                   
-                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30907v1" target="_blank">PDF</a>
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30712v1" target="_blank">PDF</a>
                   
                 </div>
               </div>
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出全球电子表格用户数以亿计，但缺乏针对 LLM Agent 的专业领域评测基准。作者提出 BlueFin 基准，任务覆盖金融电子表格的合成、操作和理解三类专业场景。核心创新在于设计了贴近真实工作场景的多步骤电子表格任务，评估 LLM Agent 处理结构化数据的能力。实验覆盖多种模型和工具配置，揭示了当前 LLM Agent 在专业金融场景中的能力边界。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM代理无法复用历史经验的问题，提出ExpGraph框架。核心创新是设计模型无关的图结构记忆机制，支持代理从成功经验和失败教训中学习。采用图结构组织交互经验，实现灵活的策略复用。实验表明该方法能显著提升代理的任务完成效率，同时保持对新型执行器的兼容性。</div>
               </details>
               
             </div>
@@ -461,7 +445,28 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">think with image</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 63</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1cda740000000036031eca?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTMht10tHHBScyQC8SBv4omY=&amp;xsec_source=pc_search" target="_blank"></a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1cda740000000036031eca?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTMht10tHHBScyQC8SBv4omY=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
@@ -483,26 +488,26 @@ details summary:hover { background: #eef2ff; }
                   <span class="card-date">2026-05-29</span>
                 </div>
                 <div class="card-title">
-                  <a href="http://arxiv.org/abs/2605.30889v1" target="_blank">MLIPilot: LLM-Driven Auto-Research for Machine-Learned Interatomic Potentials</a>
+                  <a href="http://arxiv.org/abs/2605.30785v1" target="_blank">Learning Agent-Compatible Context Management for Long-Horizon Tasks</a>
                 </div>
-                <div class="card-byline">Etinosa Osaro, Santosh Adhikari, Stamatia Zavitsanou, Kelsey Parker, Dario Rocca</div>
+                <div class="card-byline">Lu Yi, Runlin Lei, Liuyi Yao, Yuexiang Xie, Yuyang Li</div>
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  构建 MLIPilot 自动研究框架，利用工具调用 LLM 驱动分子势能训练的假设提出、代码编辑和 HPC 任务管理。
+                  解决长时任务中LLM代理的上下文退化问题，提出兼容代理的上下文管理方案。
                 </div>
                 
                 <div class="card-links">
-                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30889v1" target="_blank">arXiv</a>
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30785v1" target="_blank">arXiv</a>
                   
-                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30889v1" target="_blank">PDF</a>
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30785v1" target="_blank">PDF</a>
                   
                 </div>
               </div>
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对机器学习原子间势能（MLIP）训练中多目标优化（精度、稳定性、吞吐量）的挑战。作者提出 MLIPilot 自动研究框架，LLM 通过工具调用提出假设、编辑训练代码并管理 HPC 作业。核心创新在于将科学假设生成与自动化实验执行闭环整合。实验表明该框架能自动发现平衡多约束的训练配置，显著减少人工调参与计算资源消耗。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM代理在长时任务中的上下文管理挑战，提出学习式上下文管理方法。核心问题是累积上下文导致推理失败和性能退化。创新点在于设计代理兼容的上下文控制机制，无需训练代理本身即可适应。实验验证了该方法能有效缓解长上下文场景下的性能下降，提升代理在真实应用中的鲁棒性。</div>
               </details>
               
             </div>
@@ -512,7 +517,28 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 62</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1d688c00000000080270a5?xsec_token=ABOD0lc9TVrUB_u98RUk5gISzVOCkGUWaq60LtTHHwYoU=&amp;xsec_source=pc_search" target="_blank">day03_2 手写DPO后，终于看懂它和SFT的区别</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d688c00000000080270a5?xsec_token=ABOD0lc9TVrUB_u98RUk5gISzVOCkGUWaq60LtTHHwYoU=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
@@ -542,7 +568,7 @@ details summary:hover { background: #eef2ff; }
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  研究本地 Agentic Harness 中基于提示注入的特洛伊后门攻击，提出针对性的防御机制。
+                  揭示LLM代理面临的新型持久控制攻击，论证文件级提示注入的威胁并提出防御策略。
                 </div>
                 
                 <div class="card-links">
@@ -555,7 +581,7 @@ details summary:hover { background: #eef2ff; }
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文揭示 LLM Agent 作为实际工作空间工具时面临的新型攻击面。攻击者可在文件或工具输出中嵌入提示注入，Agent 执行时将其视为用户指令。作者系统分析了这类特洛伊后门攻击的持久性和危害性。核心创新在于识别 Agentic Harness 中的独特攻击面并提出防御策略。实验表明现有 Agent 系统对该类攻击防御薄弱，需从架构层面加强隔离和验证机制。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM代理在本地工作空间中的安全威胁，聚焦提示注入攻击的新变种。核心问题是攻击者在文件或工具输出中嵌入恶意指令，实现对代理的持久控制。创新点在于系统分析代理攻击面，揭示了传统安全评估的局限性。实验表明当前代理对这类攻击具有显著脆弱性，需要新的防御机制。</div>
               </details>
               
             </div>
@@ -565,7 +591,28 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">think with image</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 58</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1d36740000000007023c77?xsec_token=ABOD0lc9TVrUB_u98RUk5gIeQnETRgYraqybq4YFxfSRU=&amp;xsec_source=pc_search" target="_blank">NVIDIA Cosmos3 全模态｜vLLM Day0支持🚀</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d36740000000007023c77?xsec_token=ABOD0lc9TVrUB_u98RUk5gIeQnETRgYraqybq4YFxfSRU=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
@@ -587,26 +634,26 @@ details summary:hover { background: #eef2ff; }
                   <span class="card-date">2026-05-29</span>
                 </div>
                 <div class="card-title">
-                  <a href="http://arxiv.org/abs/2605.31445v1" target="_blank">Used Car Salesbots? Honesty and Credulity of LLMs as Bargaining Agents under Partial Information</a>
+                  <a href="http://arxiv.org/abs/2605.30907v1" target="_blank">BlueFin: Benchmarking LLM Agents on Financial Spreadsheets</a>
                 </div>
-                <div class="card-byline">Antonio Valerio Miceli-Barone, Vaishak Belle, Shay B. Cohen</div>
+                <div class="card-byline">Srivatsa Kundurthy, Clara Na, Colton Moraine, Anoushka Mohta, Case Winter</div>
                 
                 <div class="summary">
                   <span class="label">💡 一句话总结</span>
-                  研究 LLM 作为谈判 Agent 在不完全信息下的诚实性和轻信倾向，评估其与博弈论解的一致性。
+                  提出金融电子表格领域LLM代理基准BlueFin，填补专业领域代理评估空白。
                 </div>
                 
                 <div class="card-links">
-                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.31445v1" target="_blank">arXiv</a>
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30907v1" target="_blank">arXiv</a>
                   
-                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.31445v1" target="_blank">PDF</a>
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30907v1" target="_blank">PDF</a>
                   
                 </div>
               </div>
               
               <details>
                 <summary>📋 详细解读</summary>
-                <div class="detail-body"><span class="detail-label">论文解读</span>论文在模拟议价场景中评估 LLM Agent 的行为特性，买卖双方通过文本协商尝试达成互惠交易，涵盖完全信息、信息不对称和相互不确定三种情形。作者重点分析 Agent 的诚实性和对对手策略的轻信程度。核心创新在于将博弈论解作为基准，系统量化 LLM Agent 的行为偏差。实验揭示了当前 LLM 在高策略性交互中的局限性。</div>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对专业金融场景设计LLM代理评估基准，解决现有基准缺乏领域深度的问题。核心贡献是BlueFin数据集，包含金融电子表格的合成、操作和理解任务。创新点在于设计贴近真实工作场景的多维度任务，评估代理在专业领域的实际可用性。实验显示当前LLM代理在该领域存在显著能力差距，需要针对性优化。</div>
               </details>
               
             </div>
@@ -616,7 +663,172 @@ details summary:hover { background: #eef2ff; }
         <!-- 右栏：小红书 -->
         <td>
           
-            <div class="rest-cell">—</div>
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 57</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1d2d5c00000000080309a1?xsec_token=ABOD0lc9TVrUB_u98RUk5gIV68ehViHNrYzT1f8uwnBHI=&amp;xsec_source=pc_search" target="_blank">61儿童节我只要哥哥姐姐的这些文件</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d2d5c00000000080309a1?xsec_token=ABOD0lc9TVrUB_u98RUk5gIV68ehViHNrYzT1f8uwnBHI=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-05-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30454v1" target="_blank">The Surface You Test Is Not the Surface That Breaks</a>
+                </div>
+                <div class="card-byline">Shifat E Arman, Syed Nazmus Sakib, Nafiul Haque, Shahrear Bin Amin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示工具描述中的隐藏攻击面，证明当前LLM代理安全评估方法存在系统性缺陷。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30454v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30454v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文挑战现有代理安全评估范式，揭示工具描述作为攻击向量的新发现。核心问题是当前评估仅关注单通道攻击成功率，忽略工具描述这一关键攻击面。创新点在于系统分析工具描述如何被攻击者利用植入恶意指令。通过实验证明模型对工具描述中嵌入的攻击具有显著脆弱性，需要重新设计安全评估框架。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 53</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1ceca50000000006034b36?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTN758GJcnE_J2rJDUEJDCV0=&amp;xsec_source=pc_search" target="_blank">每天一个 codex skill</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1ceca50000000006034b36?xsec_token=ABn8cgP3JAk1TiX0HaLPaOTN758GJcnE_J2rJDUEJDCV0=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-05-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2605.30667v1" target="_blank">Automatically Attacking Software Reverse Engineering AI Agents</a>
+                </div>
+                <div class="card-byline">Brian Crawford, Justin Phillips, Patrick McClure</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  探索对软件逆向工程AI代理的自动化攻击，揭示代理系统的安全脆弱性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2605.30667v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2605.30667v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究AI代理在软件逆向工程任务中的安全性，核心问题是代理系统可能面临的恶意利用风险。通过设计自动化攻击框架，探索攻击者如何干扰或操控逆向工程代理。创新点在于揭示代理系统在安全敏感应用中的潜在漏洞。实验表明当前代理缺乏足够的安全防护机制，需要在设计阶段引入安全考量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                  </div>
+                  
+                  <span class="card-date" style="color:#FF2442;">❤️ 45</span>
+                  
+                </div>
+                <div class="card-title">
+                  <a href="https://www.xiaohongshu.com/explore/6a1d7d22000000000702ac4c?xsec_token=ABOD0lc9TVrUB_u98RUk5gIUzawg8fVMvmLbFyytRcq9A=&amp;xsec_source=pc_search" target="_blank">近期看过的几篇关于 Skill 自进化的论文！</a>
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-xhs" href="https://www.xiaohongshu.com/explore/6a1d7d22000000000702ac4c?xsec_token=ABOD0lc9TVrUB_u98RUk5gIUzawg8fVMvmLbFyytRcq9A=&amp;xsec_source=pc_search" target="_blank">小红书</a>
+                </div>
+              </div>
+            </div>
           
         </td>
       </tr>
