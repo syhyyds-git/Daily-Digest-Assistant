@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月05日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月05日 · 星期五</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.05395v1" target="_blank">VASO: Formally Verifiable Self-Evolving Skills for Physical AI Agents</a>
+                </div>
+                <div class="card-byline">Yunhao Yang, Neel P. Bhatt, Kevin Wang, Samuel Tetteh, Zhangyang Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  VASO提出形式化可验证的自我进化技能框架，提升物理AI Agent技能可信度。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.05395v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.05395v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对物理AI Agent技能信任成本问题，提出VASO框架实现技能的形式化验证与自我进化。核心创新在于将形式化验证融入技能演化循环，通过符号推理确保技能行为满足安全规范。实验验证了该方法可在保持技能灵活性的同时提供安全性保证，解决了基础模型降低技能创建成本但未降低信任成本的根本矛盾。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06087v1" target="_blank">LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents</a>
+                </div>
+                <div class="card-byline">Aofan Yu, Chenyu Zhou, Tianyi Xu, Zihan Guo, Rong Shan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  LatentSkill将文本技能转化为LoRA适配器，实现LLM Agent的即插即用技能记忆。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06087v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06087v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了LLM Agent中文本技能的权重化存储问题，提出LatentSkill框架，通过预训练超网络将文本技能转换为可插拔LoRA适配器。核心创新在于将技能知识从上下文文本转移到权重空间，消除每次推理的上下文开销，同时保护技能内容隐私。实验表明该方法在保持技能执行质量的同时显著降低令牌消耗。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06473v1" target="_blank">MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery</a>
+                </div>
+                <div class="card-byline">Shangheng Du, Xiangchao Yan, Jinxin Shi, Zongsheng Cao, Shiyang Feng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MLEvolve解决LLM Agent在机器学习工程任务中的信息隔离与无记忆搜索问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06473v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06473v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出MLEvolve框架实现LLM Agent在自动机器学习算法发现任务中的自我进化。核心创新包括跨分支信息共享机制、分层控制系统和持续搜索能力。解决了现有MLET代理的三个关键缺陷：分支间信息隔离、无记忆搜索和缺乏层级控制。在长期优化任务上验证了框架的有效性，为科学发现等长时域任务提供自进化基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.05743v1" target="_blank">Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense</a>
+                </div>
+                <div class="card-byline">Minseok Choi, Seungbin Yang, Dongjin Kim, Subin Kim, Jungmin Son</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Membrane通过对比安全记忆实现LLM Agent的自我进化防御，对抗新型越狱攻击。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.05743v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.05743v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出Membrane框架，基于对比安全记忆（CSM）构建自我进化的LLM Agent安全防御系统。核心创新在于利用对比学习区分攻击与良性查询，每个记忆单元存储攻击-响应对实现精准识别。解决了静态安全分类器无法适应新型攻击的问题，同时避免对类似攻击的良性查询过度拒绝。框架可随威胁演化自动更新防御能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.05761v1" target="_blank">SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents</a>
+                </div>
+                <div class="card-byline">Wenxuan Wang, Haoyu Sun, Fukuan Hou, Mingyang Song, Weinan Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SubtleMemory提出细粒度关系记忆区分基准，评估OpenClaw等长期AI助手的记忆能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.05761v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.05761v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对持久AI助手（如OpenClaw）的长期记忆问题，提出SubtleMemory细粒度关系记忆区分基准。核心创新在于测试Agent如何处理相互强化、分歧或冲突的记忆关系，而非孤立记忆召回。在该基准上的实验揭示现有系统在关系推理上的不足，为构建更可靠的长期记忆系统提供评估基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06036v1" target="_blank">Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents</a>
+                </div>
+                <div class="card-byline">Shuo Ji, Yibo Li, Bryan Hooi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MRAgent通过图记忆与动态重构机制突破LLM Agent静态检索-推理范式限制。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06036v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06036v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出MRAgent框架，将图结构记忆与动态重构能力引入LLM Agent。核心创新在于打破传统静态检索-推理管道，允许Agent在推理过程中根据新发现的证据动态调整记忆访问。研究表明当前静态记忆增强方法在处理长交互历史时存在局限，图记忆可通过关联推理实现更灵活的上下文管理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06240v1" target="_blank">TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory</a>
+                </div>
+                <div class="card-byline">Ziming Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  TOKI提出双时序算子代数解决LLM Agent持久记忆中的信念矛盾问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06240v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06240v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent持久记忆中的信念矛盾解决难题，提出TOKI双时序算子代数框架。核心创新在于形式化定义记忆更新的隔离级别和写时异常，明确四种现有启发式方法的前提假设。证明了当前方法在处理跨时间冲突时的不足，为生产级记忆系统提供可证明正确的矛盾解决协议。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06448v1" target="_blank">Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads</a>
+                </div>
+                <div class="card-byline">Yasmine Omri, Ziyu Gan, Zachary Broveak, Robin Geens, Zexue He</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Agent Memory系统性地分类LLM Agent有状态长时域工作负载，指导记忆系统设计。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06448v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06448v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文对LLM Agent持久记忆系统进行全面分类研究，涵盖平面检索、LLM中介提取、事实存储整合和Agent控制流等多种方案。核心贡献在于系统性分析不同记忆架构的系统影响和设计权衡，为实际部署提供理论指导。研究揭示了构建可扩展长时域Agent系统面临的关键挑战，包括存储、检索和跨会话更新机制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06054v1" target="_blank">Beyond Similarity: Trustworthy Memory Search for Personal AI Agents</a>
+                </div>
+                <div class="card-byline">Jiawen Zhang, Kejia Chen, Jiachen Ma, Yangfan Hu, Lipeng He</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Beyond Similarity指出语义相似驱动的记忆搜索存在可信度缺口，提出可信记忆检索方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06054v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06054v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对个人AI Agent记忆搜索的可信性问题，指出仅依赖语义相似度的记忆检索存在关键缺陷。核心创新在于发现语义相关的记忆可能在上下文上并不适当，导致模型被错误记忆误导。提出可信度驱动的记忆搜索方法，在检索阶段引入上下文适当性评估，为构建更可靠的个人Agent记忆系统提供新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.06399v1" target="_blank">CollabSim: A CSCW-Grounded Methodology for Investigating Collaborative Competence of LLM Agents through Controlled Multi-Agent Experiments</a>
+                </div>
+                <div class="card-byline">Jiaju Chen, Bo Sun, Yuxuan Lu, Yun Wang, Dakuo Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  CollabSim提出基于CSCW的多Agent协作能力评估方法，揭示LLM Agent协作缺陷根源。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.06399v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.06399v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM多Agent系统的协作能力评估问题，提出CollabSim方法论。核心发现是MAS失败往往不是因为个体任务解决能力不足，而是缺乏协作胜任力：建立共同基础、管理意图对齐和共享目标维护的能力不足。框架通过受控多Agent实验揭示协作失败的具体机制，为提升Agent团队协作效能提供评估基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
