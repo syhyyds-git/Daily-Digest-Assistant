@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月11日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月11日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>9</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11435v1" target="_blank">Agent Skill Evaluation and Evolution: Frameworks and Benchmarks</a>
+                </div>
+                <div class="card-byline">Kexin Ding, Yang Zhou, Can Jin, Feng Tong, Mu Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出智能体技能评估与演化的新范式框架，从孤立技能创建转向自动化评估驱动的技能进化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11435v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11435v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦智能体技能库的规模化评估问题。研究问题是如何在技能库不断扩展时确保其效用、质量和安全性。核心创新在于提出从孤立技能创建到自动化评估驱动技能演化的范式转变。文中构建了技能评估框架和基准测试体系，为技能的质量控制和持续改进提供方法论支撑，推动智能体技能系统向更规范、可控的方向发展。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11543v1" target="_blank">SkillJuror: Measuring How Agent Skill Organization Changes Runtime Behavior</a>
+                </div>
+                <div class="card-byline">Zhiyu Chen, Zihan Guo, Bo Huang, Bingwei Lu, Jianghao Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过SkillJuror框架研究技能组织方式对智能体运行时行为的实际影响，揭示技能元数据的作用机制
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11543v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11543v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文探讨智能体技能的组织结构与运行时行为之间的关系。研究问题是现有基准难以区分技能描述与技能组织对智能体表现的不同影响。核心创新在于提出渐进式披露方法，通过根文件按需引导智能体访问支持资源，并与扁平基线进行对比。实验结果表明技能的组织方式显著影响智能体在推理时的行为表现，为技能库设计提供重要参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.12344v1" target="_blank">Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks</a>
+                </div>
+                <div class="card-byline">Mengyu Zheng, Kai Han, Boxun Li, Haiyang Xu, Yuchuan Tian</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Claw-SWE-Bench基准测试集，为OpenClaw风格智能体在编程任务上的能力评估提供标准化方案
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.12344v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.12344v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对通用智能体在SWE-bench上的编码能力难以测量的问题展开研究。核心挑战是通用智能体本身不满足Docker工作空间、补丁和预测评分所需的合约约束。创新点在于提出多语言SWE-bench风格基准测试和适配器协议，使异构智能体能在统一框架下进行性能对比。该研究为OpenClaw风格智能体工具使用能力的标准化评估奠定了基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11671v1" target="_blank">Runtime Skill Audit: Targeted Runtime Probing for Agent Skill Security</a>
+                </div>
+                <div class="card-byline">Tu Lan, Chaowei Xiao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出运行时技能审计方法，通过有针对性的运行时探测解决智能体技能的安全隐患问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11671v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11671v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注智能体技能带来的新型安全威胁。研究问题是技能在文档或代码层面看似良性，但在特定用户请求、本地资产、持久状态或多步工具交互下可能产生危害。核心创新在于超越静态代码审查，提出运行时技能审计框架。方法通过目标性运行时探测技术，能够发现静态分析无法识别的技能恶意行为，为智能体技能安全评估提供新方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11830v1" target="_blank">Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task</a>
+                </div>
+                <div class="card-byline">Qianyu Yao, Fei Sun, Bocheng Huang, Wei Chen, Jiarui Jiang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  评估技能增强型AI智能体在肺癌转录组生物标志物任务中的表现，验证技能包对研究分析质量的提升作用
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11830v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11830v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究大语言模型和AI智能体在生物医学研究支持中的应用效果。研究问题是原生模型输出可能遗漏关键分析步骤、误用方法或过度推断结论。核心创新在于让智能体自主访问医学研究技能包，并设计多模型人类评估流程。实验结果显示技能增强型智能体在转录组学研究分析任务中显著优于原生AI，为医疗AI辅助工具的开发提供实证支持。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11521v1" target="_blank">Counterexample Guided Learning in the Large using Reasoning Agents</a>
+                </div>
+                <div class="card-byline">Hongyi Liu, Frederic Sala, Thomas Reps, Adithya Murali</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用正则表达式归纳任务研究反馈机制在大规模推理智能体学习中的应用可行性与控制方法
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11521v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11521v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文探索LLM及智能体在接收反馈后的改进能力。研究问题是反馈具有异构性、领域特异性且难以控制。核心方法是通过正则表达式归纳这一经典符号学习问题，利用反例作为精确的反馈形式。创新点在于为智能体反馈学习建立可控实验框架，能够清晰识别智能体何时以及如何从反馈中受益，为理解智能体学习机制提供新的研究视角。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11672v1" target="_blank">Can Open-Source LLM Agents Replace Static Application Security Testing Tools? An Empirical Assessment</a>
+                </div>
+                <div class="card-byline">Derek Yohn, Luke Flancher, Mirajul Islam, Khaled Slhoub</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  实证评估开源LLM智能体在应用安全测试中的表现，探索智能体AI在网络安全领域的应用价值
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11672v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11672v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文探索智能体AI工具在网络安全领域的实用价值。研究使用三个不同的Ollama托管开源模型驱动的通用智能体进行性能评估。核心评估指标包括精确率、召回率、误报数量及综合得分。实验系统性地评估了开源LLM智能体在静态应用安全测试场景下的能力边界，为智能体技术在网络安全自动化检测中的应用提供实证依据和性能基准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11686v1" target="_blank">Layer-Isolated Evaluation: Gating the Deterministic Scaffold of a Production LLM Agent with a No-LLM, Regression-Locked Test Harness</a>
+                </div>
+                <div class="card-byline">Sawyer Zhang, Alexander Wang, Sophie Lei</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出层级隔离评估方法，将生产LLM智能体分解为固定层级并通过独立断言切片进行测试
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11686v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11686v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对端到端任务成功指标无法定位智能体退化原因的问题提出新评估范式。研究观察到现有评估方式只能报告智能体退化，无法指出问题所在层级。核心创新在于将部署的排序智能体分解为本体、意图、路由、分解、升级、安全、记忆等固定层级分类。方法为每个层级设计独立的断言测试切片，实现对智能体各组件的精细化评估，填补了智能体可解释性评估的空白。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.11976v1" target="_blank">Exploration Structure in LLM Agents for Multi-File Change Localization</a>
+                </div>
+                <div class="card-byline">Akeela Darryl Fattha, Kia Ying Chua, Lingxiao Jiang, Laura Wynter</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  对比线性探索与非线性领域范围并行探索策略在多文件变更定位任务上的效果差异
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.11976v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.11976v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体在软件工程中的文件定位能力。观察到大多数AI智能体采用线性探索方式，逐个访问目录或文件。研究假设认为这与跨多个子系统的变更需求存在结构不匹配。核心创新在于设计非线性、领域范围并行的智能体探索策略。实验对比了线性顺序探索与新型探索方式在多文件变更定位任务上的性能表现，为智能体导航策略优化提供参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
