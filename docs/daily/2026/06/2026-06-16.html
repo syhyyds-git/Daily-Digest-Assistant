@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月16日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月16日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.16774v1" target="_blank">OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models</a>
+                </div>
+                <div class="card-byline">Tianyi Lin, Chuanyu Sun, Jingyi Zhang, Changxu Wei, Huanjin Yao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Collective Skill Tree Search框架，通过集体搜索技能树自动构建可复用技能，增强LLM Agent在工具使用和多步推理中的能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.16774v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.16774v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对OpenClaw系统中LLM Agent技能获取困难的问题，提出Collective Skill Tree Search（CSTS）框架。核心创新在于将技能构建建模为树搜索问题，通过集体协作方式探索技能空间，自动生成可复用的技能节点。实验表明，该方法显著提升了Agent在工具调用、多步推理和动态环境交互中的性能，为开放世界Agent能力扩展提供了新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.16769v1" target="_blank">Skill-to-LoRA: From Using Skills to Learning Behaviors for Token-Efficient LLM Agents</a>
+                </div>
+                <div class="card-byline">Tianyi Zhang, Zhonghao Qi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  将SKILL.md格式技能转化为LoRA参数，实现行为中心的技能表示，减少运行时上下文注入开销。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.16769v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.16769v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文提出Skill-to-LoRA（S2L）方法，解决传统技能以文本形式注入导致的高推理成本问题。研究将自然语言技能文档转换为低秩适配参数，实现行为中心的技能表示。核心创新在于将技能知识内化到模型权重中，而非依赖运行时上下文。实验验证了方法在保持技能可复用性的同时，大幅降低了Token消耗，为高效技能部署提供了新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.15390v1" target="_blank">Not All Skills Help: Measuring and Repairing Agent Knowledge</a>
+                </div>
+                <div class="card-byline">Yixuan Wang, Yiyang Zhou, Yiming Liang, Congyu Zhang, Fuxiao Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出区分技能生成与技能评估的必要性，设计定量方法评估技能实际效用并修复无效技能。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.15390v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.15390v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对LLM Agent技能积累机制的问题，提出技能生成与技能评估是两种不同能力的观点。核心创新在于设计了量化指标评估技能对任务的实际帮助程度，并提出技能修复机制。实验证明，当前LLM在判断技能有效性上存在系统性偏差，需要引入外部验证。该工作为Skill Retrieval和Skill Refinement提供了方法论基础，对构建可靠技能库具有重要意义。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.16295v1" target="_blank">VisualClaw: A Real-Time, Personalized Agent for the Physical World</a>
+                </div>
+                <div class="card-byline">Haoqin Tu, Jianwen Chen, Zijun Wang, Siwei Han, Juncheng Wu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  为物理世界设计实时个性化Vision-Language Agent，解决高延迟、静态脚手架和视觉证据使用难题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.16295v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.16295v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对视觉语言模型在物理世界部署面临的三个差距：延迟成本高、Agent脚手架静态、缺乏视觉证据使用测试，提出VisualClaw系统。核心创新包括高效视频帧处理、自适应Agent脚手架和工具内视觉证据集成。实验表明，该系统在保持实时性的同时，能有效利用视觉信息进行决策，为Think with Image在Agent领域的应用提供了完整解决方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.15242v1" target="_blank">Benign in Isolation, Harmful in Composition: Security Risks in Agent Skill Ecosystems</a>
+                </div>
+                <div class="card-byline">Yi Xie, Jiawei Du, Yu Cheng, Jiuan Zhou, Zhaoxia Yin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示Skill Composition Risk——单独安全但组合时产生危害的技能交互安全问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.15242v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.15242v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文首次系统研究LLM Agent技能组合带来的安全风险。研究发现当前安全评估仅关注单技能，忽视技能间交互产生的危害。核心贡献是提出Skill Composition Risk（SCR）概念，建立分类体系和评测基准。实验覆盖数据泄露、未授权操作等多种风险场景，为Skill Refinement和安全技能设计提供了重要警示，对构建可信Agent系统具有指导意义。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.15862v1" target="_blank">RetailBench: Benchmarking long horizon reasoning and coherent decision making of LLM agents in realistic retail environments</a>
+                </div>
+                <div class="card-byline">Linghua Zhang, Jun Wang, Jingtong Wu, Zhisong Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建RetailBench模拟超市环境，评估LLM Agent在长时域动态零售场景中的连贯决策能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.15862v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.15862v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对LLM Agent在动态长时域环境中的连贯决策评估缺失，提出RetailBench仿真基准。模拟单店超市运营的部分可观察环境，测试Agent在库存管理、客户服务等任务上的工具使用和多步推理能力。核心创新在于设计真实感强的零售场景和评估指标，填补了长时域决策评估的空白。实验为Skill Learning在动态环境中的应用提供了重要验证平台。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.15874v1" target="_blank">LLM-as-Code Agentic Programming for Agent Harness</a>
+                </div>
+                <div class="card-byline">Junjia Qi, Zichuan Fu, Jingtong Gao, Wenlin Zhang, Hanyu Yan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  将LLM从Orchestrator角色中解放，用确定性代码结构处理控制流，解决Token爆炸和控制流幻觉。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.15874v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.15874v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文挑战传统Agent架构中LLM担任Orchestrator的设计，提出将控制流（循环、分支、序列）交由确定性代码处理。核心论点是Token爆炸和控制流幻觉是架构问题而非实现bug。通过将LLM专注语义决策，控制流交给代码执行，显著提升了Agent执行可靠性。实验验证了该架构在复杂任务中的稳定性和效率，为Skill Learning和Skill Refinement提供了更鲁棒的执行基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.15899v1" target="_blank">SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills</a>
+                </div>
+                <div class="card-byline">Ismail Hossain, Sai Puppala, Md Jahangir Alam, Tanzim Ahad, Sajedul Talukder</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  建立SkillVetBench基准，用LLM-as-Judge评估开源Agent技能的多维安全风险。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.15899v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.15899v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对开源LLM Agent技能生态的安全空白，提出SkillVetBench多维评测框架。核心创新在于设计指令层和多Agent风险评估方法，超越传统代码层扫描。框架采用LLM-as-Judge范式，覆盖指令劫持、数据编码窃取等新型风险。实验对多种技能库进行了安全审计，为Skill Retrieval时的安全筛选提供了标准化评估工具，推动了Agent技能生态的安全发展。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.16307v1" target="_blank">State-Grounded Multi-Agent Synthetic Data Generation for Tool-Augmented LLMs</a>
+                </div>
+                <div class="card-byline">Rahul Khedar,  Eshita, Sneha Teja Sree Reddy Thondapu, Mayank Malhotra, Arup Das</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出StateGen四角色LLM循环系统，生成高质量状态对齐的工具增强对话训练数据。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.16307v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.16307v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对工具增强LLM Agent训练数据稀缺问题，提出StateGen合成数据生成平台。核心创新在于设计四角色LLM协作循环：Persona-Conditioned User、Environment Model、Tool Executor和Critic，生成带评分和推理轨迹的高质量对话。方法解决了隐私约束和公开数据缺失问题，为Skill Learning和Skill Retrieval提供了数据支持。实验表明合成数据可显著提升Agent在多轮工具调用任务上的性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17041v1" target="_blank">Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio</a>
+                </div>
+                <div class="card-byline">Anzhe Xie, Weihang Su, Yujia Zhou, Yiqun Liu, Qingyao Ai</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  建立MetaSyn基准评估LLM Agent在元分析全流程的系统性科学推理能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17041v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17041v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对LLM Agent在系统性证据综合任务中的评估空白，提出MetaSyn基准数据集。涵盖442篇文献的完整检索-筛选-综合流程，评估Agent在结构化、可验证工作流中的推理能力。核心贡献是首次提供全流程地面真值，为Agent在科学研究中的Skill Retrieval和推理能力提供标准化评测。实验揭示了当前LLM Agent在复杂多步推理中的局限性，为未来改进指明方向。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
