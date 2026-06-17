@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月17日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月17日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.18051v1" target="_blank">Compositional Skill Routing for LLM Agents: Decompose, Retrieve, and Compose</a>
+                </div>
+                <div class="card-byline">Xueping Gao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出组合技能路由问题，解决方案包含分解-检索-组合三阶段框架，提升LLM Agent技能复用能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.18051v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.18051v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了LLM Agent如何高效调用外部技能库解决复杂任务。核心贡献是提出组合技能路由问题形式化定义，将复杂查询分解为原子子任务，从大规模技能库中检索匹配技能，并动态组合执行。实验表明该方法在保持高准确率的同时显著提升技能复用效率，相比单一技能选择方案具有明显优势。关键词：技能路由、技能检索、技能组合。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17546v1" target="_blank">SEAGym: An Evaluation Environment for Self-Evolving LLM Agents</a>
+                </div>
+                <div class="card-byline">Congjie Zheng, Chuanyi Xue, Bin Liang, Jun Yang, Changshui Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建自进化LLM Agent评估环境SEAGym，关注Agent演化的可复用性与过拟合权衡
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17546v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17546v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注自进化LLM Agent的评估难题，指出传统评估仅关注单任务分数而忽视Agent结构演化。核心贡献是SEAGym评估环境，可追踪Agent进化过程中的可复用改进与过拟合风险。实验揭示了进化更新在任务间迁移效果的差异性，为设计更鲁棒的自进化Agent提供方法论指导，推动Agent自我改进能力评估标准化。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17819v1" target="_blank">A Framework for Evaluating Agentic Skills at Scale</a>
+                </div>
+                <div class="card-byline">Maksim Shaposhnikov, Nicolas Fortuin, Simon Stipcich, Maria I. Gorinova, Amy Heineike</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出大规模评估Agent技能的可复用框架，支持跨领域跨模型技能效果验证
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17819v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17819v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对Agent技能缺乏标准化评估方法的问题，提出可复用的评估框架。核心创新在于让技能作者能构建贴近实际的评估场景，量化技能在商业和开源模型上的表现差异。研究涵盖多个领域模型测试，揭示了技能跨模型泛化能力的差异，为技能选择和优化提供数据支撑，推动Agent技能工程标准化发展。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17328v1" target="_blank">MemTrace: Probing What Final Accuracy Misses in Long-Term Memory</a>
+                </div>
+                <div class="card-byline">Xianxuan Long, Zhikai Chen, Shenglai Zeng, Shouren Wang, Kai Guo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出MemTrace基准测试，揭示长期记忆评估中传统准确率指标的局限性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17328v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17328v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent长期记忆评估方法的不足，提出MemTrace基准。核心创新是以事实为单位追踪记忆行为，而非独立评分问题行。实验表明传统准确率指标无法捕捉同一事实在环境变化时的表现差异。该工作揭示了记忆评估的方法论盲点，为构建更可靠的长期记忆系统提供评估工具，对对话Agent记忆管理有重要参考价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17838v1" target="_blank">Environment-Grounded Automated Prompt Optimization for LLM Game Agents</a>
+                </div>
+                <div class="card-byline">Rean Clive Fernandes, Lukas Fehring, Theresa Eimer, Marius Lindauer, Matthias Feurer</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出LLM Game Agent自动提示优化框架，实现环境驱动的模块化提示迭代改进
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17838v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17838v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对游戏环境中LLM Agent提示工程依赖人工的痛点，提出自动化优化框架。核心方法是将观察-动作流程分解为目标条件描述Agent和动作选择Agent，通过LLM驱动迭代优化各模块提示。实验表明该自动优化显著提升Agent在复杂游戏任务中的表现，减少人工调优成本，为交互环境Agent开发提供高效提示工程范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.18037v1" target="_blank">ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents</a>
+                </div>
+                <div class="card-byline">Ander Alvarez, Santhiya Rajan, Samuel Mugel, Román Orús</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出ProvenanceGuard框架，解决MCP协议下LLM Agent归属错误的事实性问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.18037v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.18037v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对MCP协议LLM Agent的事实性验证缺陷，提出来源感知验证方法。核心问题是Agent答案虽被证据池支持，但可能归属错误来源，这在实际应用中造成严重误导。ProvenanceGuard通过追踪证据来源关系，检测归属错误。实验证明该方法在搜索、数据库等多种证据源场景下显著优于传统事实性指标，提升Agent答案可信度。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17459v1" target="_blank">Can LLMs Be CEOs? Benchmarking Strategic Resource Reallocation with Multi-Role Agent Simulation</a>
+                </div>
+                <div class="card-byline">Yuyang Dai, Xueqing Peng, Lingfei Qian, Zhuohan Xie</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建多角色Agent模拟基准，评估LLM在整合冲突建议后执行战略资源再分配的能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17459v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17459v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM决策能力评估的局限——现有基准仅测试孤立认知任务，提出CEO模拟基准。核心评估场景是多角色Agent模拟中整合冲突的专业建议并执行战略资源再分配。实验揭示当前LLM在高层决策整合方面的不足，为评估企业级Agent决策能力提供新范式，推动LLM在复杂组织决策场景的应用研究。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17493v1" target="_blank">When Robots Sleep: Offline Skill Consolidation for Shared-Policy Robot Learning</a>
+                </div>
+                <div class="card-byline">Nethmi Jayasinghe, Diana Gontero, Amit Ranjan Trivedi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究机器人离线技能整合问题，识别技能耦合崩溃现象并提出缓解方案
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17493v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17493v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究机器人长期部署中技能学习的挑战：既要学习新技能又不能破坏共享策略结构。核心贡献是识别技能耦合崩溃现象——旧技能轨迹缺失时新技能整合导致策略退化。提出离线技能整合方法，使机器人可在无历史轨迹条件下持续添加技能。实验验证方法有效性，为共享策略机器人技能积累提供理论基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.17591v1" target="_blank">Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Yanwei Cui, Xing Zhang, Yulong Zhang, Li Shao, Xiaofeng Shi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究非平稳环境中LLM Agent的保留-遗忘困境，提出训练无关的言语强化学习方法
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.17591v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.17591v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对无参数更新的言语强化学习方法在非平稳环境中的适应问题，提出从经验中提取言语规则并注入上下文的策略。核心挑战是保留已学规则与适应新环境的权衡。实验验证方法可让Agent通过上下文更新行为而不改变参数。虽然重点在强化学习而非Agent本身，但为动态环境中Agent持续学习提供新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.18237v1" target="_blank">ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues</a>
+                </div>
+                <div class="card-byline">Shanda Li, Qiuhong Anna Wei, Jingwu Tang, Valerie Chen, Nihar B Shah</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出可扩展可重复性审计框架ReproRepo，利用GitHub Issues辅助科学研究结果复现
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.18237v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.18237v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对科研结果复现困难的问题，提出ReproRepo可扩展评估框架。核心创新是利用GitHub Issues规模化收集复现相关问题，降低数据整理和评估的人工成本。框架支持评估LLM Agent辅助复现的能力。虽然复现评估非核心研究领域，但为Agent在科研辅助场景的应用提供基准，促进科学研究可重复性提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
