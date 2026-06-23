@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月23日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月23日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.22330v1" target="_blank">Hypothesis-Driven Skill Optimization for LLM Agents</a>
+                </div>
+                <div class="card-byline">Fangxin Shang, Yehui Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出假设驱动的技能优化框架HDSO，无需训练即可从稀疏轨迹中安全提炼和更新外部技能。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.22330v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.22330v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent的技能优化问题，提出HDSO框架解决从稀疏或噪声轨迹中提炼技能的可靠性挑战。核心创新是引入假设验证机制，对候选技能进行多层检验以区分有用程序与危险捷径。在三个基准的实验中，HDSO相比现有方法将任务成功率平均提升23%，同时将危险技能引入率降低67%。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.22557v1" target="_blank">MacAgentBench: Benchmarking AI Agents on Real-World macOS Desktop</a>
+                </div>
+                <div class="card-byline">Yikun Fu, Bowen Fu, Zhenyu Wu, Shuang Cheng, Xiaowei Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出MacAgentBench基准，用于评估AI代理在真实macOS桌面环境下的框架增强能力与任务完成度。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.22557v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.22557v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文构建了MacAgentBench基准测试，针对真实macOS桌面自动化场景，填补了现有评测缺少框架能力评估和细粒度指标的空白。核心创新在于设计了含框架增强的评估框架，能够捕获OpenClaw等现代CUA的完整工具链能力。实验表明框架增强显著提升任务完成率，但现有代理在复杂多步骤操作中仍存在规划缺陷。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-19</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.21710v1" target="_blank">PrivacyAlign: Contextual Privacy Alignment for LLM Agents</a>
+                </div>
+                <div class="card-byline">Manveer Singh Tamber, Abhay Puri, Marc-Etienne Brunet, Perouz Taslakian, Jimmy Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出上下文隐私对齐框架PrivacyAlign，使LLM Agent能够在多情境中自适应调整信息共享边界。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.21710v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.21710v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在复杂社交场景中的隐私决策问题，提出PrivacyAlign框架帮助代理理解不同接收者、时间、地点下的信息分享适当性。核心创新是构建情境感知的隐私偏好嵌入，使代理能够动态推断用户的隐私边界而非机械遵循规则。评估显示该框架在保持任务成功率的同时，将隐私泄露事件减少58%。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.23075v1" target="_blank">Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies</a>
+                </div>
+                <div class="card-byline">Ruixiao Lin, Xinhao Deng, Qingming Li, Jianan Ma, Yunhao Feng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统分析自演化LLM Agent系统中的对抗性威胁新范式，揭示永久编码与跨代自放大的安全风险。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.23075v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.23075v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文对自演化LLM Agent进行系统性安全分析，识别出传统静态Agent不存在的威胁维度：对抗影响被永久编码进模型参数并跨代传播。核心创新是提出攻击持续性指数和放大因子的量化框架。通过5个真实系统案例研究，论文证明即使短暂的中毒输入也可能在数代后演化为系统性偏见，且难以通过常规微调消除。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.23127v1" target="_blank">Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation</a>
+                </div>
+                <div class="card-byline">Julia Belikova, Rauf Parchiev, Evgeny Egorov, Grigorii Davydenko, Gleb Gusev</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  引入AFTER基准系统评估程序记忆在LLM Agent中的可复用技能生成与跨任务迁移能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.23127v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.23127v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦程序记忆在LLM Agent工作流中的技能复用问题，构建了包含382个企业任务、6个职业角色、22项技能的AFTER基准。核心创新是系统化评估技能在不同任务、角色和模型间的迁移效果。实验发现当前LLM的程序记忆技能复用率不足40%，且随模型规模增大反而出现技能退化现象。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-19</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.21777v1" target="_blank">CalVerT: Augmenting Agents with Calibrated Verifier Telemetry Improves Action and Learning in Knowledge-Intensive Tasks</a>
+                </div>
+                <div class="card-byline">Ashwin Vinod, Ying Ding, Elias Stengel-Eskin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出校准验证遥测技术CalVerT，帮助知识密集型LLM Agent在检索与推理中实现不确定性感知。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.21777v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.21777v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决LLM Agent在知识密集问答中的过度自信与过度检索问题，提出CalVerT框架提供置信度感知能力。核心创新是构建验证者遥测模块，使代理能够感知当前答案的证据支持程度与完成状态。在TriviaQA和HotpotQA的实验中，该方法将准确率提升12%的同时减少37%的冗余检索步骤，显著降低计算成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.22844v1" target="_blank">RaMem: Contextual Reinstatement for Long-term Agentic Memory</a>
+                </div>
+                <div class="card-byline">Wei Yang, Bryce Kan, Shixuan Li, Li Li, Yuehan Qin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出情境恢复机制RaMem，解决LLM Agent长期记忆中压缩片段对当前查询的有效性验证问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.22844v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.22844v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长期Agent记忆的检索有效性问题，提出RaMem框架通过情境恢复验证记忆证据的适用性。核心创新是设计记忆-查询情境一致性评分，在使用压缩记忆前评估其与当前任务的相关性强度。实验显示在3个多轮对话数据集上，该机制将事实引用准确率从61%提升至84%，同时将错误记忆导致的幻觉响应减少52%。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.22953v1" target="_blank">Plans Don&#39;t Persist: Why Context Management Is Load Bearing for LLM Agents</a>
+                </div>
+                <div class="card-byline">Aman Mehta, Anupam Datta</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出重放配对诊断方法，揭示上下文管理对LLM Agent长期规划能力的关键支撑作用。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.22953v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.22953v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦LLM Agent长时程任务中的计划持久性问题，证明上下文管理不是辅助而是负载支撑。核心创新是设计重放配对技术，通过对比相同轨迹在完整与截断上下文下的表现来诊断信息丢失影响。实验表明当前压缩策略导致45%的计划在第15步后完全失效，论文据此提出分层遗忘优先级机制，将计划存活率提升至89%。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.23195v1" target="_blank">Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory</a>
+                </div>
+                <div class="card-byline">Zewen Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  首次形式化定义记忆传染现象，揭示评估者偏见如何跨时间步传播并污染LLM Agent的记忆系统。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.23195v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.23195v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文发现并形式化了LLM Agent记忆系统中的新现象：记忆传染——评估者偏见跨时间步传播。核心创新是构建传播模型，量化偏见注入强度、记忆融合率与最终系统偏差的关系。实验表明，即使初始偏见仅影响2%的记忆条目，经过30次交互后系统决策偏差扩大至原始的8倍，且这种污染无法通过常规记忆压缩恢复。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.23565v1" target="_blank">HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory</a>
+                </div>
+                <div class="card-byline">Xiaolin Zhou, Liu Liu, Tingyang Xiao, Wei Feng, Fa Fu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出统一具身Agent框架HoloAgent-0，集成3D空间记忆以解决物理执行中的连续性与不确定性问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.23565v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.23565v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent从数字环境扩展到物理机器人的核心挑战，提出融合3D空间记忆的统一框架。核心创新是设计记忆系统能够同时维护物理状态的连续表示、工具交互历史和场景图结构。在仿真和真实机械臂实验中，该框架将长序列操作成功率从34%提升至71%，显著优于传统基于文本记忆的方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
