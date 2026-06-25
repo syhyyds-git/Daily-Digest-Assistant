@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月25日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月25日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25115v1" target="_blank">Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory</a>
+                </div>
+                <div class="card-byline">Beining Wu, Zihao Ding, Jun Huang, Yanxiao Zhao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  针对端侧 LLM Agent 设计预算约束的持续学习机制，通过记忆管理平衡效果与资源消耗。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25115v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25115v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究端侧 LLM Agent 的持续学习问题。Agent 通过积累检索记忆而非更新权重来提升能力，但记忆受限于 RAM、能源等资源约束。核心创新在于提出预算约束的持续学习框架，包括记忆增长控制、隐私保护和攻击面管理。方法动态评估记忆条目的价值与成本，优先保留高价值记忆。实验验证了方法在资源受限设备上的有效性。相关方向：LLM Agent、skill evolution。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25161v1" target="_blank">TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory</a>
+                </div>
+                <div class="card-byline">Tianyu Yang, Sudipta Paul, Vijay Srinivasan, Vivek Kulkarni, Srinivas Chappidi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出可信记忆整合框架，通过多维评估防止 LLM Agent 记忆被污染和产生幻觉。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25161v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25161v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 长期记忆的可信度问题。现有外部记忆通过生成写、修订、删除操作更新，但这些操作可能遗漏重要信息、破坏现有记忆或引入幻觉内容。核心创新在于提出多维记忆可信度评估，在整合新信息前评估其与现有记忆的一致性、事实性等。实验验证了方法在保持记忆完整性和真实性方面的有效性。相关方向：LLM Agent、skill retrieval。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25447v1" target="_blank">The Interplay of Harness Design and Post-Training in LLM Agents</a>
+                </div>
+                <div class="card-byline">Kyungmin Kim, Youngbin Choi, Seoyeon Lee, Suhyeon Jun, Dongwoo Kim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示 Agent 外部脚手架（Harness）设计与后训练的相互影响，提出协同优化框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25447v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25447v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究工具集成 LLM Agent 的脚手架设计问题。指出脚手架（决定工具暴露方式、描述方式、辅助信息等）通常被视为固定工程细节，但与 Agent 后训练存在相互影响。核心创新在于系统性地分析脚手架与后训练的交互关系，提出联合优化框架。实验表明脚手架的微小设计变化可能显著影响后训练效果，提示需要整体考虑 Agent 系统设计。相关方向：LLM Agent。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25556v1" target="_blank">BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents</a>
+                </div>
+                <div class="card-byline">Hanyang Wang, Weijieying Ren, Yuxiang Zhang, Ding Cao, Zhizhao Zeng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用 Bisimulation 和反事实估计指导 LLM Agent 策略优化，解决组间步骤不等价的根本性问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25556v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25556v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 的策略优化提出 BiPACE 方法。核心问题是现有 group-based RL 假设被比较的步骤对信用分配是等价的，但实际上长horizon任务中步骤间的差异破坏了这种等价性。创新点在于引入 Bisimulation 理论识别等价状态，并结合动作反事实估计来提供更准确的局部优势估计。实验在多个基准上验证了方法的有效性和理论基础。相关方向：skill refinement。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25705v1" target="_blank">GUI agent: Guided Exploration of User-Sensitive Screens</a>
+                </div>
+                <div class="card-byline">Aradhana Nayak, Mussadiq Nazeer, Wang Peng, Feng Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  为 GUI Agent 设计用户敏感屏幕引导探索机制，确保 Agent 行为符合安全性要求。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25705v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25705v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 在开放 GUI 环境中的安全交互问题。研究指出 Agent 不可避免会遇到包含用户敏感信息的屏幕，此时用户接管执行非常必要。核心创新在于提出引导式探索框架，Agent 能够感知用户敏感内容并主动暂停或提示用户。方法包括屏幕敏感性评估和用户介入触发机制。实验验证了框架在保持任务完成效率的同时显著提升安全性。相关方向：LLM Agent。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25852v1" target="_blank">Semantic Consistency Policy Optimization for Reinforcement Learning of LLM Agents</a>
+                </div>
+                <div class="card-byline">Peng Xu, Sijia Chen, Junzhuo Li, Xuming Hu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出语义一致性策略优化，通过对语义相似的中间步骤分组解决 RL 信用分配不一致问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25852v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25852v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 在长horizon稀疏奖励任务中的强化学习后训练问题。核心发现是现有基于轨迹结局的信用分配导致语义相似的中间步骤收到相反信用。创新点在于提出语义一致性策略优化（SCPO），通过将语义近似的步骤分组，使组内步骤获得一致的信用信号。实验表明该方法显著改善了策略优化稳定性和最终性能。相关方向：skill learning、skill refinement。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.26080v1" target="_blank">Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents</a>
+                </div>
+                <div class="card-byline">Changdae Oh, Wendi Li, Seongheon Park, Samuel Yeh, Tanwi Mallick</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出利用强化学习后训练中的进程奖励模型为 LLM Agent 提供细粒度步骤级评估信号。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.26080v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.26080v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何为 LLM Agent 构建进程奖励模型（PRM）以实现细粒度步骤级评估。研究指出在 Agent 场景中构建 PRM 的挑战：长horizon交互、不可逆动作和随机环境反馈使得大规模人类标注和蒙特卡洛估计都不可行。核心创新在于展示 RL 后训练本身就能提供免费的进程级监督信号，无需额外标注。实验验证了方法在多个 Agent 任务上的有效性。相关方向：skill learning、skill refinement。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25337v1" target="_blank">AI Coaching for Accelerating Human Skill Development with Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Wei Wang, Enlin Gu, Antonio Loquercio, Haimin Hu, Rahul Mangharam</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究具身 AI Agent 如何通过战略性脚手架扮演教练角色，加速人类运动技能发展。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25337v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25337v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 AI 教练如何加速人类技能发展。核心问题是过度辅助会导致依赖和技能退化，而辅助不足会降低学习效率。提出战略性脚手架方法，AI Agent 根据学习者当前能力水平动态调整支持程度，在保持足够挑战的同时提供必要指导。创新点在于将 AI 教练行为形式化为自适应问题，建立了能力匹配原则。相关方向：skill learning。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25421v1" target="_blank">Beyond Next-Observation Prediction: Agent-Authored World Modeling for Sequential Decision Making</a>
+                </div>
+                <div class="card-byline">Guangfeng Cai, Kaibing Yang, Shuo He, Yu Li, Shengtian Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 Agent-Authored 世界建模，超越传统下一观察预测，学习对决策相关的世界动态。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25421v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25421v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 的世界建模问题。传统方法将学习目标设定为下一观察预测，但这受限于实际观察到的转换，可能遗漏对 Agent 决策最重要的动态。创新点在于提出 Agent-Authored 世界建模（AAWM），让 Agent 预测其认为相关的未来状态和决策因素。训练目标超越简单观察预测，转向建模对当前决策有意义的未来。相关方向：LLM Agent。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.25941v1" target="_blank">Explainable Control Framework (XCF) based on Fuzzy Model-Agnostic Explanation and LLM Agent-Supported Interface</a>
+                </div>
+                <div class="card-byline">Faliang Yin, Hak-Keung Lam, David Watson</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于模糊可解释模型的 LLM Agent 支持控制框架，为复杂控制器提供人可理解的解释。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.25941v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.25941v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究复杂控制系统的可解释性问题。数据驱动和数学严格的控制器设计日益复杂，需要可解释性支持。提出基于模糊模型无关解释和 LLM Agent 支持接口的可解释控制框架。模糊解释提供人可理解的控制器行为洞察，LLM Agent 接口允许用户自然交互。创新在于将两种方法结合实现更实用的可解释控制。相关方向：LLM Agent。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
