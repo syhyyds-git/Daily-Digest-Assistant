@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年06月26日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年06月26日 · 星期五</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>9</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.26346v1" target="_blank">How Do Tool-Augmented LLM Agents Perform on Real-World Energy Analytics Tasks?</a>
+                </div>
+                <div class="card-byline">David Akinpelu, Akintonde Abbas, Rereloluwa Alimi, Ayodeji Lana</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  评估工具增强型LLM Agent在能源分析真实任务中的表现，填补领域评估空白
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.26346v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.26346v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出当前Agent评估基准多集中于通用场景或金融、编码等热门领域，能源领域的评估严重不足。核心研究是评估工具增强型LLM Agent在能源分析任务中的实际能力，包括：实时数据检索、专业法规知识、多步定量推理。论文设计了针对能源行业的评估基准，涵盖监管合规、市场分析和负荷预测等场景。结果显示现有Agent在处理专业约束和跨步骤推理时存在显著差距，为领域特定Agent设计提供了重要参考。关键词：LLM Agent, tool-augmented, skill retrieval</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-24</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.26403v1" target="_blank">ProfileFoundry: A Synthetic Person-Object Substrate for Privacy, Memory, and Tool-Use Evaluation in LLM Agent</a>
+                </div>
+                <div class="card-byline">Sriram Selvam, Anneswa Ghosh</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建用于评估LLM Agent隐私、记忆和工具使用能力的合成人物-对象数据集
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.26403v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.26403v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出LLM Agent研究缺乏高质量、可控的评估数据。真实用户数据难以共享和审计，而独立生成的假数据缺乏跨字段和时间一致性。核心贡献是ProfileFoundry系统：生成具有一致性的人物对象关系网络，支持隐私泄露、长期记忆、工具调用等能力的系统评估。创新点在于创建了既保护隐私又满足评估需求的合成数据 substrate。论文通过多个实验场景验证了该数据集在评估LLM Agent关键能力方面的有效性。关键词：LLM Agent, tool-use, memory, privacy evaluation</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.26614v1" target="_blank">HiLSVA: Design and Evaluation of a Human-in-the-Loop Agentic System for Scientific Visualization</a>
+                </div>
+                <div class="card-byline">Kuangshi Ai, Patrick Phuoc Do, Chaoli Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  设计人机协同的科学可视化Agent系统，平衡自动化与人类分析控制
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.26614v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.26614v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对科学可视化(SciVis)场景设计HiLSVA系统，解决传统LLM Agent系统过度强调自主性而牺牲透明度和人类控制的问题。核心创新包括：提出计划优先的多Agent架构，整合自然语言交互与可视化操作；引入人机协同工作流，允许用户在关键节点介入指导。系统支持混合发起(mixed-initiative)的可视化探索，既能响应用户指令又能主动建议分析路径。实验验证了该系统在保持人类分析控制的同时提升科学发现的效率。关键词：LLM Agent, multi-agent architecture</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.27009v1" target="_blank">Semantic Early-Stopping for Iterative LLM Agent Loops</a>
+                </div>
+                <div class="card-byline">Sahil Shrivastava</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出语义早停机制替代固定迭代上限，优化多Agent LLM循环的效率和效果
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.27009v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.27009v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多Agent LLM循环（如Writer和Critic的协作）提出语义早停策略。传统方法使用固定迭代次数（max_iterations）作为终止条件，这导致简单问题过度消耗token而复杂问题被过早截断。研究通过分析连续草稿的语义变化来判断是否继续迭代，实现动态终止。核心创新是设计了一种轻量级的语义相似度检测机制。实验显示该方法在保持答案质量的同时显著降低token消耗，对LLM Agent的效率优化有重要意义。关键词：LLM Agent, multi-agent</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.27136v1" target="_blank">Joint Learning of Experiential Rules and Policies for Large Language Model Agents</a>
+                </div>
+                <div class="card-byline">Shicheng Ye, Chao Yu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出LLM Agent联合学习体验规则与策略的新方法，解决交互经验的两极化利用问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.27136v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.27136v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在多步交互环境中如何有效利用累积的交互经验。核心创新在于打破传统方法的局限：要么将经验保留为外部自然语言规则用于提示，要么用轨迹和反馈更新模型参数。论文提出联合学习框架，将经验规则和策略参数统一整合，使Agent既能保持可解释性又能适应动态环境。实验表明该方法显著提升了Agent在复杂任务中的表现。关键词：LLM Agent, skill learning, skill refinement</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.26479v1" target="_blank">Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents</a>
+                </div>
+                <div class="card-byline">Praneeth Narisetty, Shiva Nagendra Babu Kore, Uday Kumar Reddy Kattamanchi, Jayaram Kumarapu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  评估针对LLM Agent的带外防御方法，对抗提示注入攻击的策略分析
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.26479v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.26479v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文评估近年来针对工具使用型LLM Agent的间接提示注入防御策略。研究分析了CaMeL、FIDES、Progent、RTBAS、FORGE等系统，这些方法不依赖模型训练拒绝恶意指令，而是在模型外部通过确定性策略实施安全控制。核心创新是系统化评估框架，从能力限制、信息流标签等多维度比较各防御方法的有效性和权衡。论文指出虽然外部策略提供了灵活的安全边界，但可能限制Agent的有效功能。关键词：LLM Agent, security, prompt injection defense</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.26627v1" target="_blank">Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents</a>
+                </div>
+                <div class="card-byline">Nada Lahjouji, Ashwin Gerard Colaco</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  综述LLM Agent中的隐私问题，分析数据-centric视角下的隐私风险与保护机制
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.26627v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.26627v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文系统调查LLM Agent在处理敏感数据时的隐私问题。Agent需要查询数据库、调用API、记忆交互历史，并以用户授权身份执行操作，这使得隐私保护更加困难。核心工作是从数据流角度分析Agent的隐私风险：多数据源访问、多步工作流、跨会话状态保持、委托权限使用等。论文分类整理了现有隐私保护方法，包括数据最小化、访问控制、联邦学习等技术。为设计隐私安全的Agent系统提供了全面参考。关键词：LLM Agent, privacy</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.27154v1" target="_blank">OpenRCA 2.0: From Outcome Labels to Causal Process Supervision</a>
+                </div>
+                <div class="card-byline">Aoyang Fang, Yifan Yang, Jin&#39;ao Shang, Qisheng Lu, Junjielung Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  改进根因分析数据集，从结果标签扩展到因果过程监督，全面评估LLM Agent能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.27154v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.27154v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出当前根因分析(RCA)数据集存在根本性缺陷：仅标注根因本身，缺少从根因到症状的传播路径，简化了任务为模式匹配。核心工作是构建包含完整因果链的RCA数据集，支持对LLM Agent长上下文理解、多步推理和工具使用等综合能力的严格评估。论文系统分析了现有数据集的局限性，并提出因果过程监督的标注框架。实验表明引入传播路径后，对Agent的推理能力要求显著提高。关键词：LLM Agent, reasoning, tool use</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-25</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.27239v1" target="_blank">HumanoidUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation</a>
+                </div>
+                <div class="card-byline">Hongwu Wang, Chenhao Yu, Youhao Hu, Jiachen Zhang, Yuanyuan Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出无机器人演示数据收集方法，支持人形机器人全身技能学习
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.27239v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.27239v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对人形机器人全身行为的数据收集难题，提出HumanoidUMI方法。传统数据收集依赖机器人遥操作，受限于硬件可用性、操作员技能和效率低下。研究灵感来自通用操作接口(UMI)，探索无需机器人硬件的演示数据收集途径。核心工作是设计适配人形机器人全身协调感知、运动和操作的演示协议。尽管涉及skill learning，但主要聚焦于数据收集方法创新而非Agent本身，对LLM Agent研究贡献有限。关键词：skill learning, humanoid robot</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
