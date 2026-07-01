@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年07月01日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年07月01日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.30755v1" target="_blank">Understanding and Evaluating Claw-like Agent Security Through a Computer-Systems Lens</a>
+                </div>
+                <div class="card-byline">Peizhi Niu, Wenjie Qu, Shangding Gu, Tianneng Shi, Yuankai Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  从计算机系统安全视角深入分析Claw类智能体（如OpenClaw）的安全风险与评估方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.30755v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.30755v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文聚焦于Claw类AI智能体（以OpenClaw为代表）的安全评估问题。这类智能体具有持久凭证访问、文件操作、工具调用等系统级权限，安全失效后果严重。研究指出现有基准仅关注模型响应和工具调用，忽视了系统级安全风险。核心贡献是提出从计算机系统视角审视Claw-like agent安全的分析框架，填补了AI agent安全评估的空白。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.30911v1" target="_blank">Why Solve It Twice? Hierarchical Accumulation of Skills for Transfer-Efficient ML Engineering</a>
+                </div>
+                <div class="card-byline">Yongbin Kim, Yashar Talebirad, Osmar R. Zaiane</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出HASTE层次化多智能体系统，通过全局-领域-竞赛三级技能积累实现ML工程任务的跨竞赛知识迁移。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.30911v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.30911v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文研究了ML工程智能体因冷启动而重复造轮子的效率问题。提出HASTE层次化多智能体架构，组织跨竞赛知识为三层（全局、领域、竞赛级），通过编排器协调各层专家并促进技能晋升。实验表明该系统显著提升了ML任务的迁移效率，减少了计算资源浪费。核心创新在于将技能积累与层次化组织相结合的系统化方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.32025v1" target="_blank">Generative Skill Composition for LLM Agents</a>
+                </div>
+                <div class="card-byline">Xinyu Zhao, Zhen Tan, Vaishnav Tadiparthi, Nakul Agarwal, Kwonjoon Lee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究LLM智能体的生成式技能组合方法，实现跨任务和领域的可复用技能库自动构建与选择。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.32025v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.32025v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对LLM智能体技能库的组合选择问题展开研究。技能作为模块化知识封装，可跨任务和领域复用，但如何从中选取恰当组合是挑战。研究提出生成式技能组合方法，通过语义理解和任务需求匹配实现自动技能选择。核心创新在于将技能组合视为生成式任务，而非简单的检索或匹配，为构建可扩展的技能库提供了新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.31371v1" target="_blank">Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?</a>
+                </div>
+                <div class="card-byline">Zewen Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  探讨概率校准技术能否缓解LLM智能体反馈循环中的评估器偏好耦合问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.31371v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.31371v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文研究LLM智能体通过评估器反馈学习时存在的系统性偏差传播问题（评估器偏好耦合）。已有工作建立诊断框架但未探索解决方案。研究引入概率校准技术，检验其能否减轻反馈循环中的偏好耦合。实验发现校准方法效果有限，揭示了智能体学习过程中偏差传播的顽固性，为后续研究提供了重要的负面结果和方向指引。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.31046v1" target="_blank">OpenLife: Toward Open-World Artificial Life with Autonomous LLM Agents</a>
+                </div>
+                <div class="card-byline">Atsushi Masumori, Itsuki Doi, Norihiro Maruyama, Ryosuke Takata, Takashi Ikegami</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出OpenLife范式，利用具有持久记忆和工具使用能力的LLM智能体构建开放世界人工生命系统。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.31046v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.31046v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文探讨传统人工生命局限于研究者设计的封闭世界，提出基于LLM智能体的开放世界人工生命（Open-world A-life）新范式。这类智能体具有持久记忆、工具使用、网络访问等能力，可进入真实社会、经济环境。论文论证了技术可行性并设计了系统架构，核心创新在于将人工生命从模拟环境拓展到开放真实世界，开辟新的研究前沿。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.31174v1" target="_blank">ClawArena-Team: Benchmarking Subagent Orchestration and Dynamic Workflows in Language-Model Agents</a>
+                </div>
+                <div class="card-byline">Kaiwen Xiong, Haonian Ji, Shi Qiu, Zeyu Zheng, Cihang Xie</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出ClawArena-Team基准，评估LLM智能体作为团队管理者协调子代理并行工作的能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.31174v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.31174v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对LLM智能体的团队协作能力提出ClawArena-Team基准。实际部署中，智能体常扮演管理者角色：创建子代理、分配任务、协调并行异步工作流。研究设计任务评估主模型能否有效编排团队。核心贡献是超越单智能体基准，聚焦多代理动态工作流场景，为评估LLM的管理协调能力提供标准化测试平台。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.31252v1" target="_blank">Embodied CAD: Solver-Grounded LLM Agents for Parametric B-Rep Assembly Modeling</a>
+                </div>
+                <div class="card-byline">Fumin Liu, Haoyu Zhou, Fei Hao, Lin Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Embodied CAD框架，利用求解器锚定的LLM智能体实现参数化B-Rep装配建模。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.31252v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.31252v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文解决LLM生成CAD代码的几何正确性难题。纯语法正确的CAD代码可能无法被几何内核接受，更无法保持参数化特征。研究提出Embodied CAD框架，让LLM智能体与几何求解器紧密耦合，生成的同时验证几何有效性。核心创新在于将精确几何约束嵌入生成过程，使LLM从代码生成器升级为可靠的CAD建模助手。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.31635v1" target="_blank">A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents</a>
+                </div>
+                <div class="card-byline">Javal Vyas, Milapji Singh Gill, Artan Markaj, Felix Gehlhoff, Mehmet Mercangöz</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  教程式论文探讨知识锚定的LLM智能体在过程工厂自主故障恢复中的应用潜力和实现路径。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.31635v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.31635v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文以教程形式探讨LLM智能体在过程工业故障恢复中的应用。工厂故障恢复高度依赖人工操作员解读报警、流程图和趋势数据。研究分析如何利用知识锚定的LLM智能体辅助操作员决策，将异常诊断和恢复建议自动化。内容涵盖技术可行性、实现挑战和应用场景设计，为智能制造领域的LLM Agent落地提供系统性参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.32034v1" target="_blank">QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents</a>
+                </div>
+                <div class="card-byline">Sergio Hernández-Gutiérrez, Matteo Merler, Ilze Amanda Auzina, Joschka Strüber, Ameya Prabhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出QVal方法以低成本评估长时程LLM智能体的密集监督信号，解决中间动作评价稀疏问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.32034v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.32034v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对LLM智能体长时程决策中监督信号稀疏的难题提出QVal方法。传统仅依赖结果奖励无法指导中间动作质量，而密集监督方法计算开销大。研究探索从内在置信度、自蒸馏到嵌入等多种稀疏信号作为替代方案。核心贡献是在评估精度与计算成本间取得更优权衡，为长时程任务的训练和评估提供实用工具。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-06-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2606.31693v1" target="_blank">ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping</a>
+                </div>
+                <div class="card-byline">Jiacheng Chen, Tao Zhang, Manxi Lin, Dunxian Huang, Teng Shi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ShopX提出面向智能购物的基础模型，弥合LLM智能体意图理解与商品空间满足之间的差距。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2606.31693v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2606.31693v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>本文针对AI原生购物应用中的意图-商品鸿沟问题提出ShopX基础模型。现有设计将LLM包装在检索推荐管道外，语言理解与商品满足间存在信息损失。研究设计端到端模型直接理解购物意图并生成商品方案。核心贡献在于提出从页面浏览到意图驱动的购物范式转变，为AI-native电商体验提供技术基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
