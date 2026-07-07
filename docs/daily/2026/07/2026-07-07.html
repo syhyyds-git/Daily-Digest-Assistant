@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年07月07日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年07月07日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.05297v1" target="_blank">MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution</a>
+                </div>
+                <div class="card-byline">Zefeng Wang, Minxi Yan, Jinhe Bi, Sikuan Yan, Volker Tresp</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出双时间尺度Meta-Skill Evolution框架，实现LLM Agent技能的递归自改进。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.05297v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.05297v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究如何让LLM Agent自主优化外部技能文件以适应多样化任务。提出MetaSkill-Evolve框架，通过双时间尺度更新机制在快速任务适应和慢速技能进化间取得平衡。实验表明该方法能显著提升Agent在长horizon开放任务中的性能，技能重写效率优于固定技能库。核心创新在于引入meta-skill evolution机制，使Agent能从执行轨迹中自动改进技能文件。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.03821v1" target="_blank">DualView: Preventing Indirect Prompt Injection in Personal AI Agents</a>
+                </div>
+                <div class="card-byline">Juhee Kim, Woohyuk Choi, Taehyun Kang, Youngmin Kim, Byoungyoung Lee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出DualView防御机制，有效防止Personal AI Agents遭受间接提示注入攻击。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.03821v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.03821v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究Personal AI Agents（如OpenClaw）面临的间接提示注入（IPI）安全威胁。提出DualView框架，通过双LLM协作识别并阻断恶意注入内容。实验证明该方法能有效保护Agent的文件系统和网络访问，同时保持正常功能不受影响。核心贡献是首次系统性地研究OpenClaw等本地Personal AI Agents的IPI攻击面并提出可行防御方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.05378v1" target="_blank">CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents</a>
+                </div>
+                <div class="card-byline">Yujiang Li, Zhenyu Hou, Yi Jing, Jie Tang, Yuxiao Dong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于强化学习的上下文压缩方法CompactionRL，解决长时程Agent的上下文窗口限制。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.05378v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.05378v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对长时程交互轨迹超过LLM上下文窗口限制的问题，研究如何将上下文压缩整合到RL训练流程中。提出CompactionRL框架，在训练过程中学习何时及如何压缩历史状态。实验表明该方法能有效扩展Agent的任务horizon，同时保持决策质量。核心创新是将上下文压缩决策纳入RL优化范围。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.03702v1" target="_blank">Agent Reinforcement Learning via Pivotal-Aware Self-Feedback Retry</a>
+                </div>
+                <div class="card-byline">Weiyang Guo, Zesheng Shi, Longhui Zhang, Zeen Zhu, Min Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出关键点自反馈重试框架PivoARL，改善LLM Agent对失败轨迹的有效利用。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.03702v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.03702v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对长时程交互任务中Agent难以有效利用失败经验的问题，提出PivoARL框架。通过识别关键决策点并进行针对性重试，平衡交互成本和经验信号保留。实验表明该方法在多个任务上实现更高的最终性能和更低的交互成本。核心贡献是设计pivotal-aware机制，在关键时刻进行自反馈重试而非全轨迹重试。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.04235v1" target="_blank">Spinning Straw into Gold: Relabeling LLM Agent Trajectories in Hindsight for Successful Demonstrations</a>
+                </div>
+                <div class="card-byline">Zichao Li, Gang Wu, Zichao Wang, Ruiyi Zhang, Wanrong Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出后见之明监督学习方法，利用Agent轨迹中意外成功的目标生成训练信号。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.04235v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.04235v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对长时程部分可观测环境中监督信号稀缺的挑战，研究如何挖掘Agent轨迹中的隐含监督信息。提出Hindsight Supervised Learning框架，通过辅助LLM重新标注意外成功的轨迹。实验表明该方法能有效利用失败轨迹提升训练效率，在多个基准上取得显著提升。核心创新是利用unintended yet successful goals作为额外监督信号。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.04574v1" target="_blank">A Few Teacher Steps Go a Long Way: Cost-Efficient On-Policy Data Augmentation for Agent Post-Training</a>
+                </div>
+                <div class="card-byline">Junze Ye, Jiayi Cheng, Miao Lu, Michal Mankowski, Jose Blanchet</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出成本高效的在策略数据增强方法，改善LLM Agent后训练效果。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.04574v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.04574v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究如何高效利用教师示范进行Agent后训练。发现行为克隆中教师上下文与学生测试上下文的分布不匹配问题。提出在策略数据增强方法，通过选择性查询教师扩展训练数据。实验表明该方法在多个任务上实现40%成本降低，同时保持或提升性能。核心贡献是分析teacher-student context mismatch并提出针对性解决方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.04713v1" target="_blank">RSPO: Reward-Swap Policy Optimization for Multi-Turn LLM Agents</a>
+                </div>
+                <div class="card-byline">Qiang Liu, Taian Guo, Ruizhi Qiao, Xing Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出奖励交换策略优化方法RSPO，解决多轮LLM Agent训练中的奖励稀疏问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.04713v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.04713v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对多轮交互任务中稀疏奖励导致训练缓慢的问题，提出RSPO框架。通过在多轮轨迹间交换不同步骤的奖励信号，提供更密集的学习信号。实验表明该方法在多个多轮任务上实现2-3倍收敛加速，最终性能也显著提升。核心创新在于设计奖励交换机制，将稀疏的outcome reward转化为更细粒度的step-level signal。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.04763v1" target="_blank">Multi-Turn On-Policy Distillation with Prefix Replay</a>
+                </div>
+                <div class="card-byline">Baohao Liao, Hanze Dong, Christof Monz, Xinxing Xu, Li Dong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Prefix Replay机制，有效降低多轮交互场景下在线策略蒸馏的计算成本。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.04763v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.04763v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究多轮交互任务中LLM Agent的在线蒸馏效率问题。提出Replayed-Prefix On-Policy Distillation方法，通过复用历史交互前缀减少环境交互和教师查询次数。理论分析表明该方法能有效降低40%以上的计算开销，同时保持学生模型性能。核心贡献是解决在线蒸馏中每次更新都需要fresh rollouts的高成本问题。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.04963v1" target="_blank">STAPO: Selective Trajectory-Aware Policy Optimization for LLM Agent Training</a>
+                </div>
+                <div class="card-byline">Qiuyi Qi, Tian Liang, Mutian Bao, Jinjian Zhang, Dongnan Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出选择性轨迹感知策略优化方法STAPO，改善LLM Agent训练中的轨迹忽略问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.04963v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.04963v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对RL训练中稀疏奖励导致的轨迹忽略问题，研究如何引导Agent关注任务目标。提出STAPO框架，通过选择性轨迹感知机制识别关键决策点并进行针对性优化。实验表明该方法显著加速训练收敛，提升长时程任务成功率。核心创新在于使用Shannon熵信号区分固有不确定性和任务相关不确定性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.05174v1" target="_blank">AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments</a>
+                </div>
+                <div class="card-byline">Zhiheng Xi, Dingwen Yang, Jiaqi Liu, Jixuan Huang, Honglin Guo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出AgentGym2基准测试，在去理想化真实环境中全面评估LLM Agents能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.05174v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.05174v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>针对现有Agent基准过于简化的问题，构建AgentGym2评估框架。涵盖网页浏览、操作系统操作、数据库查询等多类真实任务，模拟不完整输入和接口变更等现实挑战。提供统一评估协议和预训练模型基线，揭示当前Agent在真实环境中的实际能力边界。主要贡献是提供更贴近实际部署场景的评估体系。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
