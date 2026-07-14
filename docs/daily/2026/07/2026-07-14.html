@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年07月14日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年07月14日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-12</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.10625v1" target="_blank">Dual-Process Atomic Skill Learning: Decoupling Semantic Reasoning and Real-Time Control</a>
+                </div>
+                <div class="card-byline">Jun Chen, Erdent Bao, Wenlong Dong, Jierui Liu, Qi Cai</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出双过程原子技能学习方法，解耦语义推理与实时控制，提升机器人多步组合任务泛化能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.10625v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.10625v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对语言条件模仿学习中多步组合任务泛化困难的问题，提出Dual-Process Atomic Skill Learning框架。核心创新在于将技能学习解耦为语义推理层和实时控制层，通过双过程机制分别处理高层任务理解和底层动作执行。该方法缓解了传统分层方法中训练不稳定和码本崩溃的问题，在多步组合任务上展现了显著的泛化性能提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-12</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.10534v1" target="_blank">Cross-Layer Misalignment Detection in Agent Skills: A Progressive Loading-Aware Contrastive Learning Approach</a>
+                </div>
+                <div class="card-byline">Chengjun Zhang, Yang Gao, Jianna Hur, Jingjing Zhang, Sagar Samtani</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Cross-Layer Misalignment Detection检测Agent Skills跨层错位，提出渐进式对比学习方法保障技能可靠性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.10534v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.10534v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究开源技能市场扩展带来的安全问题：用户依赖简短元数据选择第三方技能时，难以发现技能描述与实际能力的不一致。提出跨层错位检测方法，核心创新是渐进式加载感知的对比学习技术，能够识别技能元数据、程序指令和运行时资源之间的不一致性。该研究为开放技能市场的安全使用提供了系统性检测方案，提升了Agent技能选择的可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-12</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.10601v1" target="_blank">Agentic-DPO: From Imitation to Agentic Policy Optimization on Expert Trajectories</a>
+                </div>
+                <div class="card-byline">Yixiong Chen, Alan Yuille</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Agentic-DPO提出从模仿学习到Agent策略优化的演进，通过对比学习训练Agent在每个状态选择正确行动。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.10601v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.10601v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出传统SFT将多轮Agent行为当作普通文本模仿，忽视了在每个状态对抗错误选项的能力训练。提出Agentic-DPO方法，核心创新是超越序列级别的模仿，在每个状态通过对比学习训练Agent区分正确行动与 plausible mistakes。该方法结合专家轨迹中的正向和负向样本，使Agent学会在每个决策点做出更鲁棒的选择，提升了Agent策略优化的深度和有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11126v1" target="_blank">ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory</a>
+                </div>
+                <div class="card-byline">Yue Fang, Zhibang Yang, Fangkai Yang, Xiaoting Qin, Liqun Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ToolAtlas提出工具端记忆机制，实现跨Agent工具知识共享与复用，解决传统agent端方法的局限性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11126v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11126v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出当前LLM Agent工具学习方法的局限性：工具知识绑定在agent端，难以跨agent共享。提出ToolAtlas，核心创新是在工具端构建可重用的工具知识记忆库。工具提供者将工具使用模式编码到共享记忆中，下游agent可直接查询复用，无需各自学习。该方法突破了传统agent端学习方法的知识壁垒，为工具生态系统的协同进化提供了新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11138v1" target="_blank">A Formal Hierarchical Architecture for Agentic Orchestration with Stack-Based Execution and Lazy Discovery</a>
+                </div>
+                <div class="card-byline">Prashant Devadiga,  Abhishek, Adithya Mishra, Alok Singh, Amisha Sinha</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  形式化分层Agent编排架构通过栈式执行与惰性发现机制，解决扁平工具注册表的决策空间爆炸问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11138v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11138v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出当前LLM Agent面对扁平工具注册表时的架构瓶颈：同时评估数百工具导致决策空间爆炸和上下文饱和。提出形式化分层架构，核心创新是栈式执行机制结合惰性发现策略，将工具按层次组织，运行时按需展开而非一次性评估。该架构显著提升了大规模工具场景下的路由准确性和系统效率，为Agent系统的可扩展性提供了理论支撑和实践方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11346v1" target="_blank">Compile, Then Page: Executable SOP Programs and a Capability-Gated Runtime for Procedural LLM Agents</a>
+                </div>
+                <div class="card-byline">Chenglin Yu, Li Yin, Ying Yu, Hongxia Yang, Ming Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Compile-then-Page为LLM Agent企业SOP执行提供编译时约束与运行时分页能力，保障安全关键流程。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11346v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11346v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决企业Agent遵循长时域、条件性、安全关键标准操作程序的挑战。核心创新是将SOP约束编译为可执行伪代码，配合程序引导的栈机运行时，通过分页机制管理活跃帧，使LLM执行语义操作的同时保持约束合规。SOPBench基准测试分离了表示与运行时性能，验证了编译方案在多种SOP场景下的有效性，为企业级Agent部署提供了安全保障。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11098v1" target="_blank">AgentCheck: A Reproduce-Intervene-Mitigate Workbench for LLM Agents over MCP</a>
+                </div>
+                <div class="card-byline">Aritra Mazumder, Nusrat jahan Lia</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  AgentCheck构建可干预的MCP服务器测试工作台，支持LLM Agent工具故障的复现、测试与修复验证。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11098v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11098v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决工具使用LLM Agent评估中的实际问题：当工具超时、返回过期值或描述被污染时，缺乏可控的故障复现和修复验证机制。提出AgentCheck开源工作台，核心创新是将MCP服务器转换为可干预表面，支持开发者复现失败、测试修复、确认效果的完整闭环。该框架填补了工具故障场景下Agent评估的工具链空白，为实际部署场景的质量保障提供了系统性支持。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11226v1" target="_blank">Heterogeneous Agent Cohorts for Safe Open-Ended Exploration with Runtime Constraint Memory</a>
+                </div>
+                <div class="card-byline">Tengjiao Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  异构Agent队列通过分离创意生成与安全约束角色，实现LLM Agent的开放式安全探索。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11226v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11226v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决LLM Agent在创造力与安全性之间的两难：严格约束导致探索受限，过度自由引发安全违规。核心创新是将职责分离到异构Agent队列：Disrupter生成非传统方案，Guardian维护运行时约束记忆，通过角色协作实现开放式安全探索。该框架避免了单一模型同时处理创造与安全的困境，为多Agent系统在安全关键场景中的应用提供了新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11250v1" target="_blank">Multi-Agent LLMs Fail to Explore Each Other</a>
+                </div>
+                <div class="card-byline">Hyeong Kyu Choi, Jiatong Li, Wendi Li, Xin Eric Wang, Sharon Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示现代LLM Agent在多Agent交互中呈现短视与极化模式，导致协调不当和 regret 增加。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11250v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11250v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多Agent系统中LLM Agent的探索能力，核心发现是现代LLM Agent在相互交互时表现出严重的探索失败：决策短视、交互模式极化，导致协调效果不佳。形式化定义为Multi-Agent Exploration Challenge，在多种交互场景中验证了该问题的普遍性。该研究揭示了当前LLM Agent在协作决策中的根本局限，为未来多Agent系统的改进提供了诊断框架和评估基准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.11698v1" target="_blank">Agent Hacks Agent: Autoresearch for Production-Agent Red-Teaming</a>
+                </div>
+                <div class="card-byline">Xutao Mao, Xiang Zheng, Cong Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Agent Hacks Agent提出生产级LLM Agent红队测试的自动化研究框架，保障Claude Code等系统的安全性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.11698v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.11698v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对生产LLM Agent（如Claude Code、Codex）在处理不可信内容时的安全风险，提出自动化的红队测试框架。核心创新是自动生成攻击并保留攻击成功记录（payloads、benchmarks），实现攻击成功率的优化。框架能够与快速演进的模型和工具保持同步，为Agent安全评估提供可持续的测试能力。该研究对保障生产环境Agent系统的安全性具有重要实践价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
