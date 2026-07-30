@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年07月30日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年07月30日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26160v1" target="_blank">GuideSkill: Evolving Executable LLM Agent Skills for Guideline-Grounded Clinical Reasoning</a>
+                </div>
+                <div class="card-byline">Lang Cao, Yuhao Shen, Tianyang Luo, Simo Du, Hao Peng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  GuideSkill 提出将临床指南编译为可执行函数，实现 LLM Agent 技能的演化与临床推理的对齐。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26160v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26160v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出 GuideSkill 框架，将临床实践指南编译为可执行函数用于诊断评分。GuideSkill-Zero 从指南初始化，GuideSkill 通过反馈迭代演化技能。研究解决了 LLM 难以执行指南规则的问题，核心创新在于将静态指南文本转化为可执行的诊断支持技能。实验表明演化的 GuideSkill 显著提升临床推理准确率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26643v1" target="_blank">Rethinking Self-Evolution: A Constrained Exploration-Exploitation Process for Mitigating Skill Overfitting</a>
+                </div>
+                <div class="card-byline">Hongqiang Lin, Chao Liu, Xiaofan Bai, Xuan Jin, Yuhong Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文提出约束探索-利用框架解决 LLM Agent 自我演化中的技能过拟合问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26643v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26643v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 自我演化过程中的技能过拟合问题。将技能视为可训练状态，但数据驱动优化易过拟合于有限轨迹。核心创新是提出约束探索-利用方法，在积累经验与避免过拟合间取得平衡。实验表明该方法能有效缓解技能过拟合，提升 Agent 在新任务上的泛化能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26784v1" target="_blank">SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution</a>
+                </div>
+                <div class="card-byline">Zhiyuan Yao, Yuxin Chen, Zhengxi Lu, Zishan Xu, Yueqing Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillRise 提出跨任务技能演化的统一强化学习方法，使 LLM Agent 能复用相似任务模式。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26784v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26784v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 跨任务技能复用难题，提出 SkillRise 统一框架。传统方法将任务视为独立回合或使用多阶段流水线，SkillRise 实现了提取、检索与执行的端到端学习。核心创新是跨任务技能演化机制，可识别和复用相关任务间的解决模式。实验证明该方法显著提升多任务场景下的 Agent 效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26598v1" target="_blank">Living-Harness Is an Interactive-Agent Evolver</a>
+                </div>
+                <div class="card-byline">Yuetian Du, Yucheng Wang, He Xu, Jiexu Xu, Shanwen Tan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Living-Harness 提出交互式 Agent 演化框架，通过后验反馈持续改进 Agent 引导系统。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26598v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26598v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出静态引导系统在部署后无法改进，导致同类失败重复出现。提出 Living-Harness 框架，Agent 可通过失败反馈演化其引导系统。核心创新是交互式演化机制，使引导配置在任务间持续改进。研究在多个基准测试验证该方法能显著提升 Agent 在新任务上的可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26637v1" target="_blank">Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability</a>
+                </div>
+                <div class="card-byline">Sizhe Zhou, Sheldon Yu, Hui Wei, Junda Wu, Siru Ouyang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文系统研究 LLM Agent 文件系统记忆的组织与演化特性，揭示现有假设的局限性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26637v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26637v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 使用文件系统作为长期记忆的现象，发现现有研究忽视该默认范式。核心创新是系统测试了 Agent 组织、演化和维持记忆的两个假设。通过多任务实验揭示当前 Agent 在记忆管理上的不足，为设计更可靠的文件系统记忆系统提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26865v1" target="_blank">Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents</a>
+                </div>
+                <div class="card-byline">Amirmohammad Farzaneh, Osvaldo Simeone</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Think Short 提出边缘 LLM Agent 的预算感知推理与不确定性感知延迟策略。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26865v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26865v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对边缘部署 LLM Agent 的资源约束问题，提出短推理-智能延迟框架。核心创新是校准推理机制，使 Agent 能根据本地不确定性动态决定是否延迟至云端。在多跳问答、代码生成和物理 AI 控制任务上验证有效性。实验表明该方法在有限推理预算下保持可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26791v1" target="_blank">SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response</a>
+                </div>
+                <div class="card-byline">Lehan Wang, Boli Chen, Ruixue Ding, Pengjun Xie, Jinwei Huang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SecRespond 提出攻击后真实世界事件响应的 AI Agent 安全能力评估基准。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26791v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26791v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出现有网络安全基准聚焦攻击前场景，忽视攻击后的 Agent 能力评估。提出 SecRespond 基准，评估 LLM Agent 在真实主机工件和命令行接口下的事件响应能力。核心创新是后渗透场景下的安全 Agent 评估范式。填补了 AI 安全 Agent 能力评估的关键空白。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.26977v1" target="_blank">TREK: A Travel Reasoning and Evaluation Kit for LLM Agents in Complex Trip Planning</a>
+                </div>
+                <div class="card-byline">Jinhu Qi, Wentao Zhang, Siu Man Ng, Feiyang Xu, Yanyu Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  TREK 提出复杂旅行规划任务的 LLM Agent 评估套件，覆盖多维度质量与可行性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.26977v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.26977v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出旅行规划是工具型 LLM Agent 的严格测试，需同时满足航班、酒店、预算等多约束。核心创新是 TREK 评估套件，涵盖行程可行性、预算合规等多维度指标。解决了现有基准缺乏对规划质量全面评估的问题。为工具型 Agent 的能力边界探索提供标准化测试环境。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27083v1" target="_blank">Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents</a>
+                </div>
+                <div class="card-byline">Yicheng Feng, Yan Zhang, Yan Cheng, Wei Qi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文提出 LLM Agent 工具获取的成本感知停止策略，解决工具数量与成本控制间的权衡。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27083v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27083v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 Agent 工具选择的核心挑战：工具过少导致任务信息不足，过多则增加成本和隐私风险。核心创新是成本感知停止机制，基于排名确定最优工具数量。在搜索、数据库查询等场景验证方法有效性。该研究为实际部署 LLM Agent 提供成本控制实用方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27155v1" target="_blank">OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding</a>
+                </div>
+                <div class="card-byline">Jingbo Zhou, Yusai Zhao, Qi Bao, Jingjia Cao, Zhenghai Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  OmegaUse-OfficeVal 提出具有经济基础的长时序办公套件任务 LLM Agent 评估基准。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27155v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27155v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出现有基准缺乏对 Agent 完成任务成本的支持。提出 OmegaUse-OfficeVal 基准，评估 LLM Agent 在长时序办公任务上的经济效率。核心创新是任务级经济基础指标，同时考虑任务完成质量与成本。研究为评估 Agent 实际部署可行性提供新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
