@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年07月31日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年07月31日 · 星期五</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27360v1" target="_blank">SkillMentor: LLM Agent Self-Evolution via Learning Blind-Spot Diagnosis</a>
+                </div>
+                <div class="card-byline">Xiaoyi Bao, Yuanzhen Xie, Yunzhi Tan, Jinghang Gu, Zhongqing Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillMentor 研究 LLM Agent 自主发现自身认知盲点的能力，提出通过盲点诊断学习实现 Agent 自演化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27360v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27360v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文挑战 Agent 自演化研究中假设失败发现能力已被给定的传统范式，提出 Agent 应具备学习诊断自身盲点的能力。SkillMentor 将盲点诊断建模为 Agent 的内在能力，通过让 Agent 学习识别其知识边界与推理缺陷，实现自驱动的自我改进。核心创新在于将「不知道什么」的学习与「如何行动」的学习分离，实验表明这一能力可显著提升 Agent 在复杂任务中的自适应性和鲁棒性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27733v1" target="_blank">VeriSkill: A Self-Evolution Framework for Program Verification Skills</a>
+                </div>
+                <div class="card-byline">Changguo Jia, Tianqi Zhao, Zhiyou Xiao, Weiming Zhang, Minghui Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  VeriSkill 提出程序验证技能的自演化框架，通过轨迹蒸馏和反馈迭代提升 LLM Agent 生成规范和引理的能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27733v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27733v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文研究如何让 LLM Agent 自动化生成程序验证所需的规格、注释、辅助引理和工具调用，这些均依赖可复用技能。论文提出自演化框架 VeriSkill，从验证轨迹中蒸馏技能，并通过反馈迭代精化技能质量。关键创新在于针对程序验证任务设计了可靠的候选技能识别机制，解决了现有演化方法无法在验证任务中稳定生成高质量技能的问题。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27994v1" target="_blank">SKIMIX: Multi-Agent Harness-Time Scaling with Skill Mixture for Dynamic Harness Engineering</a>
+                </div>
+                <div class="card-byline">Jia Luo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SKIMIX 提出多 Agent 协作框架，结合技能检索、反稀释路由与自适应技能演化管理大规模技能库。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27994v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27994v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文针对 AI Agent 依赖大规模技能库时难以高效选择、组合和维护技能的挑战，提出 SKIMIX 框架。该框架包含三个核心组件：基于嵌入的技能检索、子模反稀释路由和自适应技能演化，多个拥有不同技能组合的 Agent 通过迭代精化展开协作。实验在六个推理基准测试上验证了框架的有效性，展示了多 Agent 协作在技能管理上的显著优势。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.28048v1" target="_blank">SKILL-KD: Contrastive Skill Distillation for LLM Agents</a>
+                </div>
+                <div class="card-byline">Qiming Shi, Yibo Dou, Jiawen Zhu, Yulong Tao, Linbo Jin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SKILL-KD 提出对比式技能蒸馏方法，通过对比失败轨迹与成功轨迹的差异，帮助弱模型学习任务知识与操作策略。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.28048v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.28048v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文研究 LLM Agent 的技能获取问题，指出现有方法将技能仅视为经验摘要，导致弱学生 Agent 在缺乏任务知识或操作策略时无法有效学习。论文提出对比式技能蒸馏（SKILL-KD），通过对比成功与失败轨迹的差异来构建技能信号，并设计对比目标帮助学生Agent从示范中提炼可迁移的操作能力。实验在多个任务上验证了该方法能显著提升弱 Agent 性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27937v1" target="_blank">From Scoring to Acting: Outcome-Verified Comparative Self-Distillation for LLM Agents</a>
+                </div>
+                <div class="card-byline">Xu Xia, Jinghua Piao, Min Yang, Xiaochong Lan, Jiaju Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  From Scoring to Acting 提出基于结果验证的对比自蒸馏方法，让 Agent 从动作级评估中内化技能。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27937v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27937v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文研究 LLM Agent 的技能内化问题，指出现有在线自蒸馏方法通过沿学生生成轨迹对动作评分来监督，存在两大局限：评分信号不稳定且缺乏动作级区分度。论文提出结果验证对比自蒸馏（OVD-CSD），通过验证动作执行后的实际结果来提供可靠的对比监督信号，使 Agent 无需在推理时检索外部技能即可完成复杂任务。实验验证了方法在多种 Agent 基准上的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.28076v1" target="_blank">Group-Reflective Self-Distillation for Agentic Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Binbin Zheng, Zijun Xie, Guanqun Zhao, Enlei Gong, Xing Ma</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Group-Reflective Self-Distillation 将分组反思机制引入强化学习训练，通过细粒度监督信号增强 Agentic RL 的技能学习。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.28076v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.28076v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文针对可验证奖励强化学习（RLVR）中仅有稀疏轨迹级监督的问题，提出分组反思自蒸馏方法。核心思想是将成功行为、重复错误和偶然选择分组解耦，为每组提供细粒度的自监督信号，而非全部混合在同一结果奖励中。论文引入自然语言技能来丰富监督信息，使 Agent 能更好地将技能内化。实验表明该方法在多种 Agent 任务上优于标准 RLVR 基线。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.28103v1" target="_blank">MIND: Lightweight and Effective Memory Injection Defense for LLM Agents via Intent-Aware Information Bottleneck</a>
+                </div>
+                <div class="card-byline">Dongyi Liu, Haixing He, Xiaobao Wu, Jia Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MIND 提出基于意图感知信息瓶颈的轻量级记忆注入防御方法，保护 LLM Agent 免受恶意记忆攻击。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.28103v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.28103v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文研究记忆增强型 LLM Agent 易受记忆注入攻击的脆弱性——攻击者可注入恶意记忆使 Agent 偏离用户原始意图。现有防御方法计算开销大或多轮上下文存在冗余。论文提出 MIND，通过意图感知的信息瓶颈机制过滤无关或恶意记忆注入，在保持关键任务信息的同时阻断攻击。核心创新在于将信息瓶颈理论应用于记忆安全领域，实现了低开销高效防御。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.28272v1" target="_blank">MemHarness: Memory Is Reconstructed, Not Replayed</a>
+                </div>
+                <div class="card-byline">Rong Wu, Daocheng Fu, Licheng Wen, Xuemeng Yang, Shu Zou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MemHarness 提出 Agent 记忆重构范式，突破传统经验回放忽略情境适配的局限，实现记忆动态重建。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.28272v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.28272v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文指出当前记忆增强 Agent 将检索经验当作静态记录直接注入上下文，忽略了记忆与当前情境的适配差距。MemHarness 提出记忆应被重构而非回放，根据 Agent 当前状态动态重组过去经验的相关部分。核心创新在于引入情境感知的记忆重建机制，使检索记忆能主动适应新任务场景，实验表明该方法显著提升了 Agent 在多任务场景下的适应性和任务完成率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.27773v1" target="_blank">ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory</a>
+                </div>
+                <div class="card-byline">Yongye Su, Wujiang Xu, Chaoji Zuo, Elisa Bertino</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ChronoMem 为 LLM Agent 记忆系统引入版本控制与语义回滚机制，解决记忆前向累积无法回溯的问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.27773v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.27773v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文指出现有 Agent 记忆系统采用前向累积模式，缺乏检查、回滚或还原历史状态的机制，导致 Agent 在面对纠正、概念漂移和记忆中毒时表现脆弱。ChronoMem 引入类似 Git 的版本控制思想，为 Agent 记忆设计语义级别的版本管理与回滚能力。核心贡献是首次系统性地将版本控制引入 LLM Agent 记忆架构，使 Agent 能在记忆层面进行有原则的历史状态管理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2607.28330v1" target="_blank">Paying for Honesty Without Knowing the Truth: Reputation-Penalty Design for LLM Marketplace Agents</a>
+                </div>
+                <div class="card-byline">Mingdai Yang, Shicheng Fan, Kejing Yu, Duohao Wang, Li Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文研究 LLM Agent 作为自主商家时的虚假宣传问题，提出基于声誉惩罚机制的市场平台设计方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2607.28330v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2607.28330v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>该论文研究 LLM Agent 作为自主商家时的诚实性问题——在竞争压力下即使被要求诚实也会捏造产品属性。平台无法逐条验证每条声明（仅能观察带噪声的对比信号）。论文将这一问题建模为声誉-惩罚设计博弈，提出即使不了解真实情况也能通过声誉机制抑制虚假宣传的方案。核心发现是在一定条件下声誉惩罚可以替代真相验证，为 LLM Agent 市场治理提供了新的理论基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
