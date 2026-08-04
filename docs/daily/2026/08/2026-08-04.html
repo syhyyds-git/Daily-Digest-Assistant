@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年08月04日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年08月04日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.01149v1" target="_blank">PATH-Bench: Path-Dependent Evaluation of Lifelong Agents</a>
+                </div>
+                <div class="card-byline">Xidong Yang, Xingyi Zhang, Wenhao Li, Wenyan Liu, Junjie Sheng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  PATH-Bench提出路径依赖的终身Agent评估基准，揭示累积经验如何塑造LLM Agent的技能迁移与保留
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.01149v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.01149v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出现有基准忽略经验积累路径对Agent能力的影响。核心贡献是建立PATH-Bench基准，通过估计有向任务间转移矩阵量化累积经验的价值。创新揭示Agent在不同交互历史路径下表现出显著差异的性能，为终身学习Agent的能力评估提供新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.01637v1" target="_blank">Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw</a>
+                </div>
+                <div class="card-byline">Zheng Lin, Yuzhe Huang, Zhenxing Niu, Xianmin Ye, Haichang Gao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Salami Attack揭示针对OpenClaw记忆系统的协同记忆毒化攻击，展示多个无害记忆组合可诱导不安全行为
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.01637v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.01637v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究持久记忆带来的新型攻击面——协同记忆毒化。核心发现是现有攻击主要依赖单独恶意记录，忽略多个看似良性的记忆组合可诱导不安全行为。创新提出Salami Attack攻击方法，通过精心组合多个记忆记录实现行为操纵。在OpenClaw系统上验证了攻击有效性，为LLM Agent安全防护提供重要警示。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.01772v1" target="_blank">FRAMES: Guarded and Dual-Objective Skill Evolution for Agents in Policy-Governed Enterprise Workflows</a>
+                </div>
+                <div class="card-byline">Xuhui Wang, Ruoqi Shu, Chen Dan, Tianhua Xu, Mengxi Luo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  FRAMES提出面向企业工作流的LLM Agent技能演化框架，解决策略约束环境下的技能持续改进难题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.01772v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.01772v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究在策略约束的企业工作流中LLM Agent的技能演化问题。核心挑战是操作反馈稀疏、修改技能可能引发回归、且需兼顾审计性。创新提出FRAMES框架，通过双目标优化在保持审计可追溯性的同时提升准确率。实验表明该方法在文档审计等企业场景中显著改善技能性能且不增加推理成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.02005v1" target="_blank">Evolving in the Agent Jungle via History-Informed Opponent Awareness</a>
+                </div>
+                <div class="card-byline">Zhaofeng Zhang, Linhan Xia, Rui Liu, Yihao Wang, Binrui Shen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Evolving in the Agent Jungle通过历史信息驱动的对手意识，让LLM Agent在动态多智能体环境中持续适应策略演化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.02005v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.02005v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦多智能体环境中LLM Agent的策略适应问题。研究发现在动态对手环境中，单纯修订技能库不足应对环境持续演化。核心创新是引入历史信息驱动的对手意识机制，使Agent能够感知对手策略变化并动态调整自身行为。实验表明该方法在持续演化的多智能体博弈中显著优于传统技能修订方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.02356v1" target="_blank">SkillTrace: Traversing a Query-Skill Graph for Composable LLM Agents</a>
+                </div>
+                <div class="card-byline">Yue Yao, Shengyuan Wang, Xin Chen, Minke Zhang, Jia He</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillTrace通过查询-技能图实现LLM Agent的可组合技能检索与遍历，解决多技能组合执行的难题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.02356v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.02356v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent如何从技能库中组合可执行技能的问题。核心创新在于提出三层图结构建模技能间的组合关系，通过图遍历而非单独检索实现完整技能组合。在多个任务上验证了方法有效性，能够准确识别并连接多个相关技能形成可执行路径，为复杂任务的技能复用提供新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-07-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.00303v1" target="_blank">CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge Crystallization</a>
+                </div>
+                <div class="card-byline">Beining Wu, Jun Huang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  CrystalMem通过知识结晶实现自演化LLM Agent的弹性内存管理，解决记忆压缩后的能力滞后问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.00303v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.00303v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文发现内存配额压缩后Agent能力不会完全恢复，呈现记忆滞后的结构性问题。核心创新是CrystalMem方法，通过知识结晶机制在压缩时保留关键能力结构。实验表明该方法显著缩小压缩-恢复后的能力差距，为云环境中自适应资源配额提供有效策略。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.01050v1" target="_blank">Don&#39;t Offer What Can&#39;t Be Done: Deterministic Executability Gating for LLM Skill Selection at Scale</a>
+                </div>
+                <div class="card-byline">Ortal Ashkenazi, Vitalii Kloz, Mykhailo Ulianchenko</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Don&#39;t Offer What Can&#39;t Be Done实现LLM Agent大规模技能选择时的确定性可执行性门控
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.01050v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.01050v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对生产环境中大规模技能库的可执行性挑战。指出语义匹配不足以判断技能在当前账户状态下的可执行性。核心创新是三阶段选择管道：语义召回→可执行性验证→确定性执行门控。在Wix客服助手上线后显著降低技能执行失败率，提升用户体验。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.01739v1" target="_blank">CoEvo-Mem: Co-Evolving Retrieval Policy and Memory Bank for LLM Agents</a>
+                </div>
+                <div class="card-byline">Bowen Ye, Yongchao Xu, Zhijian Li, Xiang Yin, Junkai Ma</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  CoEvo-Mem提出检索策略与记忆库协同演化机制，优化长期LLM Agent的持续记忆管理
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.01739v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.01739v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出现有方法割裂优化记忆访问与记忆演化，忽略两者间的反馈循环。核心创新是CoEvo-Mem框架，协同优化查询特定检索策略与记忆库的持续演化。实验表明协同优化显著优于单独优化任一模块，为长期Agent的持续学习提供新框架。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.02113v1" target="_blank">MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents</a>
+                </div>
+                <div class="card-byline">Jiajun Dong, Yutao Hu, Fengrui Fan, Shihan Dou, Yueming Wu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MemArbiter通过决策时刻记忆仲裁解决LLM Agent的记忆-行动鸿沟问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.02113v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.02113v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文识别LLM Agent长程任务中的记忆-行动鸿沟问题：即使信息可访问，仍可能因组织、优先级或呈现方式不当而无法指导决策。核心创新是MemArbiter框架，在决策时刻进行记忆仲裁，优化信息呈现方式。实验表明显著提升Agent在长程任务中的连贯性和决策质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.02508v1" target="_blank">RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States</a>
+                </div>
+                <div class="card-byline">Yi Yang, Zhennan Chen, Yihong Zhuang, Tiehan Fan, Yinan Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  RoMeRL通过降阶效用状态平衡自演化LLM Agent的反馈覆盖与记忆奖励陷阱难题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.02508v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.02508v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究自演化LLM Agent的记忆系统面临的两大耦合挑战：反馈随交互历史分散以及联合奖励导致的误导性更新。核心创新是提出降阶效用状态方法，平衡有限反馈在扩展状态空间的覆盖，避免记忆奖励陷阱。在多种长程任务上验证了方法有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
