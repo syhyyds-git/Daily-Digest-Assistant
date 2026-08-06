@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年08月06日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年08月06日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04828v1" target="_blank">Skill-Use: Can LLMs Actually Use Skills in Agentic Harnesses?</a>
+                </div>
+                <div class="card-byline">Jinyi Han, Yuanjian Xu, Ying Liao, Xinyi Wang, Zishang Jiang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Skill-Use基准评估LLM Agent能否自主识别和应用技能，揭示现有Agent在技能使用上的关键缺陷。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04828v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04828v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文定义了Agent能否识别相关技能并自主应用的核心问题。构建Skill-Use基准测试，通过结构化技能文档评估Agent的技能识别和执行能力。核心创新在于从「技能质量」转向「技能使用能力」的评估视角。实验揭示当前LLM Agent普遍存在技能识别错误和应用不当的问题，为Agent技能系统设计提供重要参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04968v1" target="_blank">EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement</a>
+                </div>
+                <div class="card-byline">Jun Nie, Yonggang Zhang, Qianshu Cai, Yiu-ming Cheung, Xinmei Tian</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出EvolveNet框架通过协同进化优化Agent Harness，实现LLM Agent无需更新权重即可持续自我改进。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04968v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04968v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何通过进化Harness（构建上下文、调用工具、验证结果、故障恢复的程序）提升Agent能力。核心创新是提出协同多优化器进化机制，解决现有方法假设所有经验路由到单一优化器的问题。研究表明Harness进化可带来持久改进，无需更新模型权重。实验验证了框架在多种任务上的持续性能提升，为Agent自动化优化提供新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04192v1" target="_blank">Behavioral Skill Reconstruction: Reconstructing Hidden Functionality from LLM Agent Skills</a>
+                </div>
+                <div class="card-byline">Peichun Hua, Haoxuan Xu, Mengyuan Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出行为技能重建方法，从封闭源码Agent技能中推断隐藏功能，突破传统防护机制限制。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04192v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04192v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何从隐藏的Agent技能包中重建底层功能。核心问题是现有防护机制仅防止文件泄露，但用户仍可通过交互行为推断功能。提出行为驱动的技能重建方法，观察技能执行行为反推内部逻辑。创新在于利用Agent执行结果和上下文进行逆向工程。实验验证用户可有效重建技能包中的指令、脚本和常量，揭示了现有安全防护的局限性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04761v1" target="_blank">InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval</a>
+                </div>
+                <div class="card-byline">Tsz Ting Chung, Jiangnan Li, Jie Zhou, Mo Yu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出InsightEmb方法学习动作意图嵌入，实现Agentic Insight Retrieval中的精准洞察检索。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04761v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04761v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究自我改进Agent从轨迹中检索可操作洞察的能力。核心问题是现有方法仅建模语义相似性，无法捕捉决策导向的动作意图。提出学习动作意图嵌入的方法，将洞察与决策步骤对齐。创新在于超越语义相似性，实现意图感知的洞察检索。实验证明该方法能显著提升检索洞察对Agent决策的帮助效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04934v1" target="_blank">State2State: Environment-Derived Mid-Training for LLM Agents</a>
+                </div>
+                <div class="card-byline">Xuanyu Lei, Yiqi Zhu, Chenliang Li, Kaiming Liu, Peng Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出环境驱动的State2State中间训练范式，让LLM Agent通过环境交互自主获取内部状态表示。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04934v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04934v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对现有Agent训练依赖外部指定任务和监督信号的问题，提出环境学习新范式。核心方法是让Agent从环境中自主学习内部状态表示，突破任务指定的限制。创新点在于将环境交互作为监督来源，实现可扩展的Agent训练。实验表明该方法能显著提升Agent的可扩展性和行为多样性，为大规模Agent训练开辟新路径。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04265v1" target="_blank">Strategic Evaluation of Planning Strategies for LLM Agents in Cyber-Physical Systems</a>
+                </div>
+                <div class="card-byline">J. de Curtò, I. de Zarzà</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建物理基础的基准测试评估网络物理系统中LLM Agent规划架构的适应性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04265v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04265v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对现有Agent评估忽视规划架构在动态环境中适应性的问题。核心方法是构建受物理约束的基准测试，模拟自主参与者和物理约束响应。创新点在于从「任务成功」转向「架构适应性」评估。实验揭示当参与者和物理环境变化时，规划架构可能需要调整，为实际部署提供更真实的评估标准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04719v1" target="_blank">Diagnosing Tool-Selection Reasoning in LLM Agents with Canary Tools</a>
+                </div>
+                <div class="card-byline">Atul Anand, Sourav Chattaraj</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出金丝雀工具诊断LLM Agent工具选择推理中的六类特定弱点。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04719v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04719v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决现有Agent评估仅知选错工具但不知为何错的问题。核心方法是设计探测探针工具，植入MCP工具集中诊断特定弱点。提出六类弱点分类：语义诱饵、参数陷阱、能力幻象、前置盲区、时间诱饵、粒度陷阱。创新在于将黑盒评估转为可解释的诊断，为改进Agent推理提供针对性方向。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.04746v1" target="_blank">Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems</a>
+                </div>
+                <div class="card-byline">Kartikey Singh Bhandari, Aarya Wadhwani, Dhruv Kumar, Pratik Narang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  借鉴西灌丛鸦情景记忆机制，提出类型条件时间衰减方法改善Agent记忆系统的记忆污染问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.04746v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.04746v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对跨会话Agent累积记忆中不同内容时效性差异大的问题。核心创新是借鉴鸟类情景记忆的按类型条件衰减特性。方法为不同类型记忆设置独立的衰减曲线，避免过时信息污染检索上下文。实验验证该机制能系统性地改善记忆有效性，提升Agent在长时程任务中的表现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.05026v1" target="_blank">ArtAnno: Annotating Implicit Semantics in Artworks through LLM Agent-Driven Bidirectional Human-AI Augmentation</a>
+                </div>
+                <div class="card-byline">Xiaoyan Gu, Yifang Wang, Wenqing Zheng, Haozhong Liu, Yixia Zheng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出ArtAnno利用LLM Agent双向增强人机协作注释艺术品隐含语义。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.05026v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.05026v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决艺术品注释依赖文化语境和深度知识的难题。核心方法是构建LLM Agent驱动的双向增强工作流，实现人与AI的协同标注。创新点在于打破传统单向AI辅助模式，让专家能有效校准模型并提升标注质量。实验证明该方法能提取更准确的文化隐含语义，为计算艺术研究提供高质量标注数据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.05095v1" target="_blank">Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite</a>
+                </div>
+                <div class="card-byline">Xiawei Yue, Boran Wang, Xiaoqing Zhang, Shuxin Zheng, Ziwei Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出层次图记忆机制实现路径级定位和重写，提升LLM Agent长期推理中的记忆更新效率。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.05095v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.05095v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对Agent长期推理中记忆更新的挑战，提出层次图记忆结构。核心方法是替代传统的扁平图存储，实现路径级定位和记忆重写。创新点在于为累积的历史记忆提供结构化组织，避免无关信息干扰。实验表明层次结构能显著提升多跳检索和推理效率，为Agent长期记忆管理提供新方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
