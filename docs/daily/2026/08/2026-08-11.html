@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年08月11日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年08月11日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.08037v1" target="_blank">SkillSmith: Enhancing Locally Deployed Agents via Automatic Skill Construction and Evolution</a>
+                </div>
+                <div class="card-byline">Xinle Jiang, Remy Xie, Ming Tang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  为本地部署Agent提供自动技能构建和演化能力，提升隐私保护和成本效率
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.08037v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.08037v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对本地部署Agent的技能管理需求，提出SkillSmith框架。核心创新在于支持自动从本地交互数据中构建技能，并持续演化更新。解决了OpenClaw等云端框架的隐私和成本问题，让用户能在受控环境中部署前沿开源小模型。通过增量式技能学习机制，Agent能从本地经验中自动提取可复用的程序性知识。实验表明该方法在保护隐私的同时保持了良好的任务性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-08-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.08453v1" target="_blank">What Keeps Agent Skills from Being Reusable? Evidence from 138K SKILL.md Files</a>
+                </div>
+                <div class="card-byline">Chi Zhang, Yimin Liu, Xinze Chen, Ping Ji</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  分析138K个SKILL.md文件揭示技能复用障碍的实证研究
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.08453v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.08453v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文对13.8万个公开SKILL.md文件进行大规模分析，揭示Agent技能难以复用的根本原因。研究发现大多数技能实际来源于单一任务、仓库或对话，而非真正的通用可复用设计。核心发现包括技能粒度不匹配、缺乏抽象层级、依赖隐式上下文等问题。为技能工程提供了系统性诊断框架和最佳实践建议。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.08640v1" target="_blank">SkillReason: Reasoning-Enhanced Agent Skill Retrieval for Implicit User Requests</a>
+                </div>
+                <div class="card-byline">Donghong Jiang, Endian Lin, Luoping Cui, Hanqing Liu, Mingjie Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出推理增强的技能检索方法，处理隐式用户请求的技能匹配挑战
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.08640v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.08640v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对大规模技能库中隐式用户请求的技能检索难题，提出SkillReason框架。核心创新在于引入推理增强机制，让模型能够从简洁的任务目标中推断出所需的能力和执行步骤，而非仅做表面文本匹配。通过构建技能-能力关联图和需求推理链，提高检索的语义理解深度。实验验证了该方法在隐式请求场景下的显著优势。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill refinement</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.08677v1" target="_blank">Branch2Skill: Efficient Skill Evolution Through Reasoning Trees</a>
+                </div>
+                <div class="card-byline">Yanwei Ren, Haotian Zhang, Likang Xiao, Jiaxing Huang, Jiayan Qiu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过推理树实现高效技能演化，利用失败轨迹反馈改进Agent能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.08677v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.08677v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何高效利用失败轨迹进行技能演化。提出Branch2Skill方法，通过构建推理树来组织和分析多条失败轨迹，避免单一轨迹中早期错误对后续反馈的干扰。核心创新在于多路径错误聚合机制，能够从多个推理分支中提取互补的错误信息。实验表明该方法比单轨迹方法能更全面地识别技能缺陷，显著提升技能改进效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.09168v1" target="_blank">From Relevance to Execution Utility: Reward-Aware Dynamic Execution Gating for Skill-Based LLM Agents</a>
+                </div>
+                <div class="card-byline">Liang He, Jingbo Wen, Hongyu Gu, Hao Li, Haoyu Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出奖励感知的动态执行门控机制，优化技能型LLM Agent的执行效用
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.09168v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.09168v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究技能型LLM Agent中技能检索与执行效用匹配的问题。提出奖励感知的动态执行门控框架，能够在执行前预测技能的执行价值，避免不必要的计算开销。核心创新在于引入执行效用估计器，综合考虑技能相关性、计算成本和预期成功率来决定是否执行。实验表明该方法在保持任务质量的同时显著降低了计算成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.09248v1" target="_blank">Emotion2Skill: Model-Internal Emotion Signals for Adaptive Skill Selection and Evolution</a>
+                </div>
+                <div class="card-byline">Bohan Lin, Hejia Geng, Xinyi Xie, Heng Zhou, Qinghua Xing</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用模型内部情绪信号指导技能选择和演化，提升自适应能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.09248v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.09248v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何利用LLM内部情绪表示来改进技能型Agent的技能选择机制。核心创新在于提出Emotion2Skill方法，将模型线性可解码的情绪状态作为技能路由的额外信号。不同于传统仅依赖文本描述的方法，该框架利用模型内部表征状态进行自适应技能选择。实验表明情绪信号能有效预测任务难度和技能适用性，提升技能演化的效率和准确性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.09253v1" target="_blank">SkillSentry: Reliable Skill Execution for LLM Agents via Runtime Assurance</a>
+                </div>
+                <div class="card-byline">You Lu, Xinyu Huang, Bihuan Chen, Xin Peng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  设计SkillSentry框架为LLM Agent提供技能执行时的运行时保证，提高可靠性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.09253v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.09253v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent技能执行不可靠的问题，提出SkillSentry运行时保证框架。核心创新在于引入执行监控和一致性校验机制，能够在技能执行过程中检测偏离并自动恢复。通过记录成功执行路径并与当前执行进行对比，确保Agent能够稳定复现任务完成能力。实验表明该方法显著提升了技能执行的一致性和可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.09555v1" target="_blank">Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents</a>
+                </div>
+                <div class="card-byline">Tianjun Pan, Yuan Li, Hongda Wang, Linbo Jin, Mengfei Song</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出双向上下文自蒸馏方法提升技能型LLM Agent对外部自然语言技能的利用能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.09555v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.09555v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何帮助LLM Agent更好地将外部自然语言技能转化为实际行动。提出双向上下文自蒸馏框架，通过同时考虑技能描述和执行结果的反馈来增强策略的技能利用率。核心创新在于引入双向蒸馏机制，让Agent既能理解技能意图又能根据执行效果调整行为。实验表明该方法在多个任务上显著提升了技能利用率和任务完成率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.09292v1" target="_blank">Beyond the Capability Boundary: Zeroth-Order Optimization for Self-Evolving LLM Agents</a>
+                </div>
+                <div class="card-byline">Bingzhen Liu, Xiaomeng Fan, Yuwei Wu, Zhi Gao, Mingyang Gao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出零阶自演化优化方法，帮助LLM Agent突破固有能力边界
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.09292v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.09292v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究自演化方法如何帮助LLM Agent超越固有能力边界的问题。指出现有方法因无法采样正确轨迹而难以在困难样本上改进。提出零阶自演化框架，通过估计参数空间的梯度方向来生成改进样本。核心创新在于不依赖梯度信息，仅通过函数值评估来指导能力提升。实验表明该方法在复杂推理任务上显著超越了传统自演化基线。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-10</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.09885v1" target="_blank">SHE: Trajectory-driven Safety Harness Evolution for LLM Agents</a>
+                </div>
+                <div class="card-byline">Wanying Qu, Qinghua Mao, Yu Li, Jiyao Liu, Xin Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出轨迹驱动的安全Harness演化方法，让LLM Agent安全机制能随风险进化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.09885v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.09885v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent安全Harness的动态演化问题。指出现有安全机制将Harness视为固定部署组件，无法应对新出现的风险。提出SHE框架，通过分析Agent执行轨迹来识别安全漏洞并自动更新Harness配置。核心创新在于解耦安全责任与模型权重，实现安全机制的持续改进。实验验证了该方法在多种攻击场景下的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
