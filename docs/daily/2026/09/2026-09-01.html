@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月01日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月01日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-08-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.29596v1" target="_blank">Towards a Systems Foundation for Agentic Skills: Architecture, Lifecycle, and Security</a>
+                </div>
+                <div class="card-byline">Sanket Badhe, Deep Shah, Priyanka Tiwari, Nehal Kathrotia</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统阐述agentic skills的架构、生命周期与安全框架，为技能化LLM代理提供理论根基。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.29596v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.29596v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文直面LLM代理在复杂长时序任务中面临的可靠性与执行瓶颈问题，提出模块化agentic skills作为外部化执行知识的抽象方案。核心贡献包括技能架构设计、技能生命周期管理模型及安全保障机制。论文系统梳理了从技能定义、加载、执行到演化的完整流程，为构建可信赖的技能化代理系统奠定工程基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.30429v1" target="_blank">EvoSkill Injection: Red-Teaming Autonomous Skill Generation and Evolution in Self-Evolving Agents</a>
+                </div>
+                <div class="card-byline">Doyun Kim, Chanwoo Kim, Sugyeong Eo, Yeo-Chan Yoon, Chanjun Park</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出技能注射红队攻击，揭示自进化代理中恶意技能生成与演化的安全风险。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.30429v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.30429v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM代理系统中自主技能生成与演化引入的新型攻击面进行红队测试。核心创新在于提出EvoSkill Injection攻击框架，能够在自进化代理中注入恶意技能并实现持久化控制。实验表明现有安全机制难以有效检测此类攻击，为构建安全可控的技能演化系统提供重要警示。论文强调需要重新审视自主技能生成的边界与安全边界。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.30147v1" target="_blank">CAST: Critique-Aware Supervision for Training Reliable Long-Horizon Tool-Calling Agents</a>
+                </div>
+                <div class="card-byline">Amir Saeidi, Zehua Zhang, Rishitosh Singh, Naman Ahuja, Vivek Gupta</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出批评感知监督框架CAST，提升长时序工具调用代理的可靠性与容错能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.30147v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.30147v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时序交互中单步错误导致任务失败的问题，提出CAST批评感知监督框架。核心创新在于引入步间可靠性评估机制，在执行前拦截可能导致不可逆失败的错误操作。论文通过跨多次试验的可靠性分析，揭示了独立评估难以捕捉的复合失效模式。实验表明该方法显著提升代理在复杂环境中的容错性与任务完成率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.30650v1" target="_blank">Geometry of Divergence: Tracking Hidden-State Trajectories for Adaptive Multi-Turn Reasoning</a>
+                </div>
+                <div class="card-byline">Jie Liang, Zhengxin Yu, Hamid Nasiri, Peter Garraghan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  将多轮推理中的表示漂移建模为可达性问题，提出自适应状态追踪机制。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.30650v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.30650v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文揭示长时序交互中LLM内部状态偏离任务相关信息的关键问题，将其形式化为表示漂移与可达性挑战。核心创新在于将多轮推理建模为状态空间中的轨迹追踪，提出自适应机制在资源约束下维持目标一致性。实验表明该方法能有效区分建设性推理与有害的表示退化，为提升代理推理稳定性提供理论基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-08-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.30685v1" target="_blank">ATLAS: Dual-Horizon Diagnostic Evaluation for Industrial Tool-Use Agents</a>
+                </div>
+                <div class="card-byline">Wei Chen, Peilun Zhou, Zhaoyu Hu, Jiajun Chai, Zhongni Hou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出双时域诊断评估框架ATLAS，系统评测工业工具使用代理的能力与可靠性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.30685v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.30685v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对工业场景LLM代理的迭代轨迹与跨请求表现提出系统性评估方案。核心创新在于双时域视角：短期单次请求的任务完成度与长期跨请求的能力演化轨迹。论文设计了多维度诊断指标，能够精准定位代理在工具选择、状态维护及错误恢复中的具体缺陷，为工业代理的持续改进提供数据驱动的优先级指导。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.30730v1" target="_blank">E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation</a>
+                </div>
+                <div class="card-byline">Wei Fan, Xinjie Shen, Xudong Guo, Jianhong Tu, Yang Su</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建首个电商场景多轮谈判LLM代理基准，覆盖长时序自主运营全链路。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.30730v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.30730v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时序代理任务的评估挑战，提出E-Commerce Bench基准，涵盖多轮对手方谈判、动态环境适应及千步级交互依赖。核心创新在于设计完整的电商运营场景，要求代理在数千步交互中持续探索、学习与策略迭代。实验表明现有LLM在复杂商业场景中的适应能力仍有显著局限，为评估代理持续学习能力提供新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.29363v1" target="_blank">TRACER: Per-Tool Context Retention for LLM Agents via Consequence-Attributed Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Ziqi Lin, Ye Wu, Mengying Yang, Xu Liu, Yizhou Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  基于后果归因强化学习实现LLM代理的逐工具上下文保留，优化长程推理效率。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.29363v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.29363v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对企业数据代理中上下文累积导致的效率问题，提出TRACER框架。核心创新在于将工具输出的下游影响显式建模，通过后果归因强化学习为每个工具输出分配保留优先级。论文证明现有压缩策略忽视局部决策的全局影响，导致过度压缩或代价高昂的重复调用。该方法在保持任务完成度的同时显著降低上下文消耗，但未直接涉及技能复用。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.29605v1" target="_blank">Hindsight Memory-PRM: Supervising Memory Management with Auditable Hindsight Credit</a>
+                </div>
+                <div class="card-byline">Haoxuan Jia, Yang Liu, Yingguang Yang, Yancheng Chen, Chongyang Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用轨迹可审计性监督LLM代理的记忆操作，提出离线训练与在线推理双阶段框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.29605v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.29605v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时序代理中记忆操作价值难以观测的监督难题，提出Hindsight Memory-PRM方法。核心创新在于利用检索命中与引用等机器可读证据构建事后审计轨迹，实现离线训练记忆效用批评器与在线推理引导的双阶段框架。论文证明该方法能有效提升代理在复杂任务中的记忆管理决策质量，但侧重记忆而非技能管理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.29606v1" target="_blank">Agent Zero Memory: Provenance-Aware Long-Term Memory for LLM Agents</a>
+                </div>
+                <div class="card-byline">Ming Wu, Pengyuan Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出溯源感知的长期记忆系统Agent Zero Memory，解决代理记忆的结构化组织难题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.29606v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.29606v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对现有记忆系统固守单一组织结构的盲点，提出Agent Zero Memory框架。核心创新在于整合事实存储、向量索引与知识图谱三种范式，通过溯源感知机制蒸馏用户对话、文件与外部数据源。论文设计统一查询接口实现跨结构协同检索，有效缓解单一记忆方案的局限性，但未涉及技能层面的存储与检索机制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-30</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2608.30067v1" target="_blank">How do World Models and Policies Compose in LLM Agents? A Joint Spectral and Behavioral Account</a>
+                </div>
+                <div class="card-byline">Ruize Xu, Xiao Yu, Yujin Tang, Chenming Shang, Nikhil Singh</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过参数空间几何分析揭示世界模型与策略在LLM代理中的组合机理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2608.30067v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2608.30067v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文通过受控实验研究LLM代理如何同时习得环境理解与任务执行能力。核心创新在于结合世界模型训练与策略训练的参数更新分析，几何发现表明有效的世界模型更新呈低秩结构。论文从行为层面验证了知识迁移与能力组合机制，为理解代理的涌现能力提供可解释性框架，但未直接涉及技能检索或演化机制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
