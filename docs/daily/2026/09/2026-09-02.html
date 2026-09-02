@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月02日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月02日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.00549v1" target="_blank">Skill Following: Evaluating Actual Skill Use in Retrieval-Enabled LLM Agents</a>
+                </div>
+                <div class="card-byline">Seonghyeon Cho, Chanjun Park</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Skill Following评估方法，量化分析检索增强型LLM Agent中技能使用的实际效果。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.00549v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.00549v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对现有评估方法的偏差问题，提出Skill Following（SF）概念以精确衡量技能检索的实际效用。研究发现传统评估严重高估技能检索的价值，引入对照实验设计隔离技能使用的真实效果。核心贡献是提供细粒度诊断工具，揭示技能检索在复杂多步任务中的局限性，为设计更有效的技能增强系统提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01487v1" target="_blank">Defense-as-Skill: Evolving Runtime Guard Skill for Skill-Augmented Agents</a>
+                </div>
+                <div class="card-byline">Xiaofang Yang, Ziqi Miao, Dianbo Sui, Jing Shao, Lijun Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Defense-as-Skill框架，通过演化运行时防护技能保护技能增强型Agent免受恶意技能攻击。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01487v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01487v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究技能增强型Agent面临的安全威胁：恶意技能可能在运行时窃取秘密、篡改代码或窃取数据。核心创新是Defense-as-Skill框架，将运行时防护能力作为可演化技能，通过持续监控和动态更新抵御新型攻击。实验表明该方法能有效检测和阻止技能注入攻击，显著提升Agent系统的安全性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01245v1" target="_blank">Explore More, Drift Less: Outcome-Only Reinforcement Learning Can Suffice for Long-Horizon Interactive Agents</a>
+                </div>
+                <div class="card-byline">Liming Pu, Xiaoxia Li, Yifu Liu, Teng Cao, Bin Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论证仅用结果奖励的强化学习足以训练长期交互式Agent，skill library可帮助突破性能瓶颈。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01245v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01245v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文挑战传统观点，认为outcome-only RL不会在小模型上遇到性能天花板。研究构建skill library机制，通过经验复用和技能组合提升训练效率。核心发现是结合skill library的RL方法可显著超越使用人工先验的基线，为降低Agent训练成本提供新思路。实验在多种长时域任务上验证了方法有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01428v1" target="_blank">TRIAGE: Three-level Routing and Intelligent Agent Guidance for Efficient Execution</a>
+                </div>
+                <div class="card-byline">Ruocan Wei</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出三层路由框架TRIAGE，通过历史经验复用提升ReAct范式LLM Agent的执行效率。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01428v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01428v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文识别ReAct范式的核心缺陷：相似查询重复执行相同的推理步骤，浪费计算资源。TRIAGE框架引入查询路由、案例路由和技能路由三层机制，实现跨任务的推理经验复用。核心创新在于动态构建经验库，并根据任务特征智能选择复用路径。实验表明该方法可大幅减少token消耗和推理延迟，同时保持任务完成质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01519v1" target="_blank">When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation</a>
+                </div>
+                <div class="card-byline">Peiying Zhu, Sidi Chang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  审计LLM Agent商业评估中的构念效度问题，揭示模拟环境可能产生虚假的经济效益指标。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01519v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01519v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦LLM Agent在市场交易场景中的评估方法论问题。研究发现现有评估框架存在构念效度失效：Agent输出的价格、利润等指标看似合理，但并未反映声称的行为。通过多轮买家-卖家测试床的案例分析，揭示评估中的人为效应。贡献在于提供审计工具和方法论框架，帮助研究者识别和修正Agent评估中的虚假有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-08-31</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.00275v1" target="_blank">The Irreversibility Budget: Fleet-Level Risk Accounting and Admission Control for Agent Operating Systems</a>
+                </div>
+                <div class="card-byline">Bardia Mohammadi, Laurent Bindschaedler</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出不可逆性预算概念，为Agent操作系统的Fleet级风险核算和准入控制提供新框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.00275v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.00275v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出多Agent系统在执行金钱转移、代码部署等不可逆操作时存在累积风险：单个授权检查无法防止整体风险超额。不可逆性预算作为残余风险的累积账户，统一追踪Fleet级风险暴露。核心贡献是设计准入控制机制，确保组合风险始终在预设阈值内。该框架为部署大规模LLM Agent系统提供系统性风险管理工具。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.00749v1" target="_blank">ContextPipe: Database-Inspired Context Assembly for Long-Horizon Agents</a>
+                </div>
+                <div class="card-byline">Peng Xu, Zuyu Zhang, Yuze Sun, Feng Tian, Long Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  设计数据库启发的ContextPipe方法，优化长期Agent的上下文组装与历史压缩策略。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.00749v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.00749v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时域Agent的上下文管理挑战，提出类数据库的上下文组装范式。ContextPipe将提示构建、历史压缩和缓存管理统一为管道化流程，解决硬性上下文窗口限制和按字节计费的缓存问题。核心贡献是提供声明式接口，使上下文处理逻辑可复用、可审计。实验验证该方法在多种长任务场景下显著降低token消耗。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01035v1" target="_blank">Spawn Freely, Act Sparingly: Progressive Risk Vesting for Recursive LLM-Agent Trees</a>
+                </div>
+                <div class="card-byline">Molly Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出渐进式风险授权机制PRV，在递归LLM Agent树中平衡能力扩展与不可逆操作风险控制。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01035v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01035v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究递归Agent系统中的权限管理问题：当分支Agent请求工具执行数据发送或代码部署时，如何决定授权时机。PRV将沙箱创建与能力激活区分开来，通过渐进式授权控制不可逆操作边界。核心创新是风险vesting机制，在Agent证明可靠性后才赋予关键权限。实验表明该方法可在保持系统灵活性的同时有效控制风险暴露。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01360v1" target="_blank">EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems</a>
+                </div>
+                <div class="card-byline">Jun Hou, Priya Pitre, Yi Fang, Xuan Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出错误依赖图引导的EDGE框架，解决多Agent LLM系统中多错误归因难题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01360v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01360v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文识别现有错误归因方法的局限性：多Agent系统中错误通常相互关联，单一归因方法不适用。EDGE框架通过构建错误依赖图显式建模错误间的因果关系，支持识别根本原因和传播路径。核心创新是图结构的错误表示和传播推理算法。实验在多Agent协作任务中验证了方法的归因准确性，显著优于基线方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01491v1" target="_blank">GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions</a>
+                </div>
+                <div class="card-byline">Elias Stengel-Eskin, Newton Sander, Carlos Bonetti, Sasha Boguraev, James Bowler</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建GlossoGen平台研究多LLM Agent系统中涌现语言的演化规律及其安全性影响。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01491v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01491v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注LLM Agent之间交互时语言的自然演化现象。GlossoGen平台模拟复杂多Agent协作场景，追踪共享语言的生成和变化。研究发现Agent可发展出非预期的通信协议，带来安全风险和监控挑战。核心贡献是提供可控的实验环境和系统化的分析框架，为理解多Agent语言涌现提供实证基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
