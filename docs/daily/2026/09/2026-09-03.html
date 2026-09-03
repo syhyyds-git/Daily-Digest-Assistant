@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月03日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月03日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02042v1" target="_blank">Act More, Decide Less: Skill-Guided Adaptive Action Chunking for Long-Horizon LLM Agents</a>
+                </div>
+                <div class="card-byline">Yanting Yang, Can Jin, Jinman Zhao, Jiahao Wu, Yang Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于技能引导的自适应行动分块方法提升长周期LLM Agent效率
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02042v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02042v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent在长周期交互任务中ReAct范式效率低的问题，提出技能引导的自适应行动分块框架。当前方法每轮仅执行单一原始动作，造成频繁重规划开销。研究者让Agent学会将多个相关动作序列打包执行，同时保持决策粒度。核心创新是设计技能驱动的行动Chunk生成机制，根据任务阶段动态调整分块策略。实验证明该方法在保持决策灵活性的同时大幅降低交互轮次和计算成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02217v1" target="_blank">SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams</a>
+                </div>
+                <div class="card-byline">Ao Yan, Xin Zhang, Jiawei Du, Joey Tianyi Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出技能家族整合方法解决长周期任务中LLM Agent自我改进的技能崩溃问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02217v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02217v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了LLM Agent在长周期任务流中自我改进的技能管理问题。当前方法（全局文档或平坦技能池）在任务结构差异大时分别导致技能泛化过度或碎片化。研究者提出SkillGLoW框架，通过程序家族概念将相似技能聚类，实现结构化技能整合。核心创新是设计跨任务技能迁移机制，平衡通用性与专业性。实验表明该方法显著提升Agent在长期任务中的适应效率和任务完成质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01836v1" target="_blank">Agent Memory Is a Surface for Endogenous Authorization Laundering</a>
+                </div>
+                <div class="card-byline">Tommaso Cerruti, Mika Okamoto, Ansel Kaplan Erol</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示Agent记忆系统中的内生性授权清洗风险
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01836v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01836v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文首次系统研究LLM Agent持久记忆中的授权状态表示问题。长期运行的Agent依赖记忆存储权限状态，当记忆错误表示历史授权时，会产生未经真实授权的越权行为。研究者将这种失败命名为&#34;内生性授权清洗&#34;。核心贡献是形式化定义该问题并分析其产生机制。实验表明即使无外部攻击，记忆机制自身也可能导致Agent权限状态偏离真实历史，提出对记忆系统设计的警示。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01861v1" target="_blank">Belief-Calibrated Optimization: An Explicit World Model for Agentic Optimization</a>
+                </div>
+                <div class="card-byline">Yuhan Chen, Zhihua Tian, Mahavir Dabas, Charith Peris, Rahul Gupta</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于显式世界模型的Agent优化方法
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01861v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01861v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何提升LLM Agent scaffold性能。传统方法依赖人工设计优化规则，缺乏对环境响应机制的显式建模。研究者提出信念校准优化框架，使用编码Agent作为生成式优化器，每次编辑都基于对环境响应的显式信念预测。核心创新是构建世界模型模拟器，迭代改进Agent设计。实验表明该方法能自动发现超越人工设计的优化策略，显著提升Agent在复杂环境中的表现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02265v1" target="_blank">CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents</a>
+                </div>
+                <div class="card-byline">S M Asif Hossain, Ruksat Khan Shayoni, Md Kishor Morol</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出区分个性化Agent中偏好漂移与记忆污染的决策框架
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02265v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02265v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦个性化LLM Agent的记忆安全问题。当用户偏好随时间变化时，Agent需区分真实偏好漂移与记忆污染攻击。研究者将问题建模为连续时间部分可观测决策过程，提出CAPTURE框架实现动态区分。核心创新是设计记忆状态估计器，综合分析历史交互与当前上下文判断异常类型。实验验证该方法能有效保护Agent免受恶意记忆注入攻击，同时保持对正常偏好变化的适应能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02371v1" target="_blank">Diagnosing with Insights: Structured Analysis of Agent Failures via Behavioral Abstractions</a>
+                </div>
+                <div class="card-byline">Jiayi Bi, Yanjie Gao, Yuanmin Xie, Liqun Li, Tianyin Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于行为抽象的Agent失败结构化诊断方法
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02371v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02371v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent失败诊断难题。Agent执行轨迹复杂冗长，传统软件调试方法难以适用。研究者提出通过行为抽象将长轨迹压缩为可解释的高层状态转移序列，构建结构化诊断框架。核心创新是自动识别关键失败节点并归类失败模式。实验表明该方法能帮助开发者快速定位Agent性能瓶颈，理解失败根因，为针对性优化提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.01779v1" target="_blank">Agents That Model Agents: Five Principles Toward a Theory of Mind for 6G Networks</a>
+                </div>
+                <div class="card-byline">Hatim Chergui, Carolina Fernández-Martínez, Mehdi Bennis, Merouane Debbah</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出6G网络中LLM Agent心智理论的五项原则框架
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.01779v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.01779v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文探索LLM Agent在6G无线接入网络管理中的理论框架。传统架构假设代理间消息传达客观事实，但Agent消息实际携带主观推理痕迹，可能传播AI幻觉。研究者提出心智理论框架，包含五项通信原则确保Agent间理解准确性。核心创新是为6G RAN设计容错的多Agent协调机制。论文为未来智能网络系统的Agent通信协议设计奠定理论基础。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02580v1" target="_blank">Competitive Market Behavior of LLMs</a>
+                </div>
+                <div class="card-byline">Pawel Struski, Jakub Swistak, Inez Okulska, Przemyslaw Biecek</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过经济学实验评估LLM Agent在市场机制中的行为表现
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02580v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02580v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent作为经济主体的适用性问题。随着LLM被部署参与市场交易，需要验证现有市场机制对AI Agent的有效性。研究者复制经典经济学实验，将人类参与者替换为LLM Agent。核心发现是LLM Agent展现出与人类不同的市场行为模式，部分机制在AI参与下产生意外结果。实验揭示了设计人机混合市场时需要考虑的特殊因素，为经济机制在AI时代的适配提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02122v1" target="_blank">AI agents reshape consensus formation in human groups</a>
+                </div>
+                <div class="card-byline">Lin Chen, Ziyi Liu, Xia Hu, Yong Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  实验研究AI Agent对人类群体共识形成的影响
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02122v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02122v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent融入人类群体时的集体行为效应。随着AI从工具转变为参与者，其对社会动态的影响值得关注。研究者设计协作描述游戏，让人类与LLM Agent混合组通过随机配对通信形成共同惯例。核心发现是AI Agent的存在显著加速群体共识形成，且影响程度随Agent比例变化呈非线性特征。实验揭示人机协作的独特动力学机制，为设计人类-AI混合系统提供参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.02783v1" target="_blank">EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction</a>
+                </div>
+                <div class="card-byline">Yuling Shi, Zhensu Sun, Junsen Dong, Chengcheng Wan, David Lo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出早期结果预测方法降低LLM Agent评估成本
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.02783v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.02783v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决LLM Agent评估成本过高的问题。 frontier模型在Agent基准测试上的单次评估成本可达数百至数千美元，阻碍迭代开发。研究者提出EarlyEval方法，通过训练早期预测器在Agent执行早期判断最终成败。核心创新是设计轻量级预测模型结合轨迹特征，仅用部分执行信息预测结果。实验表明该方法在保持高准确率的同时大幅降低评估计算量和延迟。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
