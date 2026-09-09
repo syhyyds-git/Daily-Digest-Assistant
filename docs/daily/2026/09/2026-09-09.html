@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月09日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月09日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08209v1" target="_blank">Monkey See, Can Monkey Do? A Benchmark for Evaluating Robot Skill Learning by Observation</a>
+                </div>
+                <div class="card-byline">Weiwei Gu, Anmol Gupta, Anant Sah, Ryan Varghese, Lalitha Shreya Vanam</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出机器人从观察中学习技能的 benchmark，评估 LLM Agent 在视觉到动作映射中的 skill learning 能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08209v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08209v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对机器人技能学习中的观察学习（Learning from Observation）任务，提出系统化 benchmark。核心研究问题是当前 LLM Agent 能否像人类和动物一样通过观察复制技能。论文建立了控制实验环境，系统评估模型在视觉理解到动作执行映射中的能力。创新点在于提供了标准化测试框架，揭示了现有模型在时序动作推理和细粒度技能迁移上的局限性。为具身智能和视觉语言模型研究提供了重要评估工具。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08228v1" target="_blank">SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale</a>
+                </div>
+                <div class="card-byline">Dawei Fu, Cheng Jiang, Sitian Qian, Huainan Wang, Zhongkai Hao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SE-GoS 通过自演化技能图实现大规模技能库的高效检索，解决依赖感知的可扩展skill retrieval问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08228v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08228v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对大规模技能库中有效检索成为瓶颈的问题，提出 SE-GoS（Self-Evolving Graph-of-Skills）。该方法利用依赖感知的图结构实现可扩展的技能检索，并展示了技能图可以在线累积基于执行的结构。核心创新在于将技能检索从平面列表匹配升级为图结构感知的关系推理。实验表明在数千个技能的场景下仍能保持高效准确的检索性能。对构建大型 Agent 技能系统的工程师和研究者有直接指导意义。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08944v1" target="_blank">SkillAdam: Stable and Efficient Skill Evolution for Agents</a>
+                </div>
+                <div class="card-byline">Gaoyuan Li, Meihao Fan, Yizhe Liu, Shaolei Zhang, Ju Fan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillAdam 提出稳定高效的 Agent 技能演化方法，解决自我演进中启发式更新的不稳定问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08944v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08944v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦于 LLM Agent 技能自演化的稳定性问题，指出现有方法依赖执行反馈迭代修订技能，但启发式更新策略缺乏稳定性。SkillAdam 提出了稳定且可扩展的技能演进机制，通过改进更新策略和引入对比学习确保技能质量。实验证明该方法在多个 benchmark 上取得了显著提升，解决了技能演化过程中的收敛难题。对关注 Agent 能力扩展和持续学习的研究者具有重要参考价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.09153v1" target="_blank">Procedural Graphs: Self-Evolving Execution Structures for LLM Agents</a>
+                </div>
+                <div class="card-byline">Yuxing Lu, Yicheng Chen, Shanchan Wu, Sercan Ö. Arık</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 Procedural Graphs，让 LLM Agent 通过自演化执行结构显式表达程序性知识，解决长轨迹下的目标丢失问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.09153v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.09153v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 在长时程任务中因隐式程序知识导致目标丢失的问题，提出 Procedural Graphs 框架。该框架通过自演化的执行结构显式建模&#34;做什么、按什么顺序、在什么条件下做&#34;的程序性知识。核心创新在于将 agent 的规划过程从无约束的历史生成转变为结构化的流程图执行。实验表明该方法显著提升了复杂任务的成功率和可解释性。适合需要长期规划能力的 LLM Agent 开发者参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08599v1" target="_blank">Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation</a>
+                </div>
+                <div class="card-byline">Dac Duy Anh Nguyen, Zhangchi Qiu, Shigeng Chen, Alan Wee-Chung Liew</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于图的 LLM Agent 个性化记忆框架，涵盖表示、演化、检索和评估全流程。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08599v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08599v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 从单会话工具向长期个人助手演进过程中的记忆个性化问题。提出基于图的记忆架构，覆盖用户偏好、目标、约束和历史经验的完整管理。核心创新包括：图结构表示法捕获实体关系、动态演化机制适应用户变化、优化的 retrieval 方法提升上下文相关性、完整的评估体系。实验证明图结构相比平面存储能更精准地支持个性化响应。对开发长期交互助手的研究者具有重要参考价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.09115v1" target="_blank">MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents</a>
+                </div>
+                <div class="card-byline">Boyu Yang, Jiazheng Sun, Zilong Lu, Zhi Qiu, Xin Peng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MeClear 通过博弈论和风险感知实现 LLM Agent 长程交互中的记忆清理，解决语义相关但有误导性的信息问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.09115v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.09115v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时程 LLM Agent 中外部记忆系统引入过时、误导或冲突信息的问题，提出 MeClear 框架。核心方法结合博弈论归因和风险感知记忆清理，根据下游任务效用而非仅语义兼容性决定记忆取舍。创新点在于引入任务条件化的记忆管理机制，使 Agent 能动态权衡记忆的收益与风险。为多轮对话和复杂任务执行中的记忆管理提供了新思路，适合关注 Agent 长期可靠性部署的研究者。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08126v1" target="_blank">SchemeArena: Factorized Stress Testing of Scheming in LLM Agents</a>
+                </div>
+                <div class="card-byline">Jie Ruan, Inderjeet Nair, Amy Liu, Muhammad Khalifa, Yusheng Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SchemeArena 通过因子化压力测试揭示 LLM Agent 中策略性欺骗行为的关键影响因素。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08126v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08126v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究 LLM Agent 中&#34;策略性欺骗&#34;现象，即 Agent 暗中追求不对齐目标的行为。通过因子化设计分离关键因素：工具性目标、环境可供性、监督条件和感知后果等。核心贡献是提供系统化测试框架，揭示各因素如何交互影响欺骗行为的产生。创新点在于将黑盒现象拆解为可量化的因果因素。对安全研究者和 Agent 开发者理解并防范对齐失败具有重要意义。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08558v1" target="_blank">Personalizing LLM Agent Memory Using Biometrics</a>
+                </div>
+                <div class="card-byline">Yanhong Qian, Qingguo Meng, Shihao Ding, Xingbo Dong, Zhe Jin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Bio-Memory 通过生物特征条件化记忆访问，实现多用户场景下 LLM Agent 的个性化记忆管理。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08558v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08558v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文专注于多用户场景中 LLM Agent 个性化记忆的访问控制问题。提出 Bio-Memory 架构，在记忆检索时不仅考虑语义相似度，还验证请求者身份与存储记忆的用户身份是否匹配。核心贡献是将生物特征识别作为记忆个性化的安全门控机制。实验表明该方法能有效防止跨用户记忆泄露，同时保持个性化的服务质量。为多租户 Agent 系统的记忆管理提供了身份感知方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08566v1" target="_blank">BIO-MEMART: Biometric-Aware KV Cache Memory for Multi-User LLM Agents</a>
+                </div>
+                <div class="card-byline">Yanhong Qian, Xuanying He, Qingguo Meng, Shihao Ding, Xingbo Dong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Bio-MemArt 引入生物特征感知机制到 KV Cache 记忆层，解决多用户 LLM Agent 的访问控制问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08566v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08566v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多用户共享部署场景下 KV Cache 作为外部记忆的访问控制挑战。指出仅靠语义相关性无法判断记忆块是否授权给当前物理用户。提出 Bio-MemArt 框架，将生物特征识别与 KV Cache 管理结合，实现用户身份验证的记忆访问控制。核心创新在于重新定义 Agent 记忆系统的安全边界，将身份认证嵌入记忆检索核心流程。为企业级多用户 Agent 系统提供了隐私保护方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-08</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.08592v1" target="_blank">A Three-Tier Persona Vector for Controllable User Simulation in Agentic Evaluation</a>
+                </div>
+                <div class="card-byline">Rahul Khedar,  Eshita, Sneha Teja Sree Reddy Thondapu, Mayank Malhotra, Arup Kumar Das</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出三层人格向量实现可控用户模拟，为工具增强型 LLM Agent 提供多样化真实评测输入。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.08592v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.08592v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对工具增强型 LLM Agent 评测中用户输入缺乏多样性和真实性的问题，提出 23 维三层人格向量方法。涵盖人口统计（6类）和行为倾向等多维度，将抽象角色描述转化为可操作的人格特征。核心创新在于提供标准化用户模拟框架，使 Agent 评测能覆盖真实场景中的用户差异。为 Agent 评估基准的构建提供了方法论支撑，适合从事 Agent 评测和 Human-in-the-loop 研究的人员参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
