@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月10日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月10日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>5</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.10036v1" target="_blank">Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability</a>
+                </div>
+                <div class="card-byline">Arnab Chattopadhayay, Debdipta Halder</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Belief-State Engine通过追踪信念状态帮助LLM Agent在部分可观测环境中进行原则性规划，解决不确定性问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.10036v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.10036v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent在部分可观测环境中表现不佳的问题，提出信念状态引擎。通过追踪信念状态而非直接预测观察，解决模糊反馈导致的过早承诺、信息观察错误坍缩等问题。核心创新在于提供原则性规划框架，使LLM Agent能够在不确定性下保持一致的策略。实验表明该方法显著改善了Agent在复杂环境中的决策鲁棒性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.10052v1" target="_blank">Direct Diversity Optimization for Diverse Successful Trajectories in Preference Post-Training</a>
+                </div>
+                <div class="card-byline">Junwon Ko, Dong-Jae Lee, Minchan Kwon, Sunghyun Baek, Junmo Kim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Direct Diversity Optimization通过直接优化策略覆盖，使LLM Agent能够在固定预算下实现多种成功策略。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.10052v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.10052v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在序列决策任务中保留多条成功分支的问题，提出成功策略覆盖概念。核心创新是直接优化多样性而非依赖辅助损失函数，使模型在固定rollout预算下能覆盖更多成功策略。该方法解决了传统轨迹级结果标签无法提供足够监督的问题，为偏好后训练中的多样性优化提供了新思路。实验验证了方法在策略多样性上的显著提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.09821v1" target="_blank">InstantMimic: A High Performance System for Learning Physics-based Skills in Seconds</a>
+                </div>
+                <div class="card-byline">Ikjun Choi, Geonho Leem, Jungdam Won</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  InstantMimic实现秒级物理技能学习，通过基于能量的动作模型加速模仿学习。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.09821v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.09821v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对物理角色控制中深度强化学习计算成本高的问题，提出InstantMimic系统。核心创新在于利用基于能量的动作模型(EAM)作为可微分物理先验，将模仿学习训练时间从数小时缩短到秒级。该方法继承了DeepMimic的物理真实性，同时大幅提升效率，为机器人技能学习提供了快速可行的解决方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.09853v1" target="_blank">The Era by Eon Benchmark: A Generated Enterprise Estate with Exact Ground Truth for Benchmarking LLM Agents</a>
+                </div>
+                <div class="card-byline">Benjamin Gruenbaum, Doron Porat, Assaf Natanzon, Roy Zavida, Chen Dinachi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Era by Eon Benchmark提供企业系统的LLM Agent评估基准，包含完整虚构公司和真实答案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.09853v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.09853v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对企业LLM Agent无法在真实生产数据上评估的问题，提出Era by Eon Benchmark。核心创新是构建包含完整虚构公司、产品模拟器、内部数据库和计算答案的评估环境。该基准解决了企业系统LLM Agent缺乏ground truth的困境，为评估Agent使用企业工具的能力提供了标准化方法，对推动企业Agent研究具有重要价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-09</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.09565v1" target="_blank">Multi-Agent Agentic Graph Learning via Structural Signatures</a>
+                </div>
+                <div class="card-byline">Liang Qu, Jianxin Li, Hua Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Multi-Agent Agentic Graph Learning通过结构签名协调多Agent进行图推理学习。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.09565v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.09565v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多Agent在图推理任务中的协作学习问题，提出基于结构签名的协调方法。核心创新在于通过结构签名捕获图的内在特征，使多个Agent能够基于共享推理链协同采样图结构证据。该方法改进了传统单Agent或角色固定多Agent系统的局限性，为图学习任务中的Agent协作提供了新框架。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
