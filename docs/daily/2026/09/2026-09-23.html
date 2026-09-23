@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月23日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月23日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.26532v1" target="_blank">REFLEX with Jev for Efficient Selective Control in LLM Agents</a>
+                </div>
+                <div class="card-byline">Tiantong Wu, Wei Yang Bryan Lim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  设计REFLEX架构结合Jev快速决策层与LLM，在保持95%成功率的同时降低72.7%的计算开销。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.26532v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.26532v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent中生成式模型用于bounded决策的效率问题。提出REFLEX架构，引入Jev作为快速、类型化的决策层，仅在低置信度或需要生成时调用强LLM。核心创新在于混合决策机制，平衡效率与任务成功率。在100任务基准上的实验显示，该架构在保持95%成功率的前提下，将计算开销降低72.7%，实现了高效选择性控制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.26760v1" target="_blank">Grow the Harness, Not the Context: From Strategy-Free Scaffolds to Reusable Specialist Agents</a>
+                </div>
+                <div class="card-byline">Laizhen Li, Jiarui Li, Juanjuan Zhao, Kejiang Ye, Ye Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Growing Harness方法，通过任务反馈将重复控制决策转化为可执行代码，提升LLM Agent代码复用性。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.26760v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.26760v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent处理任务流时重复控制决策的代码复用问题。提出Growing Harness方法，利用任务失败反馈引导，将通用控制逻辑转化为可执行代码，仅在必要时调用LLM进行语义推理。核心创新在于将控制层与推理层解耦，实现跨任务的控制代码复用。实验表明该方法能有效减少上下文长度同时保持任务处理能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25237v1" target="_blank">Trains but Doesn&#39;t Learn: A Post-Training Delivery Benchmark for LLM Agents as Forward-Deployed Engineers</a>
+                </div>
+                <div class="card-byline">Weihang Ding, Junfei Zhan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出后训练即服务场景下LLM Agent作为前向部署工程师的评估基准，填补能力评估空白。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25237v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25237v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在post-training-as-a-service场景下作为前向部署工程师的能力评估。现有基准无法回答Agent是否能真正交付满足预算、审批和可复现性要求的模型。提出针对性评估基准。核心创新在于定义了Agent在生产级部署场景下的新评估维度，考察其在真实后训练流程中的综合表现，为Agent工程应用提供评估标准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25254v1" target="_blank">The AI Neuroscientist: An Interactive Agentic Interface for Neuroimaging Analysis</a>
+                </div>
+                <div class="card-byline">Aakash Patel, Panos Ketonis, Shreya Saxena, Smita Krishnaswamy, David van Dijk</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  开发AI Neuroscientist系统，整合LLM与神经影像工具集，为无计算背景研究者提供交互分析界面。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25254v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25254v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文开发了面向神经影像分析的语言Agent系统AI Neuroscientist。系统集成LLM与专业神经影像工具集，实现质量控制、建模和可视化功能。核心创新在于降低神经影像分析的专业门槛，使无计算背景的研究者也能进行复杂分析。该Agent能理解用户意图，自动调用合适工具完成分析任务，推动神经科学研究工具的普及。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25284v1" target="_blank">When LLM Agents Fail to Read the Room: ReAdapt for Relational Social Reasoning</a>
+                </div>
+                <div class="card-byline">Jianzhe Lin, Xiaolin Li, Yunda Liu, Fei Wang, Jubin Chheda</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出ReAdapt方法增强LLM Agent的关系社交推理能力，解决社交场景中的关系建模问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25284v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25284v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在社交场景中的关系推理能力。指出Agent的社交决策不仅依赖内容，还需理解人与人之间的潜在关系如联系强度、互惠性等。提出ReAdapt方法，使Agent能根据新的关系证据动态调整关系表示。核心创新在于为社交Agent引入显式的关系建模机制，提升其在社交网络场景中的推理和决策能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25396v1" target="_blank">Passes Alone, Fails Together: Benchmarking Semantic Coordination in Parallel LLM-Agent Development</a>
+                </div>
+                <div class="card-byline">Haocheng Xia, Eugene Wu, Yongjoo Park</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建stale基准评估并行LLM Agent开发中的语义协调失败问题，分析合并失败的根源。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25396v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25396v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多个并行LLM Agent协同开发时的语义协调问题。当Agent独立工作正常但合并后失败时，说明存在接口或规则的不一致。提出stale基准，通过分别测试独立补丁和合并补丁来量化协调失败。核心创新在于构建了专门评估多Agent协作的测试框架，揭示了并行开发中语义不一致的具体模式和原因。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25647v1" target="_blank">Testing-Driven Reliability Audit of Trajectory-Based Early Outcome Prediction for LLM Agents: Target-Specific Calibration Transfer Persists Within a Single Benchmark</a>
+                </div>
+                <div class="card-byline">YanZe Cao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究基于轨迹的早期结果预测校准问题，发现同基准内的目标特异性校准迁移现象。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25647v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25647v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent评估中基于轨迹的早期结果预测方法，旨在通过提前终止预测来降低评估成本。核心研究问题是预测器的校准性能在不同Agent间迁移时的稳定性。实验发现同基准内的校准迁移确实存在，但在跨Agent应用时校准会失效。这一发现为Agent评估的预测策略设计提供了重要参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25678v1" target="_blank">Toolcompass: Guiding Tool Trialing, Not Suppressing It</a>
+                </div>
+                <div class="card-byline">Junlin Fang, Chong Zhang, Do Nguyen-Thanh, Xiaogang Xu, Zhen Fang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Toolcompass方法引导LLM Agent的工具尝试行为，在探索与效率之间取得平衡。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25678v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25678v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent对新工具的泛化能力和工具尝试策略。现有方法要么导致过度尝试浪费交互预算，要么过度抑制必要探索。提出Toolcompass方法，在不过度约束的前提下引导工具尝试行为。核心创新在于设计了一种平衡机制，既鼓励探索不熟悉的工具，又避免不必要的重复尝试，提升Agent的工具使用效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25686v1" target="_blank">How Strongly Should Task State Influence an LLM Agent?</a>
+                </div>
+                <div class="card-byline">Chenyu Zhang, Wonbin Kweon, Jiawei Han</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  量化分析任务状态信息对LLM Agent可靠性的影响，为Agent架构设计提供实验依据。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25686v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25686v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent如何有效利用任务状态信息（已完成的步骤、阻塞状态等）。分析了两种系统设计：文本提示中的状态与强制执行的模块化状态。核心创新在于通过控制实验分离状态影响力的变量，量化不同状态下Agent的可靠性表现。为Agent架构选择提供了实验依据，帮助设计者决定状态信息的呈现和执行方式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.25804v1" target="_blank">The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks</a>
+                </div>
+                <div class="card-byline">Wenbo Pan, Zhichao Liu, Shujie Liu, Jingying Zeng, Chin-Yew Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  定义LLM Agent的&#34;taste&#34;概念并提出评估框架，衡量和改进长时任务中的决策质量。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.25804v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.25804v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在长时任务中做出好决策的能力，将其定义为&#34;taste&#34;。现有评估指标无法捕捉这一能力，论文提出系统化的评估框架。核心创新在于引入决策质量这一元能力维度，分析哪些因素影响Agent的长期决策表现。研究为评估和改进Agent的决策判断提供了理论基础和方法工具。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
