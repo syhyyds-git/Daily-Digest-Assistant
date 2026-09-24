@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月24日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月24日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27269v1" target="_blank">Banana Kick: Response-Informed Skill Evolution for Humanoid Soccer</a>
+                </div>
+                <div class="card-byline">Hao E. Zhang, Ruize Geng, Raihan Haque, Khalil Zbiss, Guanyang Luo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出响应驱动技能演进方法，让仿人机器人通过香蕉踢动作学习更快速精准的踢球技能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27269v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27269v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究仿人机器人踢香蕉踢（弧线球）的技能演进问题。传统运动模仿提供普通踢法先验，但香蕉踢需要特殊的接触力学产生旋转和空气动力弯曲。研究通过响应驱动的强化学习方法，在不改变基本踢法技术的前提下，提升射门速度和落点精准度。核心创新是定性不同的香蕉踢技能进化机制，实验验证了该方法在运动协调性和精确性上的提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    <span class="tag">skill refinement</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.28281v1" target="_blank">BrickCraft-Duo: Efficient Dual-Arm Skill Learning and Refinement for Compositional Long-Horizon Assembly</a>
+                </div>
+                <div class="card-byline">Jichuan Yu, Zhenyu Xiao, Ze Wang, Ruixuan Liu, Changliu Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 BrickCraft-Duo 模块化框架，实现双臂机器人协作的长时序互锁积木组装技能学习与改进
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.28281v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.28281v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对互锁积木组装任务，提出 BrickCraft-Duo 模块化框架，实现双臂协作的长时序装配技能学习与改进。该框架解决了结构设计多样、步骤依赖复杂、机械交互精细等技术挑战。核心创新在于将技能学习与改进模块化融合，支持组合式任务执行。实验表明该方法在装配成功率和效率上显著优于基线方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.28416v1" target="_blank">Agent-Editing World Model: Rethinking World Modeling for LLM Agents</a>
+                </div>
+                <div class="card-byline">Shuang Sun, Guoxin Chen, Fanzhe Meng, Jia Deng, Huatong Song</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 Agent-Editing 世界模型，通过选择性编辑机制替代全观测预测，提升 LLM Agent 环境交互效率
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.28416v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.28416v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 的世界建模问题，质疑传统全观测预测方法的价值，提出 Agent-Editing 世界模型概念。核心创新在于让模型学习&#34;编辑&#34;环境状态而非重建高熵的工具响应，当真实反馈可用时这种重建价值有限。该方法使 Agent 能更高效地预测环境变化，支持长时序任务执行。实验验证了编辑机制在多种环境中的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27606v1" target="_blank">State-Grounded Conditioning: Wrapping User-Facing LLM Agents Where Direction Depends on Live State</a>
+                </div>
+                <div class="card-byline">Qi Liu, Xiaoyang Yuan, Yubin Ruan, Zhuomeng Zhang, Wenjin Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出状态接地调节设计原则，通过规则核外部化状态依赖控制，解决用户界面 LLM Agent 的方向漂移问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27606v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27606v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对用户界面 LLM Agent 面临的方向漂移问题，提出状态接地调节（SGC）设计原则。核心创新在于将状态依赖控制外部化为结构化输入上的规则核，而非依赖模型隐式学习。该方法适用于需要实时响应用户状态（游戏状态、会话历史、实时库存）的场景。实验表明 SGC 能有效防止任务完成但方向错误的响应，提升代理可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27051v1" target="_blank">Propose, Don&#39;t Judge: An Anytime-Valid Referee for LLM Agents That Mine Investment Factors</a>
+                </div>
+                <div class="card-byline">Bo Qu, Mingguang Chen, Licheng Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出&#34;提出但不评判&#34;元认知策略，通过冻结的统计 referee 引导 LLM Agent 自主进化投资因子挖掘能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27051v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27051v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 在量化投资因子研究中的角色定位问题，提出&#34;提出但不评判&#34;元认知策略。Agent 负责提出、回测、选择和淘汰投资因子，而统计 referee（Agent 无法操控的冻结模块）根据市场结果评分决定因子存留。核心创新是受治理的自主进化机制，确保评估的客观性同时保留 Agent 的创造力。该框架平衡了因子创新的自由度和风险控制需求。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27334v1" target="_blank">Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents</a>
+                </div>
+                <div class="card-byline">Yefan Zhou, Yang Li, Zeyu Leo Liu, Semih Yavuz, Shafiq Joty</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出即时记忆学习范式，在查询时动态决定记忆内容而非写入时静态固化，解决传统记忆系统的先验决策问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27334v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27334v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对 LLM Agent 记忆系统的问题，提出即时记忆学习范式。传统方法在任务完成时将轨迹蒸馏为固定记忆（反思、工作流、技能、推理策略），后期通过相似度检索使用。该范式的问题在于需在未知未来查询时决定记忆价值。核心创新是在查询时即时组织记忆，使记忆管理更灵活。实验验证了动态记忆策略对任务适应性的提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27571v1" target="_blank">FDE-Bench: Evaluating LLM Agents for Deployment Environment Configuration</a>
+                </div>
+                <div class="card-byline">Weihang Ding, Junfei Zhan, Yueting Li, Qirong Guo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建 FDE-Bench 基准测试集，评估 LLM Agent 在 Docker、Compose、Kubernetes 等部署环境配置任务上的能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27571v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27571v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文构建 FDE-Bench 基准测试，评估 LLM Agent 将应用代码转换为可运行系统的部署配置能力。基准包含 136 个部署配置任务，涵盖 Docker 镜像、多服务 Compose 栈和 Kubernetes 环境，包含新建和诊断修复两种模式。Agent 提交声明式制品后系统重建并重新执行以验证正确性。该工作为部署自动化场景下的 Agent 能力评估提供了标准化基准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.26891v1" target="_blank">Harness as a Language: A Minimalist Agent Framework With Maximal Expressivity</a>
+                </div>
+                <div class="card-byline">Zhening Li, Joshua Liu, Mateja Vukelic, Nicole Shen, Supriya Lall</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 Harness 框架，将工作流程抽象为语言，实现极简 Agent 框架的最大表达力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.26891v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.26891v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对现代语言模型 Agent 的框架设计问题，提出 Harness 框架。传统 agent loop 中 LLM 在工具环境交替执行，但记忆系统、自改进系统等需要额外工程。核心创新是将复杂工作流程抽象为&#34;Harness as a Language&#34;，用极简框架实现最大表达力。该方法降低了复杂工作流的设计门槛，为 Agent 系统构建提供了更灵活的抽象层次。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27287v1" target="_blank">SR-Fraud: An Outcome-Supervised Reflective LLM Agent Framework for Non-Stationary Payment Fraud Detection</a>
+                </div>
+                <div class="card-byline">Xuwei Tan, Yao Ma, Xueru Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 SR-Fraud 框架，通过结果监督和反思机制增强 LLM Agent 在非平稳支付欺诈检测中的适应能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27287v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27287v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对实时支付欺诈检测的非平稳流式预测问题，提出 SR-Fraud 框架。生产系统依赖表格分类器和规则，难以捕捉对抗适应和突发攻击模式。Agent 面临标签延迟成熟、局部爆发攻击造成损失等挑战。核心创新是结果监督的反思框架，使 Agent 能适应对手演化。实验表明该方法在欺诈检测准确性和响应速度上优于传统方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.27349v1" target="_blank">MolDesignBench: Evaluating LLM-based Agent for Scenario-grounded Molecular Design</a>
+                </div>
+                <div class="card-byline">Yongjun Jeong, Hanbum Ko, Ye Rin Kim, Chanhui Lee, Rodrigo Hormazabal</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建 MolDesignBench 基准，评估 LLM Agent 在多约束场景下进行情境接地式分子设计的能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.27349v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.27349v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对真实分子设计的复杂性，构建 MolDesignBench 评估基准。现有基准关注显性窄约束和可行问题，无法覆盖多约束识别、不可行规范发现、多步工具推理等挑战。该基准测试 LLM Agent 解释设计上下文、满足多约束、识别不可行规格、推理多步工具输出的能力。核心贡献是为分子设计 Agent 提供更接近真实场景的评估框架，推动该领域研究发展。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
