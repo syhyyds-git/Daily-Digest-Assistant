@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月29日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月29日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-26</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.32731v1" target="_blank">SkillVine: Agent Skill Evolution via Branching Exploration</a>
+                </div>
+                <div class="card-byline">Kaiwei Liu, Jiqian Dong, Liran Dong, Shuai Mao, Mingming Zhao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillVine通过分支探索策略促进Agent技能演化，避免线性演化的过早收敛问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.32731v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.32731v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出SkillVine框架，针对现有技能演化方法遵循线性范式导致过早收敛的问题。该方法通过分支探索维护技能库的多个演化方向，并行探索不同的技能改进路径。核心创新在于将分支搜索引入技能演化，支持多路径同时优化。实验结果表明，与线性演化相比，分支探索能发现更多有效的技能变体，提升技能库的整体质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-26</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.32886v1" target="_blank">StraTune: Adaptive Selection of Revision Operators for Self-Evolving LLM Skills</a>
+                </div>
+                <div class="card-byline">Zeping Liu, Yan Li, Ni Lao, Gil Wolff, Gengchen Mai</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  StraTune为自演化LLM技能自适应选择最优修订操作符，提升技能修订效果
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.32886v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.32886v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出StraTune框架，解决自演化LLM技能中固定修订操作符效果有限的问题。该方法通过学习在不同情况下选择最合适的修订操作符，实现技能的自适应优化。核心创新是观察到没有单一修订操作符在所有情况下都最优，因此构建了操作符选择策略。实验结果表明，自适应选择策略能显著提升技能修订的效果和稳定性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-26</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.32990v1" target="_blank">Certified Long-Horizon Code Agent Evolution via Validation-Gated Skill Optimization</a>
+                </div>
+                <div class="card-byline">Yifan Wang, Hao Cheng, Xiaomin Li, Yuexing Hao, Hemanth Neelgund Ramesh</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  验证门控技能优化实现长时域代码Agent的可靠演化，无需模型权重更新
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.32990v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.32990v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时域代码Agent自我演化的挑战，提出验证门控的技能优化方法。该方法在无需更新模型权重的情况下，通过累积可复用技能实现持续改进。核心创新是引入验证门控机制，确保只有通过验证的技能更新才被保留，避免错误技能的累积。实验在真实代码库上进行，证明了方法在长时域适配任务中的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-27</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.33867v1" target="_blank">R^2 Flow: Recursive Self-Improvement via Recursive Skill Evolution</a>
+                </div>
+                <div class="card-byline">Mingda Zhang, Qiang Huang, Yanjin Li, Zijia Wang, Qika Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  R² Flow通过递归技能演化实现LLM Agent的自我改进，解决流训练中的策略崩溃问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.33867v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.33867v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出R² Flow框架，基于流程的训练实现LLM Agent的递归自我改进。该方法通过递归技能演化让Agent能够复用和修订技能库中的可执行程序。核心创新是识别并解决流训练中的三大障碍：策略崩溃、梯度冲突和价值盗版。实验表明，通过flow匹配和去相关更新，可以实现可靠的自助提升，显著优于基于单一技能的方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.34397v1" target="_blank">SkillFocus: Evolving Agent Skills via Capability Decomposition</a>
+                </div>
+                <div class="card-byline">Ning Wang, Zhiren Gong, Bingdong Li, Peng Yang, Aimin Zhou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillFocus通过能力分解将跨任务行为需求显式化，指导Agent技能迭代优化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.34397v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.34397v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出SkillFocus框架，解决Agent技能演化中跨任务行为需求未被显式表达的问题。该方法通过能力分解将重复出现的任务需求提取为独立维度，用于指导技能库迭代优化。核心创新在于将隐式的行为需求显式化，使技能修订不再仅依赖当前技能的行为。实验结果表明，这种方法能更有效地提升技能的可复用性和泛化能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.34649v1" target="_blank">Beyond Skill Evolution: Self-Evolving Context Management Policies for Long-Horizon Agent Harnesses</a>
+                </div>
+                <div class="card-byline">Weiyuan Li, Jinghan Xu, Aili Chen, Xintao Wang, Shuang Liang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ContextEvo框架通过学习上下文管理策略解决长时域Agent任务中的上下文膨胀问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.34649v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.34649v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出ContextEvo框架，针对长时域LLM Agent任务中上下文管理成为瓶颈的问题。该框架从长时域轨迹中学习上下文策略，实现动态上下文压缩和管理。核心创新在于将上下文管理本身视为可学习的策略，而非固定规则。主要结论表明，通过学习上下文策略，可以有效减少冗余和过时信息对任务执行的干扰，提升长时域任务性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.34633v1" target="_blank">GenMem: Generative Symbolic Memory for Self-Evolving Harness</a>
+                </div>
+                <div class="card-byline">Xinke Jiang, Tao Feng, Weixuan Xu, Zhixin Zhang, Zhibang Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  GenMem生成式符号记忆支持自我演化Agent的跨任务技能检索与修订
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.34633v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.34633v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出GenMem框架，为自我演化LLM Agent提供生成式符号记忆系统。该系统支持跨任务的技能检索、复用和修订，解决了现有记忆管理在可复用经验上的局限性。核心创新在于生成式符号表示和判别式检索的结合，能处理可复用经验中稀疏、层级和高冗余的结构。实验表明，该方法能有效支持长时域决策中的记忆利用。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-27</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.33153v1" target="_blank">What Does a Skill Actually Do? Estimands and Evaluation Validity for Tool and Skill Use in LLM Agents: A Critical Review</a>
+                </div>
+                <div class="card-byline">Shuyang Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统审查技能在LLM Agent中的评估指标，厘清技能使用效果的多维度含义
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.33153v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.33153v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文对LLM Agent中技能使用的评估指标进行系统性审查。研究发现，现有报告中的技能改进可能指代多种不同含义：检索召回率、成功变化率、触发任务下的提升等。核心贡献是厘清了技能评估中的混淆，明确了不同评估指标对应的estimands。论文为更准确的技能评估提供了方法论指导，有助于避免对技能效果的误判。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.34712v1" target="_blank">RSI-Router: Evolving Subtask-Level LLM Routing and Skills for Cost-Efficient Agents</a>
+                </div>
+                <div class="card-byline">Hao Li, Hangfan Zhang, Zhiyao Cui, Chunjiang Mu, Yiqun Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  RSI-Router通过子任务级路由和技能演化实现Agent成本效益优化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.34712v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.34712v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出RSI-Router框架，在长时域Agent任务中通过大小模型协作和技能演化提升成本效益。该方法在任务内不同阶段选择合适的模型，并在子任务级进行路由决策。核心创新是结合技能路由和模型路由，根据任务需求动态选择最优策略。实验结果表明，该方法能在保持性能的同时显著降低推理成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-28</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.35596v1" target="_blank">SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents</a>
+                </div>
+                <div class="card-byline">Saswat Das, Parvati Viswanathan, Daniel Donnelly, Chang Huang, Sahar Abdelnabi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SEABench评估自我演化Agent中的内生错位问题，揭示局部有用更新可能引发全局风险
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.35596v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.35596v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出SEABench基准测试，专门评估自我演化LLM Agent中的内生错位问题。研究发现，Agent在部署后根据反馈修改技能库时，局部有用的更新可能持续到后续任务中产生不安全行为。核心贡献是系统性地揭示了自我演化过程中的错位风险，建立了评估框架。实验结果表明，即使没有直接对抗攻击，内生演化也可能导致安全隐患。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
