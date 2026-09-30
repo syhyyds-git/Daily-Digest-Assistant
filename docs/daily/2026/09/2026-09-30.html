@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年09月30日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年09月30日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.37128v1" target="_blank">SkillCome: Group Contrast Skill Optimization with Dual Memory</a>
+                </div>
+                <div class="card-byline">Haolin Li, Feng Hong, Ang Li, Chilin Fu, Weichang Wu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于双记忆的群体对比技能优化方法，解决单轨迹技能演化信号不足的问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.37128v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.37128v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了技能演化中单轨迹优化信号不足的问题。方法：提出SkillCome框架，利用双记忆机制生成多个对比轨迹，通过群体对比学习识别有效技能编辑。核心创新：突破单轨迹推断局限，通过对比不同执行路径精准定位有效技能修改。主要结论：实验表明该方法在多个任务上显著提升技能演化效果，比基线方法在成功率上有明显改进。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.37539v1" target="_blank">SkillGym: Training Skill-Use Agents with Automatic Verifiable Environment Generation</a>
+                </div>
+                <div class="card-byline">Renxi Wang, Mingshan Hee, Fajri Koto, Timothy Baldwin, Haonan Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出SkillGym自动生成可验证环境用于训练智能体技能使用能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.37539v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.37539v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何合成可靠训练数据并训练智能体使用技能。方法：构建SkillGym自动管道，生成可验证环境并收集技能使用轨迹。核心创新：解决技能训练数据稀缺的难题，提供自动化环境生成框架。主要结论：实验证明该框架能有效训练智能体的技能调用能力，在复杂长时域任务上表现优异。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.36580v1" target="_blank">SafeCoEvo: Co-Evolving Safety Harnesses and Guards for LLM Agents at Test-Time</a>
+                </div>
+                <div class="card-byline">Yu Cheng, Yongkang Hu, Shuaijie Ma, Zhihang Lin, Weicheng Meng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出测试时协同演化安全机制，保障LLM智能体在真实环境中的安全。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.36580v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.36580v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体测试时安全适应问题。方法：提出SafeCoEvo框架，在测试时共同演化安全约束和防护机制。核心创新：突破传统离线优化限制，实现真实环境的在线安全适应。主要结论：该方法能有效应对新任务和安全风险，提升智能体部署安全性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.36626v1" target="_blank">Semantic Projection for Continual Self-Evolution of Language Agents</a>
+                </div>
+                <div class="card-byline">Ziyu Liu, Jun Chen, Lixu Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  基于语义投影实现语言智能体的持续自我演化，避免技能干扰。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.36626v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.36626v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究智能体持续学习中的技能干扰问题。方法：提出语义投影方法，借鉴正交梯度下降处理非平稳异构任务流中的技能修订。核心创新：将语义投影应用于自然语言技能演化，避免新任务改进覆盖旧技能。主要结论：该方法有效平衡新任务适应与旧技能保持。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill retrieval</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.36746v1" target="_blank">EASE: Behavior-Adaptive Skill Curation for Self-Evolving Agents</a>
+                </div>
+                <div class="card-byline">Zhen Xiong, Qiaoyu Tan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出行为适配技能策展方法，解决跨执行器技能性能退化问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.36746v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.36746v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究自我演化智能体中技能策展的跨执行器适应问题。方法：提出EASE框架，行为适配地策展技能，明确建模下游执行器行为。核心创新：揭示传统方法导致跨执行器性能退化的系统性缺陷。主要结论：实验表明考虑执行器差异的策展方法能显著提升技能迁移效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.36805v1" target="_blank">UpliftMem: Learning Set-Level Uplift for Agent Memory Retrieval</a>
+                </div>
+                <div class="card-byline">Mengkun Liang, Haoran Qiang, Guannan Liu, Junjie Wu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出集合级提升学习方法优化智能体外记忆检索，减少结果反馈依赖。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.36805v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.36805v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究智能体外记忆检索优化问题。方法：提出UpliftMem，从集合级执行提升中学习记忆检索，无需代价高昂的替代轨迹 rollout。核心创新：解决记忆检索评估依赖结果反馈的高成本问题。主要结论：该方法能显著降低记忆检索优化成本同时保持性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.37267v1" target="_blank">Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym</a>
+                </div>
+                <div class="card-byline">Jio Oh, Seunghyun Do, Young-Jun Lee, Steven Euijong Whang, Dongyeop Kang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出主动LLM智能体设计基础框架，包含任务能力、时间分配和信任校准三原则。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.37267v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.37267v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究主动LLM智能体的设计原则。方法：提出3T原则框架：任务能力（预期需求并正确执行有用工作）、时间分配（将闲置计算转化为有用支持）、信任校准。核心创新：系统性定义主动智能体评估维度。主要结论：该框架为设计、实现和评估主动LLM智能体提供理论指导。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.37658v1" target="_blank">EnterpriseBench: Benchmarking LLM Agents on Enterprise-Level Strategic Reasoning and Decision-Making</a>
+                </div>
+                <div class="card-byline">Min Yang, Yichen Pan, Jinghua Piao, Dandan Song, Yongshun Gong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建企业级战略推理和决策基准，填补LLM智能体企业应用评估空白。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.37658v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.37658v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体在企业工作流中的表现评估。方法：提出EnterpriseBench基准，涵盖缺失信息、不确定性、反馈和长期权衡场景。核心创新：填补现有企业基准对交互式长时域决策能力测试的空白。主要结论：揭示当前LLM智能体在企业级复杂决策上的能力边界。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.37673v1" target="_blank">KUPAS MASTER: Distilling the Tacit Expertise of Master Practitioners into Agent-Ready Experience Corpora</a>
+                </div>
+                <div class="card-byline">Changmian Wang, Yuchao Ma, Xuchao Lu, Chen Zhang, Ping Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  构建经验工程平台将专家隐性知识蒸馏为智能体可用经验语料。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.37673v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.37673v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何让LLM智能体有效利用专业经验。方法：提出KUPAS MASTER平台，围绕九层经验工程构建。核心创新：将专家的隐性知识（判断依据、关键线索）从工作记录中蒸馏出来。主要结论：该平台显著提升智能体对专业经验的有效利用。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-09-29</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2609.38108v1" target="_blank">Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution</a>
+                </div>
+                <div class="card-byline">Subba Reddy Oota, Francisco Herrera, Jordi Cabot Sagrera, Marcos López de Prado, Shadab Khan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示LLM智能体规划声明与执行模式不一致性问题，提出模式特定执行评估。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2609.38108v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2609.38108v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体规划与执行的一致性问题。方法：区分计划选择和忠实执行两种能力，提出模式特定执行评估方法。核心创新：识别现有评估无法区分选择错误和执行错误的缺陷。主要结论：揭示当前规划器-执行器系统在两种能力上的具体失败模式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
