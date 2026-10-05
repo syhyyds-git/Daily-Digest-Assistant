@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年10月05日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年10月05日 · 星期一</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02616v1" target="_blank">VERSE: Verified Self-Evolving Optimizer for Agent Harnesses</a>
+                </div>
+                <div class="card-byline">Zekai Wang, Yingqiang Ge, Zekun Wang, Hai Wang, Yuhui Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  VERSE提出经验证的自我演化优化器，通过改进诊断、编辑和测试流程提升Agent性能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02616v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02616v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent的harness演化问题，当前优化器能改进Agent的提示、工具和工作流，但优化器自身的工具和流程保持固定。VERSE探索优化器能否通过改进诊断失败、开发编辑和测试效果的方式来更有效提升其他Agent。核心创新在于两个关键观察：在受控研究中，优化器自我演化未能提升性能，这揭示了Agent演化的关键机制。实验验证了该方法在多种基准上的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02717v1" target="_blank">RoboBridge: A Self-Evolving Embodied Agent Framework for Sim-to-Real Transfer</a>
+                </div>
+                <div class="card-byline">Chenxi Li, Zhangrui Zhao, Rui Li, Yuan Gao, Kehui Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  RoboBridge提出自演化Embodied Agent框架，解决Sim-to-Real迁移和持续适应问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02717v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02717v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对将embodied智能从模拟迁移到现实并实现部署后持续适应的挑战，提出RoboBridge自演化框架。虽然端到端视觉-语言-动作策略提供强操控能力，但其到物理环境的迁移通常依赖校准。核心创新在于让Agent能不断适应物理环境，无需依赖精确的模拟条件匹配。实验验证该框架在多种机器人任务中实现了有效的sim-to-real迁移和持续学习能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02788v1" target="_blank">Skill2Real: Agentic Skill Learning for Zero-Shot Sim-to-Real Robot Manipulation</a>
+                </div>
+                <div class="card-byline">Xincheng He, Siyu Ma, Chang Yu, Yunuo Chen, Yanjia Huang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Skill2Real提出通过共享API的Agentic技能学习方法，实现零样本Sim-to-Real机器人操控
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02788v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02788v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对机器人技能从模拟到现实迁移的核心挑战，提出Skill2Real框架，通过共享应用编程接口学习可执行技能。该框架采用Proposer-Verifier-Governor循环，利用特权模拟证据诊断结果并指导技能适应。核心创新在于通过共享API保持任务知识在感知、动力学和体现差异下的可用性，实现零样本真实世界迁移。实验证明该方法在多种操控任务中有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02425v1" target="_blank">Finding the Move Is Not Winning the Game: XiangqiBench for Closed-Loop Evaluation of LLM Agents</a>
+                </div>
+                <div class="card-byline">Yekun Chai, Qiwei Peng, Haoyi Xiong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  XiangqiBench提出中国象棋闭环评估基准，区分LLM命名正确着法与实际执行能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02425v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02425v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出静态评估仅奖励语言模型命名正确着法，但Agent必须将计划执行到底并在对手响应下达成验证结果。研究者引入XiangqiBench，从119个战术残局（由引擎或仅搜索验证）出发，要求LLM Agent将死对手。核心创新在于区分&#34;找到着法&#34;与&#34;赢得游戏&#34;的差异，提供可执行的闭环评估。实验揭示了当前LLM在需要持续规划和对手建模任务中的局限性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02670v1" target="_blank">LEAP: Learning Efficient Action Proposals For LLM Agents</a>
+                </div>
+                <div class="card-byline">Zhen Xu, Qizheng Zhang, Gerry Wan, Shang Zhu, Ce Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究LLM Agents在多智能体辩论中向多数妥协的现象，发现其仍保留原始信念
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02670v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02670v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多智能体辩论中LLM Agent常向一致多数妥协的现象，探讨Agent改变答案时是真正改变想法还是仅改变陈述。研究者使用两跳事实问题，其中间实体从不被任何Agent陈述。核心发现是Agent即使表面妥协，仍保留其原始信念的表示。创新点在于揭示了多智能体协作中表面一致与内在信念的分离，对理解LLM Agent群体行为有重要意义。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02994v1" target="_blank">Sentry: Learning to Recover from LLM Agent Failures at Test Time</a>
+                </div>
+                <div class="card-byline">Changxiu Ji, Amy Lu, Qizheng Zhang, Kunle Olukotun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Sentry提出测试时可恢复LLM Agent失败的方法，通过条件化失败知识提升可靠性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02994v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02994v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent如何从失败中学习以提升可靠性，发现失败知识如何传递给Agent与知识本身同样重要。研究者发现失败经验是有条件的：保存在Agent上下文中时，当失败不存在时会误触发；从不断演化的剧本中移除则导致知识丧失。核心创新是Sentry方法，通过条件化失败知识传递，使Agent能在测试时有效恢复。实验证明该方法显著提升Agent在复杂任务中的成功率和适应性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.03102v1" target="_blank">Ask, Relax, or Act? Evaluating Actionable Indeterminacy in LLM Preference Reasoning</a>
+                </div>
+                <div class="card-byline">Ang Li, Yue Lin, Feifei Kou, Zhan Su, Prayag Tiwari</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究LLM Agent在不确定性下的行动决策，提出可行动不确定性的形式化框架
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.03102v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.03102v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在能识别不确定性的情况下仍选择错误下一步的问题，如在行动已正当时选择询问，或在约束必须改变时寻求澄清。研究者形式化了&#34;可行动不确定性&#34;概念：当所有可行偏好都共享同一行动时应执行，当各可能性可行但无共享行动时应澄清。核心创新是提出最小成本-per-uncertainty原则来指导Agent决策。实验验证了该框架能提升Agent决策的准确性和鲁棒性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.03223v1" target="_blank">AdaStep: Adaptive Step Credit Weighting for Agentic Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Xin Wang, Wenhao Wu, Menghao Zhang, Zhi Wang, Kun Shao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  AdaStep提出自适应步长信用加权方法，解决LLM Agent长时序任务中稀疏奖励的信用分配难题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.03223v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.03223v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent在长时序任务中训练时面临的稀疏奖励问题，提出AdaStep自适应步长信用加权方法。该方法通过更细粒度的步骤级监督信号来区分单个决策的贡献，解决了传统轨迹级目标过于粗糙的问题。核心创新在于考虑后续动作、环境转换和轨迹长度对返回值的影响，提供更可靠的信用估计。实验表明该方法能显著提升Agent在复杂任务中的表现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-01</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02523v1" target="_blank">Hypothesis-guided discovery of cognitive algorithms via program refinement</a>
+                </div>
+                <div class="card-byline">Huiwen Alex Yang, Mark K. Ho, Bill D. Thompson</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过程序精炼从行为数据中发现认知算法假设
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02523v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02523v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对从行为数据开发算法推理认知模型的核心挑战，传统方法虽可解释但缺乏灵活性和可扩展性。研究者提出利用LLM从零生成认知模型的新方法。核心创新在于结合认知科学专业知识与LLM的生成能力，通过程序精炼迭代优化模型。实验表明该方法能发现新颖且可解释的认知算法，为理解人类推理过程提供计算模型。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.02654v1" target="_blank">Coherence-Driven Belief Formation and Population Dynamics of Contagion in LLM Agents</a>
+                </div>
+                <div class="card-byline">Tathagata Banerjee, Nima Moghaddas</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  实证测量LLM Agents的信念采用概率，发现复杂 contagion 的sigmoid特征
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.02654v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.02654v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文挑战传统社会传染模型假设（如何个体采用信念并推导出群体行为），转而实证测量语言模型Agent中的信念采用。研究者量化Agent在给定对等体支持数量时采用声明的概率。核心发现是采用核为sigmoid曲线，这是复杂传染的特征，且阈值对三个因素敏感。创新点在于提供了LLM Agent社会行为的实证模型，为理解Agent群体动力学提供了新视角。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
