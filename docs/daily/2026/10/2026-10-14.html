@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年10月14日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年10月14日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.17860v1" target="_blank">Socratic Skill Learning: Interleaving Teaching and Practice for Transferable Agent Skills</a>
+                </div>
+                <div class="card-byline">Letian Zhu, Han Li, Yifan Yao, Xinping Lei, Xinyu Che</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出苏格拉底式技能学习方法，通过交织专家教学与学生实践来获取可迁移的Agent技能。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.17860v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.17860v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出Socratic Skill Learning (SSL)框架，解决可迁移Agent技能获取难题。传统方法依赖任务成功轨迹，但只能收集已验证的正面证据，无法获得技能使用条件的信息。SSL通过 Educator 引导探索，学生在实践中测试假设，教师提供反例和条件约束。实验表明该方法显著优于基线，能获取更完整、可迁移的技能定义。核心创新在于将教学行为纳入技能学习循环，实现条件性知识的有效获取。这项工作为构建更智能的Agent技能系统提供了新范式。
+
+- 研究问题/方法：解决可迁移Agent技能获取问题，通过师生交互循环获取完整技能知识
+- 核心创新点：引入苏格拉底式教学，教师主动提供反例，学生在实践中测试假设
+- 主要结论：SSL显著提升技能可迁移性，能获取包含使用条件的完整技能定义</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.18522v1" target="_blank">Lost in Implicit Routing: How LLM Agents Fail to Load Relevant Skills at Scale</a>
+                </div>
+                <div class="card-byline">Jinlin Liu, Wei Chen, Xiaojin Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示LLM Agent在技能库扩展时出现的技能路由崩溃现象，发现Agent会逐渐忽视甚至完全不加载相关技能。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.18522v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.18522v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了可复用技能对LLM Agent的影响，发现当前隐式路由设计存在严重可扩展性问题。通过SkillsBench基准测试，固定任务和黄金技能后添加无关技能，实验表明Agent出现技能路由崩溃：即使相关技能仍可用，Agent加载的技能数量显著减少或完全不加载。这揭示了当前技能系统设计的根本缺陷，为未来技能检索架构提供重要参考。核心创新在于提出并量化了路由崩溃现象，为构建更可靠的技能加载机制奠定基础。
+
+- 研究问题/方法：通过实验测试可复用技能系统的可扩展性，使用SkillsBench任务集和无关技能干扰
+- 核心创新点：首次发现并量化&#34;技能路由崩溃&#34;现象，揭示隐式路由的局限性
+- 主要结论：当前设计在技能库扩展时不可靠，Agent会忽略相关技能，需改进显式或结构化路由机制</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.17544v1" target="_blank">Many Steps into One: Reasoning Contraction and the Limits of Safe Memory Reuse for LLM Agents</a>
+                </div>
+                <div class="card-byline">Jianghong Zhou, Hao Rong, Chen Lin, Daoan Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统分析LLM Agent中推理压缩机制的安全风险，证明基于成功率的记忆信任机制无法可靠检测事实变化。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.17544v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.17544v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文深入分析推理压缩（Reasoning Contraction）现象，即Agent将多个推理步骤压缩为记忆或技能的机制。研究证明当前系统依赖成功/失败计数来信任记忆的方法存在根本缺陷：对称计数器无法及时检测事实变化，导致Agent持续返回错误答案。论文提供理论分析证明，并设计实验验证。核心创新在于将记忆可靠性问题形式化，揭示了看似合理的信任机制在实际场景中的失效模式。这项工作为设计更安全的Agent记忆系统提供重要理论基础。
+
+- 研究问题/方法：分析推理压缩机制中记忆复用的安全性，证明现有信任机制不可靠
+- 核心创新点：形式化证明基于成功率的计数器无法可靠检测事实变化
+- 主要结论：需要设计更好的变化检测机制，当前方法在事实动态变化场景下存在安全隐患</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.17659v1" target="_blank">Can Agents Truly Forget? Explore Machine Unlearning for LLM Agents</a>
+                </div>
+                <div class="card-byline">Junkai Lin, Ge Xu, Zheng Xu, Junkai Chen, Xiangyuan Lan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  探索机器遗忘技术在LLM Agent中的应用，为Agent部署提供隐私保护和数据合规的实用方案。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.17659v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.17659v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究机器遗忘方法在LLM Agent中的应用，解决Agent在训练和部署中可能泄露敏感或隐私知识的问题。从头重训练模型代价过高，机器遗忘成为更实用的替代方案。论文系统性地探索了多种遗忘技术对Agent特定能力的保留程度，分析了不同方法在隐私移除和性能保持间的权衡。核心创新在于将机器遗忘研究从传统模型扩展到交互式Agent系统，揭示了Agent场景下遗忘的特殊挑战。这项工作为构建隐私安全的Agent系统提供重要参考。
+
+- 研究问题/方法：将机器遗忘技术应用于LLM Agent，解决隐私知识移除问题
+- 核心创新点：首次系统评估Agent场景下机器遗忘的效果与局限
+- 主要结论：现有遗忘方法需针对Agent交互特性适配，平衡隐私与能力保留</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.17726v1" target="_blank">TSRL: Trigger-based Supervised Reinforcement Learning for Continual Agent Training</a>
+                </div>
+                <div class="card-byline">Yuqian Fu, Kaiwen Jiang, Zijun Song, Jiawei Wang, Yuanheng Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于触发的监督强化学习方法，在Agent持续学习新技能时有效防止灾难性遗忘问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.17726v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.17726v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent在持续学习中的灾难性遗忘问题，提出TSRL框架。核心挑战是SFT样本效率高但遗忘严重，RL保留先前能力但训练成本高。TSRL通过触发机制选择性地对新技能使用SFT，同时用RL维持旧技能性能。实验在多任务场景验证，显著平衡了技能获取与保留的权衡。核心创新在于引入触发器机制实现细粒度的学习策略控制。这项工作为Agent持续训练提供高效实用的解决方案。
+
+- 研究问题/方法：解决Agent持续学习中的灾难性遗忘，提出触发式混合学习方法
+- 核心创新点：触发器机制自动选择SFT或RL策略，平衡效率与保留
+- 主要结论：TSRL有效缓解遗忘，在多个任务上优于纯SFT和纯RL基线</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.18052v1" target="_blank">Can Agents Forget When Asked? A Benchmark for Memory Unlearning in LLM Agents</a>
+                </div>
+                <div class="card-byline">Bofan Xie, Chaokun Wang, Guanchen Ge, Songyao Wang, Fang Niu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Agent记忆遗忘基准，发现现有记忆系统在选择性删除特定信息时存在缺陷，难以精确执行用户删除请求。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.18052v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.18052v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM Agent长期记忆的遗忘问题，提出首个记忆遗忘评估基准。核心挑战是Agent需精准删除用户请求的信息，同时保留其他记忆不受影响。实验评估现有记忆系统发现，它们在选择性遗忘方面表现不佳：要么删除过多信息导致功能受损，要么删除不完整导致隐私泄露。核心创新在于定义了记忆遗忘的具体评估指标和多维度测试场景。这项工作为构建负责任的Agent记忆系统提供重要基准和方向指引。
+
+- 研究问题/方法：评估LLM Agent记忆系统的选择性遗忘能力，提出遗忘基准
+- 核心创新点：定义记忆遗忘的精确性、完整性、保留性三维评估指标
+- 主要结论：现有系统难以实现精准遗忘，需改进记忆架构以支持细粒度信息控制</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.18262v1" target="_blank">Encrypted Skills Can Become New Security Exploits If AI Agents Know How to Decipher</a>
+                </div>
+                <div class="card-byline">Yan-Lun Chen, Pin-Yu Chen, Chia-Mu Yu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示第三方加密技能可能成为LLM Agent安全漏洞，攻击者可嵌入隐藏指令诱使Agent解码执行恶意操作。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.18262v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.18262v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出Ciphered Skill Injection (CSI)攻击，演示第三方技能如何通过编码隐藏恶意指令。研究评估了Caesar和分层变体在八个模型和139个注入-任务对上的效果，区分了指令恢复率和攻击成功率。实验发现即使技能文件被缩短，Agent仍会尝试解码并执行隐藏指令。这项工作警示了开放技能生态系统的安全风险，为LLM Agent安全设计提供重要参考。核心创新在于系统性地揭示并评估了加密技能注入攻击的威胁模型。
+
+- 研究问题/方法：研究第三方技能文件的恶意指令注入风险，提出CSI攻击框架
+- 核心创新点：系统化评估加密指令注入攻击，区分恢复率和成功率，揭示攻击面
+- 主要结论：当前Agent缺乏对加密技能的安全防护，需建立技能验证和沙箱机制</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.18572v1" target="_blank">LLM Agents for Automated Post-Training via Structured Recipe Optimization</a>
+                </div>
+                <div class="card-byline">Ruohong Liu, Bohan Tang, Lekang Jiang, Jack Umenberger, Yiwen Guo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出自动化后训练框架，利用LLM Agent自动构建和优化跨域训练配方，降低模型适配成本。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.18572v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.18572v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM后训练的自动化问题，将预训练模型适配多领域需要大量领域专家参与。现有自动化方法受限于预定义配方空间，无法探索灵活的配置组合。论文提出基于Agent的自动化框架，让LLM Agent自主探索数据源、处理方法、跨域组合和训练配置的优化空间。核心创新在于将后训练配方优化建模为Agent决策问题，利用LLM的推理能力发现专家可能遗漏的配置组合。实验表明该方法在有限预算下达到与专家调优相当或更好的性能。
+
+- 研究问题/方法：将LLM后训练配方优化自动化，构建Agent决策框架
+- 核心创新点：利用LLM Agent探索灵活的配方空间，突破预定义空间限制
+- 主要结论：Agent自动化框架在有限预算下达到专家水平，显著降低后训练成本</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.18614v1" target="_blank">Can an Agent Learn to Predict Its Own Failure? Outcome-Grounded Confidence Calibration in LLM Agents</a>
+                </div>
+                <div class="card-byline">Ashutosh Hathidara</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究LLM Agent的自我失败预测能力，提出基于结果置信度校准的方法辅助人类决定是否信任Agent动作。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.18614v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.18614v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文解决LLM Agent长时任务执行中的人类监督问题。核心挑战是每个步骤都需决定是否信任Agent当前动作，理想的置信度信号应预测整个轨迹的最终成功率。现有方法依赖Agent自我报告的置信度，但RL方法难以有效校准。论文提出基于结果的置信度校准方法，通过实验评估不同校准技术的效果。核心创新在于为Agent行为提供可解释的失败预测，辅助人机协作决策。这项工作有助于构建更可控的Agent系统。
+
+- 研究问题/方法：研究Agent自我失败预测能力，提出可解释的置信度校准方法
+- 核心创新点：基于轨迹结果的置信度预测，辅助人类决策
+- 主要结论：现有校准方法存在不足，需改进奖励信号设计以实现可靠置信度预测</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.18683v1" target="_blank">ProAS: A Progress-Aware Advantage Shaping Framework for Multi-Turn Agentic Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Bowen Ding, Mingda Wan, Yuhan Chen, Jiyao Yuan, Qi Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出进展感知优势塑造框架ProAS，解决多轮Agent强化学习中均匀信用分配导致的无效动作强化问题。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.18683v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.18683v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM Agent强化学习中的信用分配问题，发现GRPO等无批评家算法存在均匀优势分配缺陷：所有动作被平等对待，即使某些动作在轨迹中起负面作用也被强化。ProAS通过分析动作在任务进展中的实际贡献，实现细粒度优势计算。实验表明该方法显著提升多轮任务的成功率，减少无效动作的执行。核心创新在于将任务进展纳入信用分配，为Agent RL提供更精确的梯度信号。
+
+- 研究问题/方法：解决多轮Agent RL中的均匀信用分配问题，提出进展感知优势塑造
+- 核心创新点：引入任务进展指标，实现动作级别的细粒度优势计算
+- 主要结论：ProAS显著优于均匀分配基线，提升多轮任务成功率并减少无效动作</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
