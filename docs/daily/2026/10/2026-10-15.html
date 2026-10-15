@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年10月15日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年10月15日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.20576v1" target="_blank">One Task, Many Interfaces: Simple Cross-Interface Consistency Training Improves LLM Agent Robustness</a>
+                </div>
+                <div class="card-byline">Artin Tajdini, Manpreet Kaur, Peng Qi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出跨接口一致性训练方法，提升LLM Agent对界面语义保持扰动的鲁棒性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.20576v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.20576v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了LLM Agent训练后能力与接口强绑定的问题，即对接口的语义保持扰动（如重命名操作）会导致性能下降。方法上提出跨接口一致性训练，通过独立评分每个样本，使接口随机化从单一接口扩展到多个接口，从而提升Agent鲁棒性。核心创新在于训练框架不依赖特定接口定义，可泛化到语义相同但形式不同的界面。主要实验结果表明该方法显著提升了Agent在未见接口上的泛化能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.19380v1" target="_blank">Learning What to Keep: Transfer-Aware Personal Skill Learning from User Feedback</a>
+                </div>
+                <div class="card-byline">Li Wang, Chen Zhang, Yirong Yang, Xingyu Chen, Jinkun Zhao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出SkillGrain框架，从用户反馈中选择性学习可迁移的个人技能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.19380v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.19380v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究用户反馈中持久偏好与请求特定修正混合导致的负迁移问题。方法上将挑战建模为跨原子规则的选择性迁移，提出SkillGrain框架学习可复用的个人技能。核心创新在于针对个体需求层面的选择性保留机制，避免将所有反馈不加区分地融入技能。主要实验结果表明该方法显著降低了负迁移，在个性化任务上取得性能提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.20399v1" target="_blank">Cortex: Consolidating Context into Parametric Memory</a>
+                </div>
+                <div class="card-byline">Jintian Zhang, Feng He, Xinnian Liang, Ziwen Xu, Haoming Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出记忆巩固框架，将上下文增益内化为LLM的技能参数记忆
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.20399v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.20399v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文将记忆巩固（Memory Consolidation）定义为将上下文带来的性能提升内化为模型参数，同时保留非目标能力。方法上将上下文编辑、技能学习和行为引导统一在共同目标下，并引入五任务家族测试基准。核心创新是连接了上下文指定编辑与技能学习，为长期记忆提供新范式。主要结论表明该框架能有效将上下文知识转化为可持久化的技能表示，在多个任务上验证了有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.19386v1" target="_blank">STRATA: Self-Maintaining Structured Experience Graphs for Self-Evolving Language Agents</a>
+                </div>
+                <div class="card-byline">Guanhua Zhu, Hanwen Li, Zhi Wei, Mengnan Du, Chenxi Yuan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出STRATA框架，构建自维护的结构化经验图谱实现语言Agent自演化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.19386v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.19386v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出现有Agent将轨迹、工作流和推理项混合存储，缺乏类型化抽象层次。方法上提出STRATA框架，构建自维护的结构化经验图谱，支持分层索引、遗忘和去重。核心创新在于为自演化Agent提供结构化记忆系统，超越单一的嵌入相似性索引。主要实验结果表明该方法提升了Agent在长期任务中的经验复用效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.19581v1" target="_blank">XferAgent: Cross-Agent Experience Transfer for Self-Improving LLM Agents</a>
+                </div>
+                <div class="card-byline">Weihao Li, Jun Bai, Shijie Chen, Qincheng Lu, Xinyu Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出跨Agent经验迁移框架XferAgent，提升自改进LLM Agent效率
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.19581v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.19581v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对跨Agent经验共享中执行历史和任务需求差异导致的复用困难。方法上提出XferAgent框架，将可复用经验组织为结构化知识，支持跨Agent高效迁移。核心创新在于解决经验共享的异构性问题，实现不同Agent间的经验有效传递。实验结果表明该框架显著提升了Agent在后续任务上的学习效率和性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.19799v1" target="_blank">Evolve Together, Fall into Place: How Social Scaffolding Shapes Self-Evolving Multi-Agent Systems</a>
+                </div>
+                <div class="card-byline">Seojin Hwang, Youngmin Choi, Hwanhee Lee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究社会脚手架对自演化多Agent系统的影响，揭示团队构成的作用
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.19799v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.19799v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文借鉴发展心理学中的脚手架概念，研究自演化多Agent系统的社会条件影响。方法上控制团队构成和相互依赖结构，探究不同社会脚手架如何塑造自演化系统的行为和性能。核心创新在于从社会动力学角度分析多Agent自演化，而非仅关注个体能力提升。实验结果表明社会脚手架对系统演化结果有显著影响，相同的自演化能力在不同社会条件下产生不同结果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.20388v1" target="_blank">From Relevance to Validity: Zero-Shot Tool Selection via Functional and Contextual Validation</a>
+                </div>
+                <div class="card-byline">Xiaoxuan Dong, Jin Zhang, Zichen Yuan, Yue Zhou, Zihao Rao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出功能与上下文验证结合的零样本工具选择方法
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.20388v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.20388v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对零样本工具选择的挑战，指出现有方法仅依赖语义匹配，无法确保工具功能兼容性。方法上提出先进行相关性排序，再通过功能验证和上下文验证确保工具适用性的两阶段框架。核心创新是引入功能验证层，超越纯语义匹配。主要实验结果表明该方法在新领域和新执行上下文中的零样本工具选择性能显著提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.19068v1" target="_blank">Plan or Retrieve First? A Scale Study of Tool Discovery Architectures</a>
+                </div>
+                <div class="card-byline">Mingfei Zhang, Amit Surana, Ziauddin Majid, Chenxi Wang, Michael Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  对比研究工具发现中先规划后检索与先检索后规划两种范式
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.19068v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.19068v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对工具增强型LLM Agent的工具发现问题，研究Retrieve-then-Plan和Plan-then-Retrieve两种范式。方法上进行大规模对比实验，分析不同场景下两种范式的优劣。核心创新在于系统性地比较了工具发现的两种主流架构，为实际部署提供指导。主要实验结果表明两种范式各有适用场景，取决于注册表大小和任务复杂度等因素。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.19868v1" target="_blank">Explorer-Zero: Improving Self-Play for Long-Horizon Tasks with Decomposable Verifiable Rewards</a>
+                </div>
+                <div class="card-byline">Tianyu Liu, Davide Belli, Bence Major, Arash Behboodi, Tribhuvanesh Orekondy</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Explorer-Zero框架，通过自博弈和组合奖励生成改进长时域Agent训练
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.19868v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.19868v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时域交互任务中人类标注任务和可靠验证器构建成本高的问题。方法上提出Explorer-Zero自博弈框架，联合生成可实现的组合任务并提供超越二元结果的反馈。核心创新在于利用自博弈生成训练信号，避免依赖昂贵的人工标注。主要实验结果表明该方法在多个长时域任务上显著改善了Agent性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.20457v1" target="_blank">Same Claim, Different Interpretations: How LLM Agents Resolve Ambiguity in Scientific Claims</a>
+                </div>
+                <div class="card-byline">Delip Rao, Ahmed Muharram, Chris Callison-Burch</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  分析LLM Agent在科学声明歧义消解中的解释差异，为评估提供新视角
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.20457v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.20457v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究自然语言科学声明的内在歧义性，以及LLM Agent和共科学家在评估声明时的解释差异。方法上收集多Agent对同一声明的不同解释，分析其对评估结果的影响。核心创新在于揭示了声明评估中解释选择的重要性，批评现有基准忽视了这一因素。主要结论表明解释差异会显著影响判定结果，建议基准测试应记录解释过程而非仅给出标签。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
