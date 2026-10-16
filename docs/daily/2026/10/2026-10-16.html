@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年10月16日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年10月16日 · 星期五</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.20926v1" target="_blank">SkillNEO: Non-Elitist Evolutionary Optimization of Agent Skills</a>
+                </div>
+                <div class="card-byline">Enze Ma, Chunyu Miao, Yankai Chen, Jie Yang, Liancheng Fang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出非精英进化优化方法，通过保留低奖励但有潜力的技能片段促进技能演进。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.20926v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.20926v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：传统技能进化要求即时奖励提升，可能丢弃有潜力的部分解。方法：提出 SkillNEO，采用非精英进化策略，允许低奖励版本的技能继续演化。核心创新：不需要立即产生高奖励的 interdependent edits。主要结论：在多个 Agent 技能优化任务中，SkillNEO 能发现更全面的技能变体，提升最终性能。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21016v1" target="_blank">CausalEvo: Causal Skill Self-Evolution for Health LLM Agents</a>
+                </div>
+                <div class="card-byline">Yuchen Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出因果技能自演进方法，帮助健康 LLM Agent 从反馈中学习有用的技能规则。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21016v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21016v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：健康 LLM Agent 从任务反馈中积累技能时，如何判断哪些技能值得保留。方法：提出 CausalEvo，通过因果分析估计技能对后续任务性能的相对贡献。核心创新：使用因果推断区分技能的真实效果与虚假相关，避免错误泛化。主要结论：在健康领域任务中，该方法能有效过滤有害技能，保留有益技能，提升 Agent 回答质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21348v1" target="_blank">FedSkillGit: Federated Skill Evolution via Version Control</a>
+                </div>
+                <div class="card-byline">Boxun Lan, Jiamei Li, Weijian Li, Chengyu Yang, Zhuang Qi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出联邦技能演进框架，利用版本控制安全聚合分布式客户端的技能更新。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21348v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21348v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：如何在保护数据隐私的前提下实现跨客户端的技能演进。方法：提出 FedSkillGit 框架，让每个客户端演进完整技能文档并上传结果，通过版本控制实现安全的服务器端聚合。核心创新：引入版本控制机制处理技能冲突和回滚，保证分布式环境下的技能一致性。主要结论：实验表明该框架能有效聚合分布式技能改进，同时保护原始数据隐私。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21170v1" target="_blank">MemScope: Evolving Agent Memory Architectures through Localized Code Repair</a>
+                </div>
+                <div class="card-byline">Miao Su, Yucan Guo, Zixuan Li, Long Bai, Zhongni Hou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出通过局部代码修复实现 Agent 记忆架构自演进的方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21170v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21170v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：Agent 记忆架构在部署后固定，难以适应不同任务类型。方法：提出 MemScope，利用执行反馈进行局部代码修复，动态调整记忆架构。核心创新：细粒度反馈驱动的记忆架构自适应。主要结论：在多任务场景中，MemScope 能根据任务需求调整记忆结构，提升 Agent 适应性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21267v1" target="_blank">TRACER: Trajectory-Aware Tool Retrieval for LLM Agents</a>
+                </div>
+                <div class="card-byline">Tanish Kher, Sarvesh DK, Abedelkadir Asi, Sparsha Chennarayapatna Sundaresh, Dezhi Hong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出基于 trie 的轨迹感知工具检索方法，降低 LLM Agent 的工具选择 token 成本。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21267v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21267v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：工具注册表增长导致高 token 成本，如何高效检索相关工具。方法：提出 TRACER，用 trie 索引已观察到的工具调用序列，学习性融合经验和上下文先验进行排序。核心创新：轨迹感知检索，避免暴露整个注册表。主要结论：在零售和电信环境测试中，TRACER 显著提升了 GPT-5.4 的工具选择质量并降低成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21791v1" target="_blank">RSIFlow: Adaptive Self-Improvement Workflows with an Evolving Meta-Agent</a>
+                </div>
+                <div class="card-byline">Huan Zhang, Mingju Chen, Dongxu Zhou, Can Lv, Sen Cui</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出自适应自改进工作流系统，通过元 Agent 动态调整优化机制实现递归自我改进。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21791v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21791v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：如何让 LLM Agent 实现递归自我改进，不仅优化任务还能优化改进机制本身。方法：提出 RSIFlow，包含进化元 Agent，能根据执行反馈自适应调整自改进工作流。核心创新：将优化机制本身纳入优化范围，实现真正的递归自我改进。主要结论：实验表明 RSIFlow 在代码生成、工具使用等任务上优于静态自改进方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.22124v1" target="_blank">PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents</a>
+                </div>
+                <div class="card-byline">Kshitij Mishra, Abhijith Sharma, Nils Lukas, Salem Lahlou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出学习审计工具使用 LLM Agent 策略合规性的方法 PROBE。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.22124v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.22124v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：现有评估方法缺乏对 Agent 遵守政策（定价、隐私、安全等）的系统评估。方法：提出 PROBE，学习审计 Agent 在工具使用过程中的策略合规性。核心创新：关注 policy compliance 而非仅仅是能力。主要结论：PROBE 能识别 Agent 在多轮交互中的策略违规行为，为部署提供安全保障。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.22316v1" target="_blank">Learning to Steer LLM Agents and Multi-Agent Systems</a>
+                </div>
+                <div class="card-byline">Leyang Shen, Yaxin Gong, Yang Zhang, Chenxiao Fan, Jiakai Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出 steering agent 监督 LLM Agent 执行，防止长期任务中的目标漂移。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.22316v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.22316v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：LLM Agent 在长期任务执行中容易偏离整体目标，造成资源浪费。方法：提出 steering agent 作为监督者，持续监控 Agent 行为并提供修正信号。核心创新：引入专门的 steering 机制处理 goal drift 问题。主要结论：实验表明 steering 能有效减少目标漂移，提高任务完成率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21571v1" target="_blank">Rethinking the Role of Tool Graph Memory in Multi-Turn Tool Use</a>
+                </div>
+                <div class="card-byline">Uiji Hwang, Richeng Xuan, Taeuk Kim</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  评估工具图记忆对多轮工具使用 LLM Agent 的影响，发现并非总是有益。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21571v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21571v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：工具图记忆作为 Agent 记忆组件是否能持续改善工具使用。方法：在 9 个模型和 2 个基准上评估工具图记忆的效果。核心创新：系统性评估记忆组件的实际效用。主要结论：工具图记忆并非总是有益，在某些情况下反而会干扰 Agent 的工具选择决策，取决于任务类型和模型。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.21708v1" target="_blank">Human Interventions as Labels: Localizing, Steering, and (Sometimes) Editing the Computations Behind LLM Agent Failures</a>
+                </div>
+                <div class="card-byline">Cesare Zavattari, Alessandro Tommasi, Giuseppe Prencipe</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  将人类干预视为测量标签，定位和引导 LLM Agent 失败背后的内部计算。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.21708v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.21708v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>研究问题：人类对 Agent 失败的干预通常被丢弃或仅用作训练数据。方法：将人类干预视为指向失败内部计算的测量标签，在受控环境中研究。核心创新：干预作为测量而非数据。主要结论：这种方法能有效定位 Agent 内部计算中的具体失败点，为可解释性和修复提供新思路。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
