@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年10月21日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年10月21日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill refinement</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.28386v1" target="_blank">VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning</a>
+                </div>
+                <div class="card-byline">Jiawei Wang, Yucun Li, Xueqi Li, Shenghao Wang, Xinquan Gong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出VisualEvolve框架，通过自演化机制在无需更新模型参数的情况下优化视觉工具使用技能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.28386v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.28386v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对视觉语言模型中预定义视觉操作和工具使用策略受限的问题，提出将视觉操作和策略表示为可重用的外部技能，通过自演化机制在不更新模型参数的情况下进行技能精炼。核心创新在于设计了技能自我演化框架，使VLMs能够持续优化任务相关的视觉工具使用能力。实验表明该方法能显著提升模型在视觉推理任务中的表现，技能精炼后性能有明显改善。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-19</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.27244v1" target="_blank">AutoRedClaw: Automated Red-Teaming for Claw-Style Agents</a>
+                </div>
+                <div class="card-byline">Hao Li, Tongyan Hu, Weidi Luo, Shanghao Shi, Xiaogeng Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  针对Claw风格智能体的自动化红队测试方法，检测持久化状态中毒攻击
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.27244v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.27244v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究从任务型工具使用智能体向持久化、个性化助手（如OpenClaw）转变过程中的安全评估问题。提出AutoRedClaw框架，专门针对Claw风格智能体的配置文件中AGENTS.md、长期记忆和可重用技能等持久化状态进行自动化红队测试。核心创新在于设计了针对持久化威胁的评估方法，能有效检测出跨任务和跨会话的持续性攻击。实验验证了该方法在发现Claw智能体安全漏洞方面的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.28201v1" target="_blank">MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses</a>
+                </div>
+                <div class="card-byline">Yu Cui, Hong He, Ruiqing Yue, Sicheng Pan, Zhuoyu Sun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Model-as-Data方法实现智能体测试平台的递归自我改进
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.28201v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.28201v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对智能体测试平台（harness）与特定LLM之间强耦合导致的泛化性问题，提出MaD-RSI框架将模型作为数据进行处理，通过搜索测试平台空间实现递归自我改进。核心创新在于解耦了测试平台优化与特定模型的绑定，使RSI能够发现针对特定LLM能力和行为特征定制的测试平台。实验表明该方法能显著提升智能体在多种LLM上的表现，并实现测试平台的自我进化。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-19</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.27377v1" target="_blank">REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents</a>
+                </div>
+                <div class="card-byline">Xinyi Lisa Chen, Pedro Herrero-Vidal, Xiaohan Chen, Xiaojing Yu, Cris Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究编码智能体经验记忆的存储、检索和遗忘策略
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.27377v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.27377v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM智能体无法有效重用跨任务执行经验的问题，系统研究了经验记忆的存储内容、检索时机和遗忘策略。核心创新在于提出运行智能体需要观察自身状态来决定是否需要外部经验的观点，而非仅依赖检索相关性。实验表明精心设计的三策略组合能显著提升智能体在代码生成等长时域任务中的表现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.27700v1" target="_blank">Memory as Code: Declarative Retrieval over Codified Long-Term Memory</a>
+                </div>
+                <div class="card-byline">Aoting Zeng, Yuxin Du, Jianwei Wang, Yizhang He, Shan Jiang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出将长期记忆编码为声明式检索对象以提升LLM智能体推理能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.27700v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.27700v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对复杂场景中事实分散且关系动态变化导致记忆系统难以组合的问题，借鉴模块化和可组合性设计声明式检索接口。核心创新在于将记忆编码为声明式对象，支持跨会话的灵活组合查询，增强LLM智能体的推理能力。实验验证了该方法在多样化查询场景下的有效性，显著提升了智能体利用长期记忆的能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.27781v1" target="_blank">GRADUS: Discovering and Recovering Agent Lessons from the Environment&#39;s Latent Syllabus</a>
+                </div>
+                <div class="card-byline">Qing Ping, Wei Yang, Panpan Xu, Johannes Kirmayr, Lukas Stappen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  从环境潜在课程中发现和恢复LLM智能体的学习经验
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.27781v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.27781v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对策略约束工具环境中智能体训练数据偏向简单行为的问题，提出Gradus框架从环境的潜在课程中发现和恢复有价值的训练任务。核心创新在于设计了graded保留机制，不仅保留智能体能立即解决的任务，还保留需要逐步组合规则才能解决的任务。实验表明该方法显著提升了智能体在航空公司后端等复杂工具环境中的泛化能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.27847v1" target="_blank">SAPD: Learning from Agent Experience without Environment Interaction</a>
+                </div>
+                <div class="card-byline">Juncheng Diao, Haibin Wang, Wei Shi, Yifan Ding, Qingbin Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出无需环境交互的从智能体经验中学习的方法SAPD
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.27847v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.27847v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM智能体规模化训练需要大量可执行环境的问题，提出SAPD方法从离线轨迹中提炼交互经验来改进当前策略。核心创新在于设计了无需重访环境的离线学习方法，能够有效利用历史交互数据训练智能体。实验表明该方法在多种任务上显著优于从头训练的baseline，证明了离线经验学习的有效性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.28093v1" target="_blank">ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents</a>
+                </div>
+                <div class="card-byline">Jinhao Hu, Bardia Mohammadi, Mofasshara Binte Rafique, Lars Henning Klein, Akhil Arora</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  为有状态LLM智能体设计保护一致性的虚拟内存机制ClawMMU
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.28093v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.28093v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对AI智能体长期记忆面临的安全隐患（网页和工具结果中的隐藏指令），提出ClawMMU保护层为每段记忆标注所有者、作用域、来源和权限信息。核心创新在于设计了保护一致性的虚拟内存系统，能区分用户指令与外部来源内容，防止恶意注入攻击跨会话持久化。实验验证了该机制在保护智能体记忆安全方面的有效性，为Claw风格智能体提供了基础安全防护。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.28361v1" target="_blank">FALCA: Falsification-Aware Reinforcement Learning with Hierarchical Credit Assignment for Long-Horizon Deep Search Agents</a>
+                </div>
+                <div class="card-byline">Zijun Dou, Kun Luo, Chaofan Li, Shuqi Lu, Zheng Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  设计层级信用分配的强化学习方法提升LLM智能体深度搜索的鲁棒性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.28361v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.28361v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长时域深度搜索任务中早期错误逐级放大的问题，提出FALCA框架结合伪证意识和层级信用分配机制。核心创新在于设计了能够识别和纠正错误搜索轨迹的方法，通过层级信用分配防止错误锚定和矛盾证据的累积。实验表明该方法在复杂信息检索任务中显著提升了智能体的搜索可靠性和最终答案质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.28388v1" target="_blank">Self-Credit: Credit Assignment for Long-Horizon Agentic RL via Intra-group Rescaling</a>
+                </div>
+                <div class="card-byline">Fangcong Yin, Ming Yin, Tanvi Bhandarkar, Aashu Singh, Eryk Helenowski</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Self-Credit方法解决长时域智能体强化学习中的信用分配难题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.28388v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.28388v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM智能体在强化学习训练中面临奖励稀疏导致的信用分配困难问题，提出Self-Credit方法通过组内重缩放生成自生成的信用分配来实现密集监督信号。核心创新在于设计了端到端的智能体强化学习方法，无需环境交互即可从稀疏结果奖励中提取有效训练信号。在长时域任务上的实验表明该方法显著优于传统RLVR baseline，有效解决了长期信用分配难题。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
