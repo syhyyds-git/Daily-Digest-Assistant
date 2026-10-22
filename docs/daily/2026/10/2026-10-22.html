@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年10月22日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年10月22日 · 星期四</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.28945v1" target="_blank">Self-Improving Agents with World Model Predictive Paths</a>
+                </div>
+                <div class="card-byline">Haori Lu, Tianyu Gao, Yaoyao Liu, Yingying Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  世界模型预测路径让LLM智能体在部署中自我改进
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.28945v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.28945v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体在部署时如何利用未来预判和历史交互持续改进决策，提出受路径积分控制启发的测试时框架。核心创新是以世界模型生成候选预测路径，再结合实际交互经验筛选和修正行动，将预测与经验统一到规划过程。实验表明，该方法可提升复杂环境中的决策质量，展示世界模型驱动的技能优化与在线自我改进潜力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29326v1" target="_blank">Signals and Queries: Token-Efficient Agentic Context Discovery</a>
+                </div>
+                <div class="card-byline">Yam Marcovitz</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  两阶段策略筛选降低LLM智能体的上下文发现成本
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29326v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29326v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文面向LLM智能体每轮需从大量行为策略中找出适用规则、但逐条调用模型成本过高的问题，提出Signals and Queries两阶段筛选框架。核心创新是先用轻量级激活信号过滤候选策略，再交给下游模型精查，在保持高召回率的同时至少剔除30%候选。实验显示，该方法显著降低策略检索成本并维持任务效果，为可扩展技能检索提供实用方案。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29443v1" target="_blank">DynaWeave: Learning to Adapt through Dynamic Scenario Synthesis</a>
+                </div>
+                <div class="card-byline">Xuan Yang, Chunxiao Liu, Hongsheng Xin, Hao Xu, Ning Miao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  DynaWeave通过动态场景合成训练智能体适应环境突变
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29443v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29443v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文关注状态化环境中外部突发事件会打断智能体既有计划的问题，提出DynaWeave，通过动态场景合成训练智能体适应环境变化。核心创新是把执行过程中的新情境自动纳入学习与规划，而非依赖静态训练环境。实验表明，该方法增强智能体面对意外事件时的重规划和适应能力，为持续学习与技能更新提供更贴近真实部署的机制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29245v1" target="_blank">CrashGym: Measuring the Decision Value of Experimentation for LLM Agents in Counterfactual Market Crashes</a>
+                </div>
+                <div class="card-byline">Haocheng Lu, Haoxuan Cheng, Mingyang Chen, Minjun Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  CrashGym检验LLM智能体实验是否真正改善市场决策
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29245v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29245v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文考察LLM智能体运行实验是否真正改善后续决策，提出CrashGym反事实市场崩溃模拟环境。核心创新是在确定性、可重放的限价订单簿中，让智能体比较去杠杆与流动性支持等干预，并对照反事实结果评估实验价值。实验显示，代理常把执行实验与有效决策脱节；该基准可衡量行动、实验和决策收益之间的真实联系。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29346v1" target="_blank">Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents</a>
+                </div>
+                <div class="card-byline">Zixuan Yu, Zhenheng Tang, Xiaowen Chu, Bo Han</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  深度搜索智能体基准与轨迹分析定位中间执行错误
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29346v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29346v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对深度搜索与深度研究智能体仅看最终答案、难以定位中间执行错误的问题，提出系统基准和误差分析方法。核心创新是对长程、多步执行轨迹进行细粒度分析，区分检索、规划、工具调用等环节的失败来源。实验发现，中间过程错误会显著影响最终可靠性，轨迹级诊断比单一结果评分更能揭示智能体的系统性弱点与改进方向。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29427v1" target="_blank">One Act, Many Masks: Effect-Marginal Policy Optimization for Long-Horizon Agents</a>
+                </div>
+                <div class="card-byline">Shaojin Ma, Ruitao Wang, Pengyi Li, Jie Yang, Liangyu Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  效果边际策略优化改善长程智能体的强化学习信用分配
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29427v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29427v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对长程LLM智能体强化学习中，不同文本回答可能产生相同执行效果、导致信用分配偏差的问题，提出Effect-Marginal Policy Optimization。核心创新是按动作带来的环境效果而非回复形式分配训练信号，并优化长程策略。实验显示，该方法改善了复杂多轮任务中的细粒度信用学习，说明效果感知的策略优化能提升长程任务表现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29932v1" target="_blank">FrontierCS 2: A Benchmark for Computer Science R&amp;D</a>
+                </div>
+                <div class="card-byline">Qiuyang Mang, Wenhao Chai, Runyuan He, Dongruixuan Li, Zihan Zheng</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  FrontierCS 2以48项开放任务评测科研型LLM智能体
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29932v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29932v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文考察LLM智能体能否对前沿计算机科学研发作出真实贡献，提出FrontierCS 2基准。核心创新是从论文与作者代码中删除原始贡献，以人类完成版本作为参照，在48个开放式任务中持续评测智能体研发成果，而非只评一次生成。基准结果揭示智能体在开放问题分解、实现和贡献质量方面的能力，为研究型智能体提供更严格标准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.29934v1" target="_blank">ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination</a>
+                </div>
+                <div class="card-byline">Nithin Sivakumaran, Ali Payani, Hyunji Lee, Mohit Bansal, Elias Stengel-Eskin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  连续理论心智令牌提升多智能体协作中的伙伴状态推断
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.29934v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.29934v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多智能体协作中如何准确推断伙伴潜在状态，提出ToM2Vec，将理论心智表示为连续抽象令牌，以支持在多种可能伙伴状态下推理。核心创新是摆脱单一文本状态描述，让LLM智能体在表示空间内连续表达不确定性并据此协调行动。实验表明，该方法提升多智能体协作表现，说明连续化心智建模有助于处理动态互动与伙伴状态推断。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.30014v1" target="_blank">Agent Behavior Maps: Locating Agents by What They Would Do, Without Running Them</a>
+                </div>
+                <div class="card-byline">Shota Fujikawa, Takuya Tamura, Kosuke Akimoto, Daichi Haraguchi, Masafumi Oyamada</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以行为轨迹似然绘制LLM智能体地图，无需运行目标代理
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.30014v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.30014v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究如何在不运行目标智能体的情况下定位其行为特征，提出Agent Behavior Map，用共享参考轨迹上的中心化动作对数似然刻画智能体与执行框架组合。核心创新是建立坐标距离与轨迹KL散度之间的误差界，并用该表示比较成功率相近但策略不同的智能体。实验支持其跨环境定位和代理相似性分析能力，有助于诊断智能体行为差异。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-10-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2610.30113v1" target="_blank">Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research</a>
+                </div>
+                <div class="card-byline">Houde Qian, Zheng Jiang, Wenyi Li, Chenxi Xu, Xinjie Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  量化交易基准检验LLM智能体完成研究闭环的能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2610.30113v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2610.30113v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对量化研究中假设、编码、回测与取舍难以端到端评估的问题，提出Quant-Arena基准，考察LLM智能体能否完成完整研究闭环。核心创新是将可执行策略、样本外有效性与多环节研究过程统一评测，而非只评公式、代码或单次交易决策。基准结果揭示智能体在研究迭代和泛化上的实际能力与短板，为金融研究代理提供可复现标尺。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
