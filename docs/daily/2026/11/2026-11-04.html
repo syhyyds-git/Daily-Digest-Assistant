@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月04日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月04日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04003v1" target="_blank">WASP-Mem: Let Agent Organize Procedural Memory. Human Spend Effort on Diagnosis</a>
+                </div>
+                <div class="card-byline">Peizhi Niu, Ge Shi, Vaibhav Gorde, Sarthak Ghosh, Christos Faloutsos</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  让智能体自主沉淀并组织企业流程性记忆
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04003v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04003v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对企业复杂流程难以依靠静态脚手架自动化的问题，提出WASP-Mem，使LLM智能体从执行经验中整理程序性记忆并诊断重复步骤。创新点是让智能体承担记忆组织与巩固工作，同时保留人工处理疑难情况的投入。该方法旨在减少逐流程编写规则的负担，使智能体能够适应专有政策、隐含行为及依赖状态的恢复路径。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-02</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.03982v1" target="_blank">SLATE: A Large-Scale Benchmark for Long-Horizon API Selection in E-commerce Tool Use</a>
+                </div>
+                <div class="card-byline">Rongzhe Wei, Ge Shi, Min Cheng, Sarthak Ghosh, Vaibhav Gorde</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  评测智能体长程电商流程中的API选择能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.03982v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.03982v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出SLATE基准，用于评估LLM智能体在电商软件栈中执行长程标准操作流程的能力。任务要求智能体从数千个内部API中选择、组合正确调用，但不使用人工编写的步骤与接口映射，仅依据整体任务是否成功进行评判。核心创新是将评测重点从局部调用匹配转向长程工具编排能力。该基准旨在衡量智能体在大规模API环境中的检索、规划和执行可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04104v1" target="_blank">ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends</a>
+                </div>
+                <div class="card-byline">Shengjun Kris Dong, Dima Nikiforov, Sahil Modi, Sana Damani, Edward C Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以学习型智能体跨模型优化加速器计算内核
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04104v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04104v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体如何跨模型、计算内核及硬件后端优化加速器代码。ModelBlaster在智能体探索能力之上引入学习增强机制，使系统不仅复用既有调度，还能生成替代算法、算子分解和硬件专用优化方案。核心创新是突破单一编程接口与单一硬件家族的局限。方法旨在缩小专用编译器与智能体优化之间的性能差距，并提高跨后端内核优化的可迁移性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04182v1" target="_blank">When the Consumer Is an Agent: Execution-Grounded Service-Level Agreements</a>
+                </div>
+                <div class="card-byline">Michal Orzechowski, Renata G. Slota, Jacek Kitowski</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  用执行结果约束智能体任务完成的服务承诺
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04182v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04182v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM智能体调用异步分布式服务时误报完成的问题，提出执行锚定的服务级契约。不同于接口返回成功或立即读取状态，契约要求指定状态在截止期限前真正对外可观察。其核心创新是将智能体自报完成转换为可验证的执行结果，为任务完成建立明确责任边界。该框架可提升智能体与服务协作中的可靠性，并支持更严格的时限和结果管理。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04196v1" target="_blank">DoGNAVY-Exploit: Harnessing Parallel Open-Weight Agents for Stage-Aware Vulnerability Exploitation</a>
+                </div>
+                <div class="card-byline">Yuxuan Wang, Dadi Guo, Weijie Guo, Zikai Xu, Chen Lu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  并行开源智能体执行阶段化漏洞利用链
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04196v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04196v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文面向长链条漏洞利用成本高、开放权重模型难以持续推进的问题，提出DoGNAVY-Exploit。该方法并行调度多个开源LLM智能体，根据利用阶段分配角色、传递进度并调用相关安全知识。核心创新是以阶段感知的协作机制替代单纯顺序执行，减少上下文和进度丢失。方法旨在使更易获得的开放模型能够稳定完成从漏洞分析到实际利用的多阶段复杂任务。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04301v1" target="_blank">OSGR: Observation-Support Graph Reasoning for Earth Observation Question Answering</a>
+                </div>
+                <div class="card-byline">Dazhou Yu, Zerong Wang, Riyang Bao, Longxiang Li, Yang Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  结合符号推理与关系检索回答地球观测问题
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04301v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04301v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对地球观测问答中的联合检索与推导难题，提出OSGR两阶段框架。第一阶段离线推导地理符号概念，第二阶段在线执行关系条件分组检索，以满足严格时空约束。核心创新是分解原有智能体的巨大搜索空间，并将观测项目与地理实体建立可验证联系。方法旨在解决LLM智能体回答缺乏观测依据以及搜索爆炸问题，提高复杂地理查询的可执行性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04356v1" target="_blank">CloakFEM: Agentic FEM Code Generation for Red-Teaming Computational Resource Exhaustion</a>
+                </div>
+                <div class="card-byline">Li Zheng, Simin Chen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以智能体生成红队程序攻击有限元计算资源
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04356v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04356v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究有限元求解器面临的效率攻击，即攻击者构造语法有效且可运行的程序，在正常完成的同时诱发过量计算。论文提出CloakFEM，通过智能体式代码生成开展红队测试，自动搜索能够触发计算资源耗尽的FEM程序。其创新在于把自然语言驱动的代码生成用于安全评测，结论是此类隐蔽的资源消耗攻击能够被系统化发现并用于防御评估。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.04805v1" target="_blank">Where Is the Truth When AI Agents Disagree? Dependence-Aware Belief Propagation for Unsupervised Truth Discovery (Extended Version)</a>
+                </div>
+                <div class="card-byline">Laure Berti-Equille</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用依赖关系从意见分歧的智能体中发现真相
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.04805v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.04805v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多个LLM智能体对同一问题给出冲突答案时，如何在无标签条件下推断真实答案及个体可靠性。由于派生自同一基础模型的智能体误差高度相关，论文提出依赖感知的信念传播方法BP-TD，避免传统众包算法奖励一致性集团。其核心结论是显式建模智能体间依赖关系，有助于获得更可靠的真相发现结果，优于简单多数投票。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.05171v1" target="_blank">AgentAM: An AI Agent for Spatter- and Defect-Aware Process Optimization in Laser Powder Bed Fusion</a>
+                </div>
+                <div class="card-byline">Olabode T. Ajenifujah, Amir Barati Farimani</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  用LLM智能体优化增材制造中的工艺缺陷
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.05171v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.05171v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文面向激光粉末床熔融工艺优化，提出AgentAM，使工程师通过自然语言调用基于CFD训练的飞溅和熔池几何代理模型。系统借助模型上下文协议封装专用预测工具，并结合智能体完成参数分析、模型查询与优化建议生成。核心创新是打通文本交互、领域仿真模型和车间决策，结论是该方式可降低使用预测模型所需的编程及专业知识门槛。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-03</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.05320v1" target="_blank">PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data</a>
+                </div>
+                <div class="card-byline">Kewei Zhang, Juncheng Ma, Guodong Lv, Duomin Wang, Feixiang Ruan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以编码智能体低成本生成真实就绪机器人数据
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.05320v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.05320v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究编码智能体能否替代传统遥操作员完成机器人演示数据采集。DataFarm接收数据需求和一次目标场景校准后，由智能体自动编写场景、任务及仿真配置，并在仿真中重建任务。其核心创新是将通用编码能力与机器人数据生产流程结合。方法有望降低机器人与操作员的时间成本，并减少每项新任务从零开始的重复投入。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
