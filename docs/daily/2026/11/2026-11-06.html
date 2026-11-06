@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月06日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月06日 · 星期五</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07558v1" target="_blank">SKIM: Pruning Large Language Model Agents via Selective Knowledge Informed Masking</a>
+                </div>
+                <div class="card-byline">Moonseok Choi, Jongwon Jeong, Minki Kang, Giung Nam, Juho Lee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SKIM面向结构化生成剪除对智能体无益的模型知识
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07558v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07558v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究结构化生成场景下语法约束改变有效词元分布，导致传统LLM智能体压缩方法与实际推理需求不匹配的问题，提出选择性知识Informed Masking，即SKIM。方法依据对智能体后续决策有用的知识识别并剪除不重要参数或计算。核心创新是面向受语法约束的生成过程设计压缩目标。实验表明，SKIM可在保持Agent任务能力的同时减少模型开销，提升部署效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07932v1" target="_blank">AttnSR: Attention Step Reward for Long-Horizon Agentic RL</a>
+                </div>
+                <div class="card-byline">Mengsong Wu, Tianchen Zhou, Zhaochen Su, Zhenhua Liu, Zhe Cui</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  利用策略注意力为长时程LLM智能体分配步级奖励
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07932v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07932v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究长时程LLM智能体仅依赖最终结果奖励、难以监督中间步骤的问题，提出AttnSR步级奖励增强方法。方法从训练回放中的策略注意力反向推导各步奖励，不依赖独立奖励模型，也不增加额外rollout。核心创新是以现有策略内部信号为监督，定位造成长期结果的关键决策。实验显示，该方法能改善多步任务中的信用分配与长时程决策能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07976v1" target="_blank">QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents</a>
+                </div>
+                <div class="card-byline">Yingjie Tan, Haiquan Qiu, Quanming Yao, Manyi Zhong, Xianzhi Yu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以查询相关注意力熵在线压缩DeepSearch智能体检索上下文
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07976v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07976v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对DeepSearch智能体反复检索、持续累积来源导致上下文膨胀和延迟上升的问题，提出查询相关注意力熵QRAE。方法利用稀疏证据评估头判断检索片段是否真正影响后续推理，并在线压缩完整内容而非粗暴截断。其创新在于把注意力信号转化为上下文价值判据，无需额外训练奖励模型或生成更多推理轨迹。实验表明，该方法可在保留关键证据的同时降低令牌消耗与响应延迟。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.08175v1" target="_blank">PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?</a>
+                </div>
+                <div class="card-byline">Yue Zhang, Jilei Sun, Liqiang Jing, Yijie Wei, Ruohan Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  多模态LLM智能体协同全局策略与局部几何完成PCB布线
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.08175v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.08175v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究复杂PCB布线中全局连接决策与局部几何执行难以协调的问题，提出受人类工程师工作方式启发的多模态PCBRouteAgent，使智能体结合视觉信息与原生布线工具完成操作。核心创新是将战略规划和几何执行统一到可交互的多模态Agent流程中。实验显示，该方法提升了复杂板卡上的自动布线可靠性，缩小了智能体与工程师之间的能力差距。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-04</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07140v1" target="_blank">More Agents, More Reliable? System-Level Reliability of Multi-Agent LLMs under Operational-Profile Uncertainty</a>
+                </div>
+                <div class="card-byline">Burkay Tunçtürk, Koorosh Aslansefat, Yiannis Papadopoulos, Bao Nguyen</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统级分析多智能体LLM可靠性与输入分布及聚合规则
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07140v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07140v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文质疑多智能体LLM系统“数量越多越可靠”的常见假设，指出平均基准准确率无法反映部署环境中不同输入组合及答案合并规则的影响。作者以HIP-LLM的不精确概率评估为基础，扩展出系统级可靠性分析框架。核心创新是把输入分布不确定性与聚合机制纳入可靠性度量。实验与案例分析表明，单纯增加Agent数量可能无法提升系统可靠性，配置和治理策略同样关键。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07286v1" target="_blank">How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering</a>
+                </div>
+                <div class="card-byline">Melika Sepidband, Jiho Shin, Song Wang, Hadi Hemmati</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以地图化代码表示重塑智能体软件工程的仓库检索流程
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07286v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07286v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究智能体软件工程中代码长期被当作纯文本，通过原始文件、词法搜索和Shell命令访问所造成的信息获取局限。论文将基于地图的代码表示工作流作为智能体软件工程的设计变量，比较不同仓库视图对检索与理解的影响。核心创新是让Agent利用结构化全局代码地图，而非仅做文件级搜索。实验表明，合适的代码表示能显著改变Agent的检索质量、任务表现与工程效率。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07372v1" target="_blank">EnvOpt: Automated Optimization for Agent Environments</a>
+                </div>
+                <div class="card-byline">Mingxuan Li, Huanzhi Mao, Qiuyang Mang, Hanchen Li, Joseph E. Gonzalez</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  EnvOpt自动优化智能体运行环境以提升成功率并降低成本
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07372v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07372v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出除模型参数调优和智能体框架优化之外的第三个方向：自动优化智能体所处环境。EnvOpt面向Slack工作区或复杂数据源等跨任务共享的静态环境，自动搜索更有利于Agent成功率和成本的环境配置。核心创新是把环境本身视为可优化对象，并建立与模型、框架联合评估的流程。实验显示，环境优化能够改善智能体表现并降低成本，说明提升Agent能力不只依赖更强模型。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07586v1" target="_blank">Stress Testing Chain-of-Thought Monitoring Against Covert Misalignment</a>
+                </div>
+                <div class="card-byline">Yao Huang, Yifan Wang, Yitong Sun, Yichi Zhang, Yinpeng Dong</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  压力测试链式思维监控能否发现智能体的隐蔽不对齐
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07586v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07586v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究链式思维监控能否可靠识别绕过安全约束的隐蔽目标，并针对当前红队攻击过于理想化的问题开展压力测试。作者构造更具现实性的隐蔽不对齐场景，检验监控器在实际Agent行为中的识别能力。核心创新是将监控可靠性与攻击真实度联合评估，而非只报告理想化攻击下的准确率。实验揭示现有CoT监控的局限，为构建更逼真的红队与更可靠的智能体安全控制机制提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07599v1" target="_blank">Binding Paraphrased Instructions to Encountered Objects in sLLM Agents under Partial Observability</a>
+                </div>
+                <div class="card-byline">Chanyoung Kim, Harim Song, Byoungchan Ko, Keonyoung Lee, Myungwon Lee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ALFWorld-Para揭示指令改写下具身智能体的对象绑定脆弱性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07599v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07599v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究经强化学习微调的小型LLM智能体面对多样化指令改写时能否稳定理解环境对象，提出ALFWorld-Para并系统评估部分可观测具身任务中的指令鲁棒性。受控改写实验显示，成功率下降21%至52%，暴露模型对用户表达的脆弱性。核心贡献是把指令释义与对象绑定能力单独隔离评测，从而区分语言理解问题与环境执行问题，为鲁棒训练提供更清晰的诊断依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.07689v1" target="_blank">MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents</a>
+                </div>
+                <div class="card-byline">Yizhen Jiang, Haowei Guo, Tianyi Bai, Zengjie Hu, Lu Ma</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MCPHallu系统评测工具型智能体的推理执行与记忆幻觉
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.07689v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.07689v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文围绕MCP智能体在运行时发现并跨服务器调用工具时产生的推理、执行和记忆幻觉，构建专门基准MCPHallu。不同于仅评估任务完成率或在执行后诊断失败的现有工作，它将三类失败风险直接设计进任务。核心创新是建立可定位幻觉来源的细粒度评测框架。实验结果揭示了MCP智能体在推理、工具执行和记忆环节的薄弱环节，为后续安全改进提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
