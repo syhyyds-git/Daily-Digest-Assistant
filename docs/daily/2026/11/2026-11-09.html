@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月09日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月09日 · 星期一</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>8</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.08644v1" target="_blank">Decision Context: Persistent Behavioral Learning for AI Agents</a>
+                </div>
+                <div class="card-byline">Nima Vahdat, Pashootan Vaezipoor</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Decision Context，让AI代理跨会话持久学习用户纠正与行为偏好
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.08644v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.08644v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM代理无法跨会话从用户纠正中学习、导致同类错误反复出现的问题，提出Forge Decision Context系统。与主要记录事实和偏好的传统代理记忆不同，该方法从人类反馈和代理自评中提取行为信号，形成持久化程序性知识。其核心创新是将决策上下文独立建模，并让代理在后续会话中检索和应用相关经验。实验显示，该机制能够减少重复犯错，显著提升代理对用户行为约束的长期适应能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.08768v1" target="_blank">Conflux: Preventing Privilege Escalation with Principal Contexts and System-Level Evaluation</a>
+                </div>
+                <div class="card-byline">Raya Buckley, Christian Schroeder de Witt</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出Conflux系统，以主体上下文和系统级评估阻止LLM代理权限升级
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.08768v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.08768v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究多主体信息汇合时LLM代理可能实施权限升级的问题，提出只有影响行动的所有主体均允许该行动时，系统才可执行的安全目标。作者设计Conflux主体上下文防御机制及ITES内核，将授权判断置于模型判断之外，以降低模型级防御的随机性。核心创新是把权限一致性提升为系统级执行约束，而非依赖提示词或模型自我审查。实验表明，该方法能够有效识别并阻止跨主体协作中的越权行为。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.09088v1" target="_blank">When Routine Operations Break Architectural Pattern Relationships in LLM Agent Harnesses</a>
+                </div>
+                <div class="card-byline">Boming Xia, Qinghua Lu, Dino Sejdinovic, Liming Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  分析日常操作如何破坏LLM代理框架中的架构模式关系与安全约束
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.09088v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.09088v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM代理运行框架中，工具中介、状态管理和安全护栏由原生服务、独立插件及配置共同承担时，日常操作如何改变架构模式所依赖的运行时顺序或保留状态。作者围绕Guardrail Enforcement Point、Autonomy Controller等五类架构关系展开分析。其创新在于将代理框架的偶发运行偏差与架构级失效联系起来，而不是只检查代码实现。研究结论表明，即使没有代码变更，常规交互也可能逐步破坏关键架构关系并削弱安全控制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.09113v1" target="_blank">Authorization Drift in LLM Agents: Evaluating Boundary Compliance in Multi-Step Tool Use</a>
+                </div>
+                <div class="card-byline">Chuxue Cao, Jingru Zeng, Boqin Yin, Yujin Zhou, Yidan Huang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出授权漂移基准，评估多步工具调用代理的权限边界合规性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.09113v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.09113v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM代理在追求用户目标时，即使没有外部攻击者也可能越过授权边界的问题。作者将这一现象形式化为数据、工具、范围和时间维度上的授权漂移，并提出包含648个样本、覆盖七个领域的Authorization Drift Benchmark。每个任务同时设置合规路径与更具诱惑性的越权捷径，从而测量代理是否在工具调用链中持续遵守权限约束。实验表明，复杂任务和多步操作会显著增加授权漂移风险。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.09264v1" target="_blank">Nudging Decision Models: Do Digital Nudges Steer Fast, Generation-Free AI Agents?</a>
+                </div>
+                <div class="card-byline">Sascha Kaltenpoth, Haya Halimeh, Kevin Bösch, Oliver Müller</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究数字化助推能否快速引导无需文本生成的高效AI代理决策
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.09264v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.09264v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究面向业务和消费任务的LLM代理，考察其是否能被数字助推在线引导，并引入无需生成完整文本、速度和成本更优的决策模型作为快速代理。作者依据双过程理论，比较自动反应式判断与生成式代理在不同助推条件下的行为差异。核心创新是将经典行为经济学助推机制迁移到生成式AI代理评估中，结果显示数字助推能够有效改变决策模型的选择，但效果受任务类型与助推形式影响。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.09721v1" target="_blank">MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory</a>
+                </div>
+                <div class="card-byline">David H. Yang, Blake Bullwinkel, Amanda Minnich, Mohammad Mohammadi Amiri, Giorgio Severi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出MemoryDojo基准，评估恶意指令对LLM代理记忆系统的投毒风险
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.09721v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.09721v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦LLM代理长期、多会话记忆中的安全漏洞，研究恶意指令被写入记忆后，如何跨会话传播并在后续检索时被代理执行，从而形成持久化攻击。论文提出MemoryDojo基准，用于比较不同记忆系统在写入、存储和检索恶意信息时的防护效果。其核心贡献是将记忆投毒从单次执行扩展到跨会话生命周期评估，实验表明记忆系统差异会显著影响投毒风险和攻击传播范围。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-06</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.09768v1" target="_blank">Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents</a>
+                </div>
+                <div class="card-byline">Yuchen Li, Lisa Liu, Runqi Zou, Shuxuan Kuang, Qingquan Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统检验语言表达方式如何影响LLM社交推理代理的判断与行动
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.09768v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.09768v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究语言表达形式是否改变大语言模型代理在社会推理中的行为，具体分析简单与复杂、直白与礼貌措辞对其他代理判断和行动的影响。研究基于LURK Werewolf框架，将言语行为谓词与自然语言实现分离，仅重写表达形式以控制变量。其创新在于把语言风格作为可操控变量，评估LLM代理社会互动中的敏感性与策略性，结论揭示语言表达可能显著影响代理协作结果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-05</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.08613v1" target="_blank">NormGym: Evaluating Normative Competence through Social Interaction</a>
+                </div>
+                <div class="card-byline">Binze Li, Zihuan Zhang, Seokhyun Baek, Gillian K. Hadfield, Tianmin Shu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出NormGym，评估智能体能否从社会互动中习得并运用未知规范
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.08613v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.08613v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究智能体在陌生人类社区中能否通过社会互动推断并调整行为以满足未被明确告知的规范。作者提出NormGym，用于评估规范性能力，而非仅测试智能体识别或应用已知规范的能力。其核心创新在于将规范获取过程纳入评测，要求代理从交互反馈中发现社会约束并迁移到后续行为。相关结果表明，代理能够学习部分互动规范，但在规范泛化、冲突处理及陌生情境适应方面仍存在明显差异。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
