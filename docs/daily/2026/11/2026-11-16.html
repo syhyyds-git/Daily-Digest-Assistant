@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月16日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月16日 · 星期一</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17797v1" target="_blank">Vision-as-a-Tool: Visual Harness for Multimodal Agentic Coding</a>
+                </div>
+                <div class="card-byline">Haolin Yang, Wenshan Wu, Jin Jiang, Yu Cheng, Yan Xia</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以视觉工具解耦多模态代理编码中的图像推理
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17797v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17797v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：针对多模态代理编码中的视觉理解瓶颈，提出将视觉作为外部工具的Visual Harness。核心创新：解耦代理内部视觉能力与图像观察工具，使代理可主动调用视觉流程评估产物。结论：外部视觉工具能增强视觉落地编码与产物核查，表现优于仅依赖内生视觉的架构。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17880v1" target="_blank">Soteria: Formally Verified Planning with Runtime Enforcement for Safe LLM Agents</a>
+                </div>
+                <div class="card-byline">Mike He, Ankush Desai, Sharad Malik, Aarti Gupta</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以形式化运行时保障LLM代理规划的安全效用
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17880v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17880v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：提出Soteria，为执行多步工具调用的LLM代理加入形式化验证的运行时约束。核心创新：联合维持任务效用与领域安全，并在拒绝危险动作后提供可恢复路径。结论：框架能阻止策略违规且避免代理单纯停摆，在安全与完成用户任务之间取得更稳定的平衡。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.18471v1" target="_blank">Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation</a>
+                </div>
+                <div class="card-byline">Disha Sheshanarayana, Sai Linisha Reddy Goli</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  测量轨迹抽象下LLM验证器判断的迁移可靠性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.18471v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.18471v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：测量同一代理执行在组合工具、委派边界和压缩历史下，LLM验证器判断能否稳定迁移。核心创新：提出验证迁移概念与跨表示评测框架。结论：轨迹证据的抽象会系统性改变验证判断，单一表示上的高分不足以保证部署环境中的可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.18514v1" target="_blank">Can Mechanistic Interpretability Help Explain LLM Agent Failures? A Case Study on Web Element Hallucination</a>
+                </div>
+                <div class="card-byline">Mohamed Aghzal, Mor Geva, Gregory J. Stein, Ziyu Yao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  用机制可解释性剖析网页代理的元素幻觉失效
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.18514v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.18514v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：研究机制可解释性能否解释网页代理在元素识别上的幻觉。核心创新：把MI工具应用于真实工具交互失败，并连接内部计算与外部行为。结论：该方法揭示了网页元素幻觉的可解释路径，同时说明传统静态解释难以覆盖代理与网页环境耦合造成的失效。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17780v1" target="_blank">LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent</a>
+                </div>
+                <div class="card-byline">Ibrahim Memon, Armin Karamzade, M. Hanif Jhaveri, Roy Fox</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  用本地单次SQL模型加速并保护数据库代理查询
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17780v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17780v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：提出LuthorSQL，用本地一次推理模型承担文本到SQL的快速初判，再由较慢LLM代理处理复杂查询。核心创新：把轻量模型设为代理外部的“系统1”，兼顾速度、成本与数据外发风险。结论：该级联方案可减轻云端代理负担，并在准确率、延迟和隐私之间形成实用折中。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17808v1" target="_blank">CarryOn: Learning What to Keep in Context for Long-Horizon LLM Agents</a>
+                </div>
+                <div class="card-byline">Lihuan Li, Ruiyi Yang, Jiru Wang, Yifan Duan, Xiachong Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  学习上下文保留策略提升长程LLM代理表现
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17808v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17808v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：提出CarryOn，研究长程LLM代理应从不断增长的交互历史中保留哪些上下文。核心创新：学习面向决策价值的内容选择机制，替代固定摘要或简单裁剪。结论：保留关键行动与约束信息能提升复杂任务的可靠性与效率，证明更短上下文并不必然带来更好决策。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17820v1" target="_blank">Aligning AI Teams</a>
+                </div>
+                <div class="card-byline">Siddarth Srinivasan, Morgan Jane Matthews, Jascha Sohl-Dickstein, Erik Jones</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究对齐训练向多智能体LLM团队迁移的机制
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17820v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17820v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：探究个体代理的对齐训练为何不能迁移到多代理团队，并比较干预方案。核心创新：在脓毒症分诊、新闻推荐及十类咨询提案任务上系统刻画迁移失败。结论：跨代理交互会改变对齐效果，训练方案需显式考虑团队结构与协作动力学，不能假设个体安全自动扩展。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17910v1" target="_blank">Adversarially Attacking Symbolic Vocabulary Vulnerabilities In LLM Planners</a>
+                </div>
+                <div class="card-byline">Stephen Obadinma, Xiaodan Zhu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示符号词汇操纵对LLM规划器鲁棒性的影响
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17910v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17910v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：研究LLM规划器对符号词汇中动作、谓词和对象名称所暗含常识线索的依赖。核心创新：构造对抗式词汇操纵，隔离名称语义与正式规划结构。结论：移除常识提示后规划鲁棒性显著下降，表明符号命名可能成为不可信捷径，并削弱规划成绩的可解释性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17931v1" target="_blank">MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration</a>
+                </div>
+                <div class="card-byline">Bing Wang, Mingyang Wang, Yuanhang Mi, Yue Xu, Kaibo Su</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  基准评测代理设计矿物勘探地球化学实验的能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17931v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17931v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：构建MineralExp，评测LLM代理在真实矿物勘探中设计地球化学实验的能力。核心创新：将昂贵实验前的高价值实验选择标准化为开放任务基准。结论：实验揭示代理在探索性设计、约束满足和方案比较上的差异，说明领域知识与验证反馈仍是关键瓶颈。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-13</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.17933v1" target="_blank">OutfitterBench: Evaluating LLM Agents on Long-Horizon Resource Allocation and Commitment Coordination</a>
+                </div>
+                <div class="card-byline">Jie Huang, Yuecheng Hong, Yao Chen, Shengding Jiao, Xudong Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  基准评测长程代理的资源分配与承诺协调能力
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.17933v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.17933v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：提出OutfitterBench，评测LLM代理在长程资源分配和承诺协调中的表现。核心创新：显式建模当前选择造成的后续容量义务与机会成本。结论：该基准能区分仅追求即时收益和维持长期可行性的策略，为长程规划与资源配置提供更贴近现实的评测。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
