@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月17日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月17日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">think with image</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-14</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.19200v1" target="_blank">LogT: Logically Think with Images for Visual Search</a>
+                </div>
+                <div class="card-byline">Yanjun Fu, Quanzeng You, Jiadong Guo, Yujie Lu, Sai Charitha Akula</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  让视觉语言模型边看图边逻辑推理，并精准高效调用缩放工具。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.19200v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.19200v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：研究视觉搜索场景中逻辑推理与Zoom-in外部工具协同使用的问题，提出LogT方法。核心创新：不再仅为工具调用设计训练流程，而是同时强化模型的逻辑思考、视觉定位和工具选择能力。结论：所提方法改善了细粒度视觉搜索中的推理正确性与工具使用效率，兼顾回答质量和操作成本。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.19823v1" target="_blank">EfficientSkill: Learning Skills for Token-Efficient Multi-Turn Agents</a>
+                </div>
+                <div class="card-byline">Deep Shah, Sanket Badhe, Nehal Kathrotia, Priyanka Tiwari</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出两阶段技能优化框架，在保持精度的同时降低智能体令牌成本。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.19823v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.19823v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：针对多轮智能体反思式技能优化造成提示膨胀、令牌浪费和长循环错误的问题，提出两阶段EfficientSkill框架。核心创新：先发现无额外令牌负担的可靠技能，再以准确率守卫进行剪枝和热启动。结论：该方法可在维持任务精度的同时减少上下文开销，并降低边缘规则引发的错误循环。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.19700v1" target="_blank">Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both</a>
+                </div>
+                <div class="card-byline">Parsa Mirtaheri, Mohammadreza Armandpour, Keivan Alizadeh, Iman Mirzadeh, Parshin Shojaee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统比较智能体在上下文与参数中测试时适应的效果差异。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.19700v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.19700v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：面向反复运行于代码仓库、数据库或应用环境的LLM智能体，比较经验保留在上下文与更新模型参数两种测试时适应方式。核心创新：将适应位置作为核心变量，同时研究二者结合的适用条件。结论：实验揭示不同适应通道在复用环境知识、稳定性和成本方面的差异，为智能体选择持续学习方式提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.19886v1" target="_blank">Recovery Gone Too Far: Understanding and Repairing Risky Fallback in LLM Agents</a>
+                </div>
+                <div class="card-byline">Liwen Wang, Jiangrong Wu, Zongjie Li, Zongyi Lyu, Shuai Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  诊断智能体故障回退越界风险，并设计针对性修复机制。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.19886v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.19886v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：研究LLM智能体遇到限流、超时等工具错误后自动启用替代工具的行为，分析普通容错为何可能跨越动作边界。核心创新：将“恢复任务”与“恢复过程越权”区分开来，并据此设计风险识别和修复方法。结论：危险回退可能在完成任务时产生不当外部行为，修复方案能降低越界风险，同时保留必要容错能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-15</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.19911v1" target="_blank">&#34;Don&#39;t Leave the Task Unfinished&#34;: Persistence-Driven Violations under Quiet Oversight</a>
+                </div>
+                <div class="card-byline">Seunghyun Lee, Jaehui Hwang, Dongyoon Han, Sangdoo Yun</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  揭示长任务坚持机制在低监督下可能引发任务越权违规。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.19911v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.19911v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：研究被赋予长期多步任务的LLM智能体，在用户低频监督下坚持执行直至完成的倾向及其安全后果。核心创新：将持久性驱动造成的任务偏离与普通指令不足、冲突区分开来，系统刻画“安静监督”场景。结论：坚持机制虽可提升长任务完成率，也可能推动智能体越过授权边界，因此需要更明确的约束与监督机制。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.20484v1" target="_blank">Agent-Guided Configuration Tuning for SMT Solvers</a>
+                </div>
+                <div class="card-byline">Cong Wang, Qiaoyi Zheng, Zhaoguo Wang, Fan Long</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  让通用LLM智能体自主调节SMT求解器配置并实验验证。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.20484v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.20484v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：研究通用LLM智能体如何为不同工作负载调节SMT求解器配置，提出由智能体参与的自动调优工作流。核心创新：允许智能体阅读求解器文档、源代码及持久实验记录来提出选项变更，再由确定性测试框架客观评估。结论：实验展示了智能体结合领域资料与迭代反馈改进求解器性能的能力，验证了文档驱动配置调优的可行性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.20595v1" target="_blank">Invariant-Aware Harness Enforcement to Protect LLM Agents from Silent API Failures</a>
+                </div>
+                <div class="card-byline">Sajib Acharjee Dip, Brian Ouyang, Lala Motlhabi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  通过不变量约束拦截智能体遭遇的静默API调用失败。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.20595v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.20595v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：针对API返回HTTP 200却忽略部分请求、产生可信错误结果的问题，提出SilentGuard防护机制。核心创新：把错误检测从依赖模型自检、审查模型或LLM裁判，转移到执行环境中验证调用不变量。结论：该机制可在结果进入智能体决策前阻断静默失败，减少模型即使察觉异常仍继续回答所带来的错误传播。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.20736v1" target="_blank">GainCtrl: Predicting Remaining Gains for Efficient LLM Agent Execution</a>
+                </div>
+                <div class="card-byline">Kangwen Zhao, Jianfeng Cai, Ruopei Sun, Mingxiao Feng, Peng Zhang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  预测智能体重复尝试的剩余收益，及时停止低价值执行。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.20736v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.20736v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：针对工具型LLM智能体反复尝试会持续增加成本的问题，研究如何估计当前尝试还能带来的最终收益。核心创新：提出GainCtrl机制，依据剩余增益预测决定是否继续执行，而非固定重试或等待答案一致。结论：动态停止低边际收益尝试可降低无效工具调用和整体执行成本，同时尽量保持最佳结果质量。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.21053v1" target="_blank">System 1 agents: a method for local, reliable and fast agentic AI</a>
+                </div>
+                <div class="card-byline">Eleftherios Tzanis, Michail E. Klontzas</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  以本地无文本工具调用构建更可靠快速的临床智能体系统。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.21053v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.21053v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：针对云端LLM可能泄露敏感临床数据、本地模型幻觉会沿工具链传播的问题，提出System 1 agents。核心创新：让本地智能体直接调用工具而不生成自然语言，并通过确定性编译机制约束动作执行。结论：该设计减少对云端模型的依赖和虚构值的级联传播，在医疗数据分析中兼顾隐私、可靠性与响应速度。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.21129v1" target="_blank">Linglong Agent Service: A Runtime for Centralized Agent Reasoning and Distributed Execution</a>
+                </div>
+                <div class="card-byline">Hua Zhang, Min Jiang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  提出集中推理、分布式执行且执行站点可配置的智能体运行时。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.21129v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.21129v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>做了什么：针对LLM智能体远程调用工具、云沙箱及异构执行环境难以统一管理的问题，提出Linglong Agent Service。核心创新：把执行站点建模为可配置维度，由父服务集中保留推理编排和会话状态，并将任务分发至不同执行位置。结论：该运行时支持自托管部署和嵌入式Python集成，改善复杂智能体工作流的统一调度与执行。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
