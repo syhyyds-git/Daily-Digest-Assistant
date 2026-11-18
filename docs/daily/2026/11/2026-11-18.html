@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月18日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月18日 · 星期三</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.21847v1" target="_blank">Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery</a>
+                </div>
+                <div class="card-byline">Prithwish Jana, Nikos Kanakaris, Purak Jain, Anoop Deoras, Sahika Genc</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Inventa以分散式自改进代理提升科学发现的多样性与可行性
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.21847v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.21847v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出Inventa，以去中心化自改进代理执行自主科学发现，重点解决代理数量和迭代增加却产生同质化想法、共享记忆传播无依据主张及重复低效搜索的问题。其创新在于联合调节候选多样性、证据约束与搜索协作，而非单纯扩大规模。实验结果表明，治理这些失效模式可让更多代理与迭代转化为多样、可行的研究发现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22610v1" target="_blank">EvoSkill-S1: Evolving Reusable Skills with Genetic-Inspired Operators</a>
+                </div>
+                <div class="card-byline">Yujun Wang, Jiqiang Li, Yinuo Lu, Jinhe Bi,  Aniri</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  EvoSkill-S1以遗传启发算子直接进化并强化可复用技能库
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22610v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22610v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对语言模型代理技能库更新浅层、缺乏控制的问题，提出EvoSkill-S1，将可复用技能作为直接进化对象，以强化学习驱动并引入遗传启发式算子。创新点是把技能生成、筛选与变异纳入统一优化过程，而非依赖滚动积累和启发式反思。实验结果显示，该方法能更直接、精细地提升技能库质量与复用效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.23219v1" target="_blank">Do LLM Agents Still Need to Be Told How to Self-Improve?</a>
+                </div>
+                <div class="card-byline">Shobhita Sundaram, Cansu Sancaktar, Phillip Isola</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  研究LLM代理在能力增强后如何自主规划自我改进流程
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.23219v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.23219v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究能力持续增强的LLM代理是否仍需外部规定自我改进方式，并在仅提供基本原语与资源的自主范式下，让模型自行组织学习与优化。核心创新是把代理视为自我改进流程的设计者，考察自主规划能否替代人工模板。结论指向：更强模型可承担更多改进决策，但基础资源、反馈与约束仍决定改进上限。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22113v1" target="_blank">RegimeCouncil: Paired-Evidence Routing For Memory Conflict Governance In LLM Agents</a>
+                </div>
+                <div class="card-byline">Qingcan Kang, Mingyang Liu, Shixiong Kai, Tao Zhong, Mingxuan Yuan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  成对证据路由治理LLM代理长期记忆冲突与过期反馈
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22113v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22113v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出RegimeCouncil，以成对证据路由治理语言代理长期记忆中的事实过期与负反馈传播，解决旧记录已失效但系统只在行动后才收到惩罚的问题。核心创新是在更新记忆前决定反馈应抑制哪些未来查询，并保留仍可信的信息。实验显示，该方法可减少依据过期事实作答，同时避免过度禁用记忆并提升个性化响应可靠性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22245v1" target="_blank">Multi-Agent Memory Inconsistency: Where Factual Conflicts Disappear in LLM Agents</a>
+                </div>
+                <div class="card-byline">Hejia Zhang, Zhongming Yu, Yimin Ding, Wei-Ting Chen, Hengjia Yu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  基准与证据流分析揭示多代理记忆中的事实冲突消失
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22245v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22245v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多代理委派中工作者各自取证、汇总代理却看不到全部事实的问题，提出记忆不一致基准与证据流分析器，在可控事实冲突下追踪证据的传递、遗漏与消解。创新点是将冲突定位从最终答案扩展到跨代理证据流。实验结果揭示，事实可能在分工与汇总过程中悄然消失，为记忆设计和冲突治理提供诊断工具。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22432v1" target="_blank">Think Once, Act Fast: Cost-Effective Recursive Self-Improvement for Decision Model Harness</a>
+                </div>
+                <div class="card-byline">Siqi Lai, Haitao Li, Hao Liu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  递归自我改进将慢速系统二推理沉淀为快速决策支持
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22432v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22432v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出JevRSI，用System-1与System-2协作降低决策延迟和成本：复杂场景由大模型推理，再把推理转化为可迁移的决策支持供快速模型复用。核心创新是以递归自我改进持续沉淀跨任务经验，而非每次重复调用慢速推理。实验围绕准确率、延迟、算力与迁移收益对比方案，验证该折中能否接近系统二效果并显著减少开销。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22511v1" target="_blank">LMLineage: Content Lineage and Context Governance for LLM Agents</a>
+                </div>
+                <div class="card-byline">Wei Hou, Jingxin Geng, Xin Chen, Zheqing Jiang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  LMLineage为代理输出句子追踪证据来源与校准置信度
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22511v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22511v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文提出LMLineage，为LLM代理会话中的每个输出句子追溯支持它的输入片段，并给出经过校准的置信度；整个过程采用带外机制，无需访问模型内部权重。创新点是把可解释性从模型内部扩展到多来源上下文中的证据归因。实验结果显示，该系统能提升句子级证据可追踪性，并支持对代理决策与记忆上下文的审计。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22539v1" target="_blank">JET: Just-Enough Exploration Tuning for Efficient Tool-Calling Agents in Repository-Level Question Answering</a>
+                </div>
+                <div class="card-byline">Yoonho Choi, Taehyeon Han, Seonghyeon Lee</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  JET调优工具调用代理，避免仓库问答中的过度探索
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22539v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22539v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文发现仓库级问答中的工具型LLM代理在信息已足够后仍继续调用工具，形成过度探索，并提出JET对探索充分性进行调优。核心创新是把何时停止探索纳入学习目标，在答案质量与工具调用成本之间联合优化，而非只提升最终准确率。实验显示，适度探索可减少无效调用并保持或提高问答表现。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.22841v1" target="_blank">Verifying Agents in Rubric-Graded Environments</a>
+                </div>
+                <div class="card-byline">Markus Dücker, Vaibhav Kumar, Yi Liu, Ronak Chaudhary, Andreas Plesner</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  系统评估开放式代理环境中基于评分标准的验证器
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.22841v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.22841v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文首次系统研究评分标准环境中的代理验证器：由验证器依据自然语言多项标准，同时检查代理交付物和环境状态变化。核心创新是覆盖开放式任务中更复杂、可组合的满足条件，而非只核验最终答案。实验比较不同验证器的判断能力、稳定性与偏差，分析其对代理改进信号的影响，为验证器选择和训练提供依据。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.23119v1" target="_blank">Dynamic Task Allocation with Dialogue</a>
+                </div>
+                <div class="card-byline">Matthew Groholski, Weiwei Gu, Nakul Gopalan</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  动态任务分配通过对话适应目标与职责的持续变化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.23119v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.23119v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多代理协作中目标、职责和可观测性变化导致的任务分配失效，提出基于对话的动态分配机制，并让代理形成关于任务与意图的显式、可验证信念。创新点是让分配依据可交流、可校正，而非完全依赖黑盒LLM判断。实验结果显示，该机制能够提升任务适应性、协作效率及责任划分的稳定性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
