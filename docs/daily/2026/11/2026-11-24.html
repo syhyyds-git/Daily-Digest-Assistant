@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年11月24日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年11月24日 · 星期二</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · think with image · skill learning · skill retrieval · skill refinement · skill evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.28706v1" target="_blank">SkillLens: An Interactive Human-LLM System for Diagnosing and Refining Agent Skills</a>
+                </div>
+                <div class="card-byline">Shuo Yan, Rui Sheng, Xiaoyan Gu, Lian Lian, Chengran Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SkillLens以交互式人机协同诊断并精炼智能体技能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.28706v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.28706v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文面向智能体技能版本、评测案例和执行轨迹相互割裂的维护难题，提出交互式人机系统SkillLens。该系统把开发者反馈、行为变化与任务结果关联起来，帮助研究人员定位技能缺陷并进行针对性修订。其核心贡献是建立技能诊断与精炼的闭环工作流，并通过形成性用户研究验证系统的可用性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-21</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.28907v1" target="_blank">STRIDE: Strategy-to-Tactics Retrieval-Guided Skill Disclosure and Evolution for Agentic Reinforcement Learning</a>
+                </div>
+                <div class="card-byline">Shixin Hong, Wanqing Cui, Yibo Hu, Naen Xu, Zhiwei Huang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  STRIDE按策略与战术层级检索并演化智能体强化学习技能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.28907v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.28907v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对技能增强强化学习中技能池扁平、仅凭回合结果粗粒度更新的问题，提出STRIDE框架。该方法区分贯穿整段任务的稳定策略与仅在特定状态触发的战术知识，并通过检索引导披露合适技能。核心创新是分层组织经验、细化技能更新信号，使LLM智能体更精准地复用和演化解题知识。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.29274v1" target="_blank">MetaSkill: Reusable Problem-Solving Methods for Adaptive Skill Orchestration in LLM Agents</a>
+                </div>
+                <div class="card-byline">Tianxing Wang, Mingming Zhao, Shuai Huang, Chaoyue Niu, Huiyang Xu</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MetaSkill以两层框架实现LLM智能体技能的复用与自适应编排
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.29274v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.29274v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体面对可复用技能时如何选择、组合并动态调整使用方法，提出MetaSkill两层框架。方法层从26种整理好的问题求解方法中选择合适方案，并将抽象角色绑定到任务对象；执行层则依据具体任务适配方法。实验表明，该设计能够提升跨任务、跨领域的技能复用与编排能力。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">skill evolution</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.30139v1" target="_blank">AutoSECO: Automated Skill Evolution for Cross-Problem Combinatorial Optimization with General-Purpose LLM Agents</a>
+                </div>
+                <div class="card-byline">Zirui Zhu, Cong Zhang, Ni Zhang, Kuan Xu, Zhiguang Cao</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  AutoSECO让通用智能体自动演化可复用的组合优化求解技能
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.30139v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.30139v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对通用LLM智能体依赖人工定制工作流、跨问题经验难以复用的问题，提出AutoSECO自动技能演化方法。系统从历史求解经验中提炼可迁移的开发指导，并将其反馈到后续求解器构建过程。核心创新是把一次性问题解决经验转化为可复用技能，支持面向不同组合优化问题的自动积累与改进。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-20</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.28356v1" target="_blank">Engram: Multi-Stage Memory for Agentic Tuning of Heterogeneous Models</a>
+                </div>
+                <div class="card-byline">Huanran Li, Nhat X. T. Le, Kevin De Angeli, Yao Xuan, Alireza Vahdatpour</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Engram以多阶段记忆复用异构模型调优中的历史经验
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.28356v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.28356v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM智能体调优神经网络时因缺少跨会话记忆而重复试错的问题，提出多阶段记忆系统Engram。该系统将历史试验结果与背后假设、推理依据建立关联，再判断这些证据能否迁移至架构和训练配置不同的模型。核心创新是以可解释的推理链支撑经验复用，减少昂贵试验并提升异构模型间的知识迁移效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.29613v1" target="_blank">Weight Coding: Evolving Web-Scale Recommenders through Direct Weight Edits with LLM Agents</a>
+                </div>
+                <div class="card-byline">Junpeng Hou, Jiaxing Qu, Derek Cheng, Jaewon Yang, Abhinav Naikawadi</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Weight Coding驱动LLM智能体直接编辑推荐模型权重并持续演化
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.29613v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.29613v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对网络规模推荐模型依赖重训练或微调才能演化的局限，提出Weight Coding方法。LLM智能体负责检查模型结构与参数、形成假设，并依据评测反馈实施可执行的权重修改，搜索过程由局部调整逐步扩展到定向优化。其核心创新是以智能体闭环直接演化模型参数，在降低人工调优成本的同时保持修改过程可执行和可验证。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.29619v1" target="_blank">Wactorz: Self-Writing LLM Agents That Discover, Repair, and Migrate at the Edge</a>
+                </div>
+                <div class="card-byline">Panagiotis Kasnesis, Lazaros Toumanidis, Amalia Contiero Syropoulou, Christos Chatzigeorgiou</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Wactorz构建可持续自编写、修复与迁移的边缘LLM智能体
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.29619v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.29619v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对多数智能体框架完成任务后即退出、难以长期维护实体环境任务的问题，提出开源运行时Wactorz。其核心是由LLM生成并监督长期运行的智能体：规划器把请求转为Python程序，执行器结合传感器和边缘设备完成操作，同时支持故障恢复与部署迁移。该设计推动智能体从一次性工具转向可持续自维护的长期执行者。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-22</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.29716v1" target="_blank">Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents</a>
+                </div>
+                <div class="card-byline">Wanghao Ye, Shwai He, Sihan Chen, Yiting Wang, Bowei Tian</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Fin-RSI统一金融技能、检查与自改进机制以赋能LLM智能体
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.29716v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.29716v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对金融软件接口分散、难以直接组合为可靠智能体工作流的问题，提出面向LLM智能体的统一Python库Fin-RSI。该库集中提供金融技能、结果检查和自改进能力，使智能体能够便捷发现并调用工具。其核心创新是将领域技能、验证机制与反馈优化封装到一致接口中，增强金融任务执行的可靠性和复用性。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">skill learning</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-11-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.30264v1" target="_blank">Skill-Adaptive Noise Scheduling for Diffusion Policies</a>
+                </div>
+                <div class="card-byline">Woo Kyung Kim, Gwangpyo Yoo, Eunyoung Park, Honguk Woo</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  自适应噪声调度使扩散策略按技能特性学习不同生成过程
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.30264v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.30264v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对层次化技能学习中不同技能共享固定扩散噪声调度的问题，研究将扩散过程本身作为可学习组件。方法根据各技能的数据与时序特征，自适应生成差异化噪声调度，而非对所有技能使用统一配置。核心创新是实现技能感知的生成过程建模，有助于扩散策略更准确地表达多模态、时序抽象行为。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    
+                    <span class="tag">arxiv</span>
+                    
+                  </div>
+                  <span class="card-date">2026-11-23</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2611.30765v1" target="_blank">Object Count Generalization Is an Interface Problem: Warping a Frozen Skill Instead of Retraining It</a>
+                </div>
+                <div class="card-byline">Paul Mattes, Ayman Abdeldayem, Denis Shcherba, Wojciech Samek, Marc Toussaint</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  WAVE无需重训即可将冻结单物体技能推广到多物体操作
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2611.30765v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2611.30765v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究机器人策略在物体数量超出训练范围时因状态维度变化而失效的问题，提出WAVE方法，通过动作与视角变换改造冻结的专家技能。系统对多个候选技能进行选择和组合，使单物体策略能够泛化到多物体场景。其创新点是无需更新预训练权重即可扩展技能适用范围，并缓解协变量偏移造成的性能退化。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    
+    <a href="https://syhyyds-git.github.io/Daily-Digest-Assistant/archive.html" target="_blank">📚 查看历史归档</a> ·
+    
+    <a href="https://github.com/yzbcs/Daily-Digest-Assistant">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
